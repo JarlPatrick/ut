@@ -73,7 +73,7 @@
 	\begin{flushright}
 	\expandafter{\@author} \\
 	\expandafter{\@klass} \\
-	Juhendaja: \expandafter{\@juhendaja}
+	Juhendajad: \expandafter{\@juhendaja}
 	\end{flushright}
 	\vfill
 	\centerline{\@koht{} \the\year}%

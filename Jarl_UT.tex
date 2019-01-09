@@ -6,7 +6,7 @@
 \pealkiri{Atmosfääri mudeldamine ja katseandmete põhjal täpseima mudeli leidmine} % Kahel real
 \autor{Jarl Patrick Paide}
 \klass{11.a}
-\juhendaja{Mart Kuurme}% Toetab praegu ainult ühte juhendajat, manual fix: muuda cls failis juhendaja -> juhendajad
+\juhendaja{õp. Mart Kuurme \\ õp. Kaarel Kivisalu}% Toetab praegu ainult ühte juhendajat, manual fix: muuda cls failis juhendaja -> juhendajad
 
 \begin{document}
 \maketitle% Tiitelleht
@@ -18,17 +18,19 @@
 
 
 \chapter{Teooria}
-Teeme lihtsustuse, et gaasid atmosfääris on ideaalsed. Siis saame kasutada ideaalse gaasi olekuvõrrandid
-\begin{equation}\label{eq8}
-PV=\nu RT
-\end{equation}
 
 Termodünaamika esimene seadus on
 \begin{equation}\label{eq1}
 dU = dQ - dA
 \end{equation}
 
-\section{Erisoojustest}
+\section{Ideaalne gaas}
+Teeme lihtsustuse, et gaasid atmosfääris on ideaalsed. Siis saame kasutada ideaalse gaasi olekuvõrrandid
+\begin{equation}\label{eq8}
+PV=\nu RT
+\end{equation}
+
+\subsection{Erisoojustest}
 Gaasi siseenergia $U$ avaldub vabadusastmete $i$ kaudu järgneva seaose abil.
 \begin{equation}\label{eq5}
 U = \frac{i}{2} \nu R T
@@ -55,7 +57,7 @@ Sammuti saab näidata $c_V$ ja $c_p$ vahelist seost
 c_p = c_V + R
 \end{equation}
           
-\section{Adiabaatiline protsess}
+\subsection{Adiabaatiline protsess}
 Adiabaatiline protsess on termodünaamiline protsess mille käigus ei toimus soojusvahetust väliskeskonnaga. Kuna atmosfääris on õhud pidevas üles-alla liikumises siis soojusvahetust ei toimu.
 
 Harilikult on õhumassid atmosfääris tugevas liikumises, nii et nad liiguvad pidevalt üles-alla. Et kõrgemal on rõhk väiksem, kui all, siis jahtub gaas üles liikudes heas lähenduses adiabaatilise paisumise tõttu (õhumasside suurte mõõtmete tõttu on soojusjuhtivus hästi aeglane).
@@ -101,7 +103,7 @@ p^{1-\gamma}T^\gamma = Const.
 V^{\gamma-1}T = Const.
 \end{equation}
 
-\section{Rõhu muutus atmosfääris}
+\subsection{Rõhu muutus atmosfääris}
 Vaatame õhukest õhuriba laiusega $dz$. Rõhu muutust selle kõrguse vahel saab kirjeldada valemiga
 \begin{equation}\label{eq10}
 dp=-\rho gdz
@@ -136,6 +138,45 @@ p = p_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{z}{z_0} \bigg)^\frac{\gamma}{\gam
 \end{equation}
 
 \section{Wan der Waals}
+Wan der Waalsi esitas ideaalse gaasi olekuvõrrandist täpsema mudeli gaasi olekuvõrrandi jaoks.
+\begin{equation}\label{eq15}
+\nu RT = \bigg( p+\frac{\nu^2 a}{V^2} \bigg) \bigg( V - \nu b \bigg)
+\end{equation}
+Kus $ a = ?? $ ja $ b = ??$. Siseenergia on antud
+\begin{equation}\label{eq14}
+U = \nu c_VT-\frac{\nu^2 a}{V}
+\end{equation}
+
+
+\subsection{Adiabaatiline protsess}
+Siseenergia muutu saab avaldada valemist \ref{eq14}
+\begin{equation}
+dU = \nu c_VdT + \frac{\nu^2 a}{V^2}dV
+\end{equation}
+Adiabaatilise protsessi deffinitsiooni kohaselt ei anta gaasile siseenergiat juurde, ehk $dQ = 0$. Seega saame kirja panna
+\begin{equation}
+0 = dU + pdV = \nu c_V dT + \bigg( \frac{\nu^2 a}{V^2} + p \bigg) dV
+\end{equation}
+Asendades siia sisse valemi \ref{eq15} saame
+\begin{equation}
+0 = c_V dT + \frac{RT}{V - \nu b}dV
+\end{equation}
+\begin{equation}
+\int - \frac{c_V}{T} dT = \int \frac{R}{V - \nu b}dV
+\end{equation}
+\begin{equation}
+c_V \ln(T) + R \ln(V - \nu b) = Const.
+\end{equation}
+\begin{equation}
+(V - \nu b)^R T^{c_V} = Const.
+\end{equation}
+\begin{equation}
+(V - \nu b)^{R + c_V} \bigg( p + \frac{\nu^2 a}{V^2} \bigg)^{c_V} = Const.
+\end{equation}
+\begin{equation}
+ \bigg( p + \frac{\nu^2 a}{V^2} \bigg) (V - \nu b)^\gamma = Const.
+\end{equation}
+
 
 \chapter{Katsed ja andmete analüüs}
 \section{Metoodika}
