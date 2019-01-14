@@ -1,12 +1,14 @@
 \documentclass{trkut}% Reaalkooli vormistus. Muidu "report" või "article".
 \usepackage[style=trkut]{biblatex}% Kasutatud kirjanduse genereerimine
+\usepackage{pgfplots}
+\usepackage{amsmath}
 \addbibresource{viited_eesnimi_perekonnanimi.bib}% Viidete info fail
 \defbibheading{bibliography}{\addchap{#1}}% Lisame kasutatud materjalid sisukorda
 
 \pealkiri{Atmosfääri mudeldamine ja katseandmete põhjal täpseima mudeli leidmine} % Kahel real
 \autor{Jarl Patrick Paide}
 \klass{11.a}
-\juhendaja{õp. Mart Kuurme \\ õp. Kaarel Kivisalu}% Toetab praegu ainult ühte juhendajat, manual fix: muuda cls failis juhendaja -> juhendajad
+\juhendaja{õp Mart Kuurme } %\\ õp Kaarel Kivisalu}% Toetab praegu ainult ühte juhendajat, manual fix: muuda cls failis juhendaja -> juhendajad
 
 \begin{document}
 \maketitle% Tiitelleht
@@ -15,70 +17,99 @@
 \addchap{Sissejuhatus}
 \nummerdame% See käsk peab olema kohe peale sissejuhatust
 %See teema on aktuaalne, kuna see on väga huvitav ja ma tahan seda uurida...
+Globaliseeruvas ja ülerahvastatud maailmas on atmosfääri reostatus üks kõige olulisemaid probleeme. Atmosfääri reostusega kaasneb kasvuhooneefekt - kliima soojenemine, mis omakorda viib maailmamere tõusule. Atmosfääri mudeldamine aitab mõista atmosfääris toimuvaid protsesse ja leida lahendusi atmosfääri seisundi arendamiseks. Mudeli andmeid saab kasutada globaalse atmosfääri mudeli arendamisel.
+
+Uurimistöö eesmärk on leida vaatlusandmete alusel võimalikult täpne mudel, mis kirjeldaks atmosfääri temperatuuri ja rõhu seoseid vastavalt kõrgusele maapinnast. Uurimisküsimus on "Millised seosed on atmosfääris mõõdetavate parameetrite vahel - temperatuur, rõhk ja kõrgus maapinnast?".
+
+Uurimistöö alguses leitakse erinevate eeldustega erinevad seosed temperatuuri ja rõhu sõltuvusest kõrgusest. Praktilises osas tehakse mõõtmisi heeliumõhupalli külge kinnitatud mõõteriistaga, mis lennutatakse stratosfäärini ja pärast kontrollitakse katseandmete põhjal teoreetilises osas saadud seoste kehtivust.
+
+
+
 
 
 \chapter{Teooria}
-Teooria osas proovitakse leida erinevaid täpseid viise kuidas kirjeldada rõhu ja temperatuuri sõltuvust kõrgusest. 
+Teooria osas proovitakse leida erinevaid täpseid viise, kuidas kirjeldada rõhu ja temperatuuri sõltuvust kõrgusest.
 
 \begin{figure}[h]
-	\includegraphics[width=1\textwidth]{profile.png}
-	\caption{Kõrguse sõltuvus ajast}
+	\includegraphics[width=0.5\textwidth]{Profile2.png}
+	\caption{Temperatuuri sõltuvus kõrgusest}
 	%\allikas{Minu programm}
 	\label{profile}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Joonisel \ref{profile} on näha kuidas temperatuur muutub kõrguse kasvades. Troposfääris temperatuur langeb ja stratosfääris temberratuur tõuseb. Kõrguse kasvades rõhk väheneb, sest kõrguse kasvades väheneb üleval pool oleva õhu mass mis surub õhku kokku poole tekidades rõhku. Kuna rõhk väheneb siis temperatuur langeb. See seletab temperatuuri langust troposfääris. Peale troposfääri tuleb osoonikiht mis asub stratosfääris. Osoon neelab päikeselt tulevat kiirgust muutes selle soojuseks. Mida kõrgemal seda vähem kiirgust on neelatud päikese poolt, seda soojem. Sellega piirdub meid huvitatav piirkond.
+Joonisel \ref{profile} on näha, kuidas temperatuur muutub kõrguse kasvades. Troposfääris temperatuur langeb ja stratosfääris temperatuur tõuseb. Kõrguse kasvades rõhk väheneb, sest kõrguse kasvades väheneb ülevalpool oleva õhu mass, mis surub õhku kokku tekitades rõhku. Kuna rõhk väheneb, siis temperatuur langeb. See seletab temperatuuri langust troposfääris. Peale troposfääri tuleb osoonikiht, mis asub stratosfääris. Osoon neelab päikeselt tulevat kiirgust muutes selle soojuseks. Mida kõrgemal, seda vähem kiirgust on neelatud päikese poolt ja seda soojem. Eelkirjeldatud atmosfääri kihtides on kogutud käesoleva uurimistöö katseandmed.
 
-Selles peatükkis on avaldatud temperatuuri ja rõhu sõltuvused kõrgusest erinevate meetoditega otsides kõige täpsemat kirjeldust.
+Selles peatükis on avaldatud temperatuuri ja rõhu sõltuvused kõrgusest erinevate meetoditega, otsides kõige täpsemat seost.
 
-Termodünaamika esimene seadus on
+Termodünaamika esimene seadus on avaldatud alljärgnevalt
 \begin{equation}\label{eq1}
 dU = dQ - dA
 \end{equation}
+kus $dU$ on gaasi siseenergia muutus, $dQ$ on soojushulga muutus ja $dA$ on töö muutus.
 
-\section{Ideaalne gaas}
-Teeme lihtsustuse, et gaasid atmosfääris on ideaalsed. Siis saame kasutada ideaalse gaasi olekuvõrrandid
-\begin{equation}\label{eq8}
-PV=\nu RT
-\end{equation}
-
-\subsection{Erisoojustest}
-Gaasi siseenergia $U$ avaldub vabadusastmete $i$ kaudu järgneva seaose abil.
+Gaasi siseenergia $U$ avaldub vabadusastmete $i$ kaudu järgneva seose abil
 \begin{equation}\label{eq5}
 U = \frac{i}{2} \nu R T
 \end{equation}
-Konstanstse ruumala puhul tööd ei tehta, seega kogu soojus läheb siseenergia suurendamiseks. Saame soojusmahutavuse võttes siseenergia muudust tuletist temeratuuri järgi.
+Konstantse ruumala puhul tööd ei tehta, seega kogu soojus läheb siseenergia suurendamiseks. Saame soojusmahutavuse, võttes siseenergia muudust tuletise temeratuuri järgi.
 \begin{equation}\label{eq6}
-C_V = \frac{dU}{dT}=\frac{i}{2}\nu R
+C_V = \frac{dQ}{dT}=\frac{i}{2}\nu R
 \end{equation}
 Molaarset soojusmahutavust saab avaldada valemiga $c_V = \frac{C_V}{\nu}$ saades molaarseks soojusmahutavuseks
 \begin{equation}\label{eq7}
 c_V = \frac{i}{2}R
 \end{equation}
 
-Kui aga vaadata isobaarilist protsessi siis vaadates olekuvõrrendid tuleneb $pdV=\nu RdT$, ning gaas teeb tööd $dA = pdV = \nu RdT$. Avaldades need valemisse \ref{eq1} saame
-\begin{equation}
+Kui aga vaadata isobaarilist protsessi, siis vaadates olekuvõrrandit tuleneb $pdV=\nu RdT$, ning gaas teeb tööd $dA = pdV = \nu RdT$. Avaldades need valemisse \ref{eq1} saame
+\begin{equation*}
 dQ = dU + dA = \frac{i+2}{2} \nu R dT
-\end{equation}
-Millest järeldub
-\begin{equation}
+\end{equation*}
+millest järeldub
+\begin{equation*}
 c_p=\frac{i+2}{2}R
-\end{equation}
-Sammuti saab näidata $c_V$ ja $c_p$ vahelist seost
+\end{equation*}
+Samuti saab näidata $c_V$ ja $c_p$ vahelist seost
 \begin{equation}\label{eq9}
 c_p = c_V + R
 \end{equation}
+
+Vaatame õhukest õhuriba laiusega $dz$ kõrgusel $z$. Rõhu muutust kõrguste $z$ ja $z + dz$ vahel saab kirjeldada valemiga
+\begin{equation}\label{eq10}
+dp=-\rho (z) gdz
+\end{equation}
+Kui seda integreerida, siis saab kätte rõhu muutuse sõltuvalt kõrgusest. Aga kuna tihedus ei ole konstantne, siis on vaja kõigepealt leida kuidas tihedus muutub kõrguse muutumisega.
+
+\section{Ideaalne gaas}
+Selles alampeatükkis teeme eelduse, et atmosfäär koosneb ideaalsest gaasist. Sellisel juhul saame kasutada ideaalse gaasi olekuvõrrandit
+\begin{equation}\label{eq8}
+PV=\nu RT
+\end{equation}
+
+\subsection{Isotermiline atmosfäär}
+Oletame, et armosfääris on kõikjal ühtlane temperatuur. Sellisel juhul on atmosfäär isotermiline ja me saame asendada valemi \ref{eq8} valemise \ref{eq10} saades järgmise seose
+\begin{equation}\label{eq16}
+\frac{dp}{p} = -\frac{\mu g}{RT}dz
+\end{equation}
+Kuna temperatuur on konstantne, siis on ka $\frac{\mu g}{RT}$ konstantne ning seda integreerides saame järgneva
+\begin{equation*}
+\int_{p_0}^{p} \frac{dp}{p}  = \int_{0}^{z} -\frac{\mu g}{RT}dz
+\end{equation*}
+\begin{equation*}
+\ln(\frac{p}{p_0}) = - \frac{\mu g}{RT} z
+\end{equation*}
+Kus $T$ on atmosfääri konstatntne temparatuur, $z$ on kõrgus maapinnalt, $p_0$ on kõrgus maapinnalt ja $p$ on rõhk kõrgusel $z$ maapinnast ja $p$ sõltub kõrgusest järgnevalt
+\begin{equation*}
+p = p_0 e^{-\frac{\mu g}{RT}z}
+\end{equation*}
+Kuid see valem ei kehti, sest atmosfääris pole ühtlane temperatuur.
+
           
-\subsection{Adiabaatiline protsess}
-Adiabaatiline protsess on termodünaamiline protsess mille käigus ei toimus soojusvahetust väliskeskonnaga. Kuna atmosfääris on õhud pidevas üles-alla liikumises siis soojusvahetust ei toimu.
+\subsection{Adiabaatiline atmosfäär}
+Adiabaatiline protsess on termodünaamiline protsess, mille käigus ei toimus soojusvahetust väliskeskkonnaga.
 
-Harilikult on õhumassid atmosfääris tugevas liikumises, nii et nad liiguvad pidevalt üles-alla. Et kõrgemal on rõhk väiksem, kui all, siis jahtub gaas üles liikudes heas lähenduses adiabaatilise paisumise tõttu (õhumasside suurte mõõtmete tõttu on soojusjuhtivus hästi aeglane).
+Harilikult on õhumassid atmosfääris tugevas liikumises, nii et nad liiguvad pidevalt üles-alla. Kuna kõrgemal on rõhk väiksem kui all, siis jahtub gaas üles liikudes adiabaatilise paisumise tõttu (õhumasside suurte mõõtmete tõttu on soojusjuhtivus hästi aeglane).
 
-% Jaan kalda
-% Adiabaatiliseks nimetatakse sellist protsessi, mis on nii aeglane, et tema kulgemise karakteerne aeg on mõnevõrra väiksem (praktikas piisab paarikordset erinevusest), kui süsteemi omavõnkesagedus.
-
-
-Kuna adiabaatilises protsessis soojusvahetust ei toimu siis valemis \ref{eq1} $dQ=0$. Gaasi poolt tehtud töö on $d A=pdV$ ja gaasi siseenergia muut on $dU=\nu c_VdT$. Sellest järeldub:
+Kuna adiabaatilises protsessis soojusvahetust ei toimu, siis valemis \ref{eq1} $dQ=0$. Gaasi poolt tehtud töö on $d A=pdV$ ja gaasi siseenergia muut on $dU=\nu c_VdT$. Sellest järeldub
 \begin{equation}\label{eq2}
 \nu c_VdT = -pdV
 \end{equation}
@@ -86,108 +117,102 @@ Ideaalse gaasi olekuvõrrandist \ref{eq8} saame tuletist võttes ja avaldades j�
 \begin{equation}\label{eq3}
 dT = \frac{pdV+Vdp}{\nu R}
 \end{equation}
-
-Asendades \ref{eq3} valemi valemisse \ref{eq2} saame uue seose.
+Asendades \ref{eq3} valemi valemisse \ref{eq2} saame uue seose
 \begin{equation}\label{eq4}
 pdV(c_V+R)+c_VVdp=0
 \end{equation}
-Asendame siia sisse valemi \ref{eq9} ja adiabaadinäitaja
-\begin{equation}
+Asendame siia sisse valemi \ref{eq9} ja adiabaadi näitaja
+\begin{equation*}
 \gamma \equiv \frac{c_p}{c_V}
-\end{equation}
+\end{equation*}
 Nüüd eelmisi seoseid kasutades ja ümber paigudades saame võrrandi
-\begin{equation}
+\begin{equation*}
 \gamma \frac{dV}{V} + \frac{dp}{p} = 0
-\end{equation}
+\end{equation*}
 Seda integreerides saame
-\begin{equation}
+\begin{equation*}
  \int \gamma \frac{dV}{V} + \frac{dp}{p} = \gamma \ln(V) + \ln(p) = Const.
-\end{equation}
+\end{equation*}
 Sellest saame järeldada
-\begin{equation}
+\begin{equation*}
 pV^\gamma = Const.
-\end{equation}
-Sammuti kasutades ideaalse gaasi olekuvõrrandid saame tuletada veel 2 seost
+\end{equation*}
+Samuti kasutades ideaalse gaasi olekuvõrrandid saame tuletada veel 2 seost
 \begin{equation}\label{eq13}
 p^{1-\gamma}T^\gamma = Const.
 \end{equation}
-\begin{equation}
+\begin{equation*}
 V^{\gamma-1}T = Const.
-\end{equation}
-
-\subsection{Rõhu muutus atmosfääris}
-Vaatame õhukest õhuriba laiusega $dz$. Rõhu muutust selle kõrguse vahel saab kirjeldada valemiga
-\begin{equation}\label{eq10}
-dp=-\rho gdz
-\end{equation}
-Õhu tihedust on võimalik kirjeldada järgnevalt kasutades ideaalse gaasi olekuvõrrandit
-\begin{equation}\label{eq11}
-\rho = \frac{\nu \mu}{V} = \frac{p \mu}{RT}
-\end{equation}
-Pannes valemid \ref{eq10} ja \ref{eq11} kokku saame
-\begin{equation}\label{eq12}
-\frac{dp}{p} = -\frac{\mu g}{RT}dz
-\end{equation}
+\end{equation*}
 Valemist \ref{eq13} saame
-\begin{equation}
+\begin{equation*}
 d\ln(p^{1-\gamma}T^\gamma) = 0
-\end{equation}
+\end{equation*}
 Millest saame
-\begin{equation}
+\begin{equation}\label{eq17}
 \frac{dp}{p} = \frac{\gamma}{\gamma-1}\frac{dT}{T}
 \end{equation}
-Pannes see nüüd kokku valemiga \ref{eq12} saame valemi
-\begin{equation}
+Võttes nüüd valemi \ref{eq16} ja valemi \ref{eq17}
+\begin{equation*}
 \frac{dT}{dz}=-\frac{\gamma-1}{\gamma} \frac{\mu g}{R}
-\end{equation}
+\end{equation*}
 Seda integreerides saame
-\begin{equation}
-T=T_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{z}{z_0} \bigg)
-\end{equation}
-Kus $T_0$ on temperatuur maapinnal ja $z_0 = \frac{RT_0}{\mu g} $. Kasutades nuud seost \ref{eq13} saame seose
-\begin{equation}
+\begin{equation*}
+\int_{T_0}^{T} dT = \int_{0}^{z} -\frac{\gamma-1}{\gamma} \frac{\mu g}{R} dz
+\end{equation*}
+\begin{equation*}
+T - T_0 = - \frac{\gamma - 1}{\gamma} \frac{\mu g}{R} z
+\end{equation*}
+Kus $T_0$ on temperatuur maapinnal ja $T$ on temperatuur kõrgusel $z$, mille saab avaldada sõltuvusena
+\begin{equation*}
+T=T_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{\mu g}{R T_0} z \bigg)
+\end{equation*}
+Kasutades nuud seost \ref{eq13} saame seose
+\begin{equation*}
 p = p_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{z}{z_0} \bigg)^\frac{\gamma}{\gamma-1}
-\end{equation}
+\end{equation*}
 
-\section{Wan der Waals}
-Wan der Waalsi esitas ideaalse gaasi olekuvõrrandist täpsema mudeli gaasi olekuvõrrandi jaoks.
+\subsection{Mitteadiabaatiline atmosfäär}
+
+\section{Wan der Waalsi gaasi mudel}
+Wan der Waals esitas ideaalse gaasi olekuvõrrandist täpsema mudeli gaasi olekuvõrrandi jaoks.
 \begin{equation}\label{eq15}
 \nu RT = \bigg( p+\frac{\nu^2 a}{V^2} \bigg) \bigg( V - \nu b \bigg)
 \end{equation}
-Kus $ a = ?? $ ja $ b = ??$. Siseenergia on antud
+Kus $a$ ja $b$ on igale  gaasile empiiriliselt määratud parameetrid. Siseenergia on antud kujul
 \begin{equation}\label{eq14}
 U = \nu c_VT-\frac{\nu^2 a}{V}
 \end{equation}
 
 
-\subsection{Adiabaatiline protsess}
+\subsection{Adiabaatiline atmosfäär}
 Siseenergia muutu saab avaldada valemist \ref{eq14}
-\begin{equation}
+\begin{equation*}
 dU = \nu c_VdT + \frac{\nu^2 a}{V^2}dV
-\end{equation}
+\end{equation*}
 Adiabaatilise protsessi deffinitsiooni kohaselt ei anta gaasile siseenergiat juurde, ehk $dQ = 0$. Seega saame kirja panna
-\begin{equation}
+\begin{equation*}
 0 = dU + pdV = \nu c_V dT + \bigg( \frac{\nu^2 a}{V^2} + p \bigg) dV
-\end{equation}
+\end{equation*}
 Asendades siia sisse valemi \ref{eq15} saame
-\begin{equation}
+\begin{equation*}
 0 = c_V dT + \frac{RT}{V - \nu b}dV
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
 \int - \frac{c_V}{T} dT = \int \frac{R}{V - \nu b}dV
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
 c_V \ln(T) + R \ln(V - \nu b) = Const.
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
 (V - \nu b)^R T^{c_V} = Const.
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
 (V - \nu b)^{R + c_V} \bigg( p + \frac{\nu^2 a}{V^2} \bigg)^{c_V} = Const.
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
  \bigg( p + \frac{\nu^2 a}{V^2} \bigg) (V - \nu b)^\gamma = Const.
-\end{equation}
+\end{equation*}
 
 
 \chapter{Katsed ja andmete analüüs}
@@ -205,6 +230,24 @@ Selles uurimistöös tehtud katsed on tehtud Eesti kosmosekoolide võrgustiku si
 
 \subsection{Kõrguse sõltuvus lennuajast}
 Joonisel \ref{NK_H_T} on näha õhupalli kõrgust lennu jooksul muutuvana ajast. Kuna mõõtmised on tehtud kindlate ajavahemike tagant on näha, kuidas peale õhupalli lõhkemist langeb sond kiiremini ja hakkab peale seda aeglustama. %(huvitav, kuidas õhupall läheb koguaeg ühtlase kiirusega ülesse(Jarl mõtle hiljem üle)).
+
+%\begin{tikzpicture}
+%\begin{axis}[
+%title={pealkiri},
+%xlabel={muutuv},
+%ylabel={muutuja},
+%xmin=600, xmax=2400,
+%ymin=0, ymax=35000,
+%xtick={0,20,40,60,80,100},
+%ytick={0,20,40,60,80,100,120},
+%legend pos=north west,
+%ymajorgrids=true,
+%grid style=dashed,
+%]
+%\addplot table {H_T.txt};
+%\end{axis}
+%\end{tikzpicture}
+
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{NK_H_T.png}
 	\caption{Kõrguse sõltuvus ajast}
