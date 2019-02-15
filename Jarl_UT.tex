@@ -2,6 +2,7 @@
 \usepackage[style=trkut]{biblatex}% Kasutatud kirjanduse genereerimine
 \usepackage{pgfplots}
 \usepackage{amsmath}
+\usepackage{siunitx}
 \addbibresource{viited_eesnimi_perekonnanimi.bib}% Viidete info fail
 \defbibheading{bibliography}{\addchap{#1}}% Lisame kasutatud materjalid sisukorda
 
@@ -216,6 +217,40 @@ c_V \ln(T) + R \ln(V - \nu b) = Const.
 
 
 \chapter{Katsed ja andmete analüüs}
+
+Selle uurimistöö käigus tehti katse milleks oli heeliumõhupalliga andmete kogumine kogu lennu vältel. Heeliumõhupalli külge kinnitati sond, mis mõõtis õhurõhku, temperatuuri, õhuniiskust ja asukohta. Lend koraldati 10. veebruaril 2019.
+
+Alguses oli plaanis lend teha väätsa staadionilt, aga kasutades http://predict.habhub.org/ lehel olevat kalkulaatorit oli ennustusest näha, et sond oleks kukkunud jõhvi lähedale. Kuna eksimusruum võib olla suur ning Venemaa piir ja meri pole kukkumis kohast kaugel otsustatti lennu start teha võimalikult edelast, nii et edela tuultega kalduks sond Kesk-Eestisse. Rihtides lõppsihtkohta Paide peale otsustatti start teha Varblast, Pärnumaalt.
+
+Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parralleelsed ja läbisid sondi kere. Nenede sees olid klappid, ventilaator ja filtrid. Selle eesmärgiks oli koguda tolmu ja muud, mis jääb filtrisse kinni kõrgemal kui 20km. Teatud kõrguse saavutamisel pöörab raspbarry Pi mootori \SI{90}{\degree} päripäeva avades nii klappid ja sulgedes lüliti. mille tõttu hakkavad ventilaarotid tööle. Kui võrgus on vähenenud soovitud kõrgusest siis pöörab raspbarry Pi mootori algasendisse. Sulgedes sellega klappid ja ühendades ventilaarotid vooluringist lahti. Tolmu kogumine ei käi selle uurimistöö juurde.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/sond2korrus.jpg}
+	\caption{Pilt sondist}
+	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
+	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Ülemises osas oli kogu tehnika. Mõõtmisi tegi ja klappe avas Raspberry Pi arvuti. Voolu andis nii ventilaatoritele kui ka Raspberry Pi'le akkupank. Raspberry Pi külge oli kinnitatud raadio antenn, Gps antenn mootor klappide jaoks ja andur BME280 mis mõõtis väljas olevat rõhku, temperatuuri ja õhuniiskust.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/sond1korrus1.jpg}
+	\caption{Pilt sondist}
+	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
+	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja puit tikke. Sondist tuli välja nii raadio kui ka GPS antenn, ning ka andur BME280. Sondi peale oli kinnitatud langevari. Eraldi korpuses asus GPS tracker GL370?? mida kasutatti pärast sondi leidmisel. Lennuks kasutatti Hwoyee \SI{600}{g} õhupalli. Sinna sisse lasti umbes 2800 l heeliumi.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/sond.jpg}
+	\caption{Pilt sondist}
+	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
+	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Lennu start oli kell 11:51. Algul saadi andmeid kätte raadio teel saadetud signaalist. Raadioside töötas umbes 20 min. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS trackeri ühendus mobiilisideme teenuspakkujaga kõrguse pärast. Peale maandumist ühendas GPS Tracker ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Lend lõppes kell 14:06. Siis saime sondi kätta ja lugesime Raspberry Pi poolt tehtud logiandmed maha.
+
 \section{Metoodika}
 \subsection{Andmete kogumine}
 Andmeid kogutakse heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõdab erinevaid andmeid. Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal on Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
@@ -231,22 +266,6 @@ Selles uurimistöös tehtud katsed on tehtud Eesti kosmosekoolide võrgustiku si
 \subsection{Kõrguse sõltuvus lennuajast}
 Joonisel \ref{NK_H_T} on näha õhupalli kõrgust lennu jooksul muutuvana ajast. Kuna mõõtmised on tehtud kindlate ajavahemike tagant on näha, kuidas peale õhupalli lõhkemist langeb sond kiiremini ja hakkab peale seda aeglustama. %(huvitav, kuidas õhupall läheb koguaeg ühtlase kiirusega ülesse(Jarl mõtle hiljem üle)).
 
-%\begin{tikzpicture}
-%\begin{axis}[
-%title={pealkiri},
-%xlabel={muutuv},
-%ylabel={muutuja},
-%xmin=600, xmax=2400,
-%ymin=0, ymax=35000,
-%xtick={0,20,40,60,80,100},
-%ytick={0,20,40,60,80,100,120},
-%legend pos=north west,
-%ymajorgrids=true,
-%grid style=dashed,
-%]
-%\addplot table {H_T.txt};
-%\end{axis}
-%\end{tikzpicture}
 
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{NK_H_T.png}
