@@ -32,7 +32,7 @@ Uurimistöö alguses leitakse erinevate eeldustega erinevad seosed temperatuuri 
 Teooria osas proovitakse leida erinevaid täpseid viise, kuidas kirjeldada rõhu ja temperatuuri sõltuvust kõrgusest.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{Profile2.png}
+	\includegraphics[width=0.5\textwidth]{PicGra/Profile2.png}
 	\caption{Temperatuuri sõltuvus kõrgusest}
 	%\allikas{Minu programm}
 	\label{profile}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -216,11 +216,26 @@ c_V \ln(T) + R \ln(V - \nu b) = Const.
 \end{equation*}
 
 
-\chapter{Katsed ja andmete analüüs}
+\chapter{Katse ülesehitus}
+Katse käigus mõõdeti atmosfääris, troposfääris ja stratosfääri madalametes kihtides, rõhku, temperatuuti ja õhuniiskust. Selle jaoks kasutati heeliumõhupalli külge kinnitatud sondi, mis tegi mõõtmisi.
+
+Andmeid kogutakse heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõdab erinevaid andmeid. Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal on Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
+
+\section{Katsemetoodika valik}
+Selles uurimistöös tehtud katsed on tehtud koostöös Eesti kosmosekoolide võrgustikuga.
+
+Eesti kosmosekoolide võrgustik oli enne selle uurimistööga tehtud lendu teinud kaks lendu. Esimene lend mis tehti 29. märtsil kestis umbes kaks tundi, kus kõrgeim punkt milleni jõuti oli 26474 m. Selleks läks aega poolteist tundi. Kokku tehti 220 mõõtmist. Mõõtmise alla kuulusid kellaaeg, laiuskraad, pikkuskraad, kõrgus, kapsli sisetemperatuur, välistemperatuur ja rõhk. Teine lend tehti 11. mail ning seekord kestis lend peaaegu neli tundi, jõudes kolme ja poole tunniga kõrgusele 32608 m. Katse tegijad muutsid õhupallis heeliumi kogust, mille tõttu oli tõusmise kiirus väiksem, aga õhupall plahvatas hiljem ja jõuti kõrgemale. Seekord tehti 4300 mõõtmist ja mõõdeti samu parameetreid.
+
+Katse korraldamiseks ja läbiviimiseks vajalikud oskused saadi Eesti kosmosekoolide võrgustiku poolt korraldatavast koolituselt ja sealt on pärit vastav metootika.
 
 Selle uurimistöö käigus tehti katse milleks oli heeliumõhupalliga andmete kogumine kogu lennu vältel. Heeliumõhupalli külge kinnitati sond, mis mõõtis õhurõhku, temperatuuri, õhuniiskust ja asukohta. Lend koraldati 10. veebruaril 2019.
 
+\section{Katse planeerimine}
 Alguses oli plaanis lend teha väätsa staadionilt, aga kasutades http://predict.habhub.org/ lehel olevat kalkulaatorit oli ennustusest näha, et sond oleks kukkunud jõhvi lähedale. Kuna eksimusruum võib olla suur ning Venemaa piir ja meri pole kukkumis kohast kaugel otsustatti lennu start teha võimalikult edelast, nii et edela tuultega kalduks sond Kesk-Eestisse. Rihtides lõppsihtkohta Paide peale otsustatti start teha Varblast, Pärnumaalt.
+
+Lennu jaoks oli vajalik saada lennuametilt kooskõlastus.
+
+Sondi ehitamise eest vastutasid Tallinna Reaalkooli põhikooli õpilaste robootikameeskond Viirus. Sondi põhiehitusmaterjaliks oli penoplast ja puidust tikkud. Sond pidi hoidma sisetemperatuuri madalate välistemperatuuri eesti, et sisemuses olev elektroonika töötaks. Sammuti peab korpus vastu pidama kukkumisele, ning kõige juures peab olema korpus võimalikult kerge. Selle tõttu valiti korpuse materjaliks penoplast ja tikkud. Kuna ühe lennuga saab üles saata mitu katset siis otsustasid põhikooli õpilaste meeskond Viirus koguda atmosföörist tolmu tõmmates õhku läbi filtri. 
 
 Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parralleelsed ja läbisid sondi kere. Nenede sees olid klappid, ventilaator ja filtrid. Selle eesmärgiks oli koguda tolmu ja muud, mis jääb filtrisse kinni kõrgemal kui 20km. Teatud kõrguse saavutamisel pöörab raspbarry Pi mootori \SI{90}{\degree} päripäeva avades nii klappid ja sulgedes lüliti. mille tõttu hakkavad ventilaarotid tööle. Kui võrgus on vähenenud soovitud kõrgusest siis pöörab raspbarry Pi mootori algasendisse. Sulgedes sellega klappid ja ühendades ventilaarotid vooluringist lahti. Tolmu kogumine ei käi selle uurimistöö juurde.
 
@@ -228,7 +243,7 @@ Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parra
 	\includegraphics[width=0.5\textwidth]{PicGra/sond2korrus.jpg}
 	\caption{Pilt sondist}
 	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
-	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
+	\label{sond}
 \end{figure}
 
 Ülemises osas oli kogu tehnika. Mõõtmisi tegi ja klappe avas Raspberry Pi arvuti. Voolu andis nii ventilaatoritele kui ka Raspberry Pi'le akkupank. Raspberry Pi külge oli kinnitatud raadio antenn, Gps antenn mootor klappide jaoks ja andur BME280 mis mõõtis väljas olevat rõhku, temperatuuri ja õhuniiskust.
@@ -237,10 +252,10 @@ Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parra
 	\includegraphics[width=0.5\textwidth]{PicGra/sond1korrus1.jpg}
 	\caption{Pilt sondist}
 	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
-	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
+	\label{sond}
 \end{figure}
 
-Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja puit tikke. Sondist tuli välja nii raadio kui ka GPS antenn, ning ka andur BME280. Sondi peale oli kinnitatud langevari. Eraldi korpuses asus GPS tracker GL370?? mida kasutatti pärast sondi leidmisel. Lennuks kasutatti Hwoyee \SI{600}{g} õhupalli. Sinna sisse lasti umbes 2800 l heeliumi.
+Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja puit tikke. Sondist tuli välja nii raadio kui ka GPS antenn, ning ka andur BME280. Sondi peale oli kinnitatud langevari. Eraldi korpuses asus GPS tracker GL370?? mida kasutatti pärast sondi leidmisel. Lennuks kasutatti Hwoyee \SI{600}{g} õhupalli.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/sond.jpg}
@@ -249,53 +264,115 @@ Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja p
 	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
+\subsection{Lend}
+
 Lennu start oli kell 11:51. Algul saadi andmeid kätte raadio teel saadetud signaalist. Raadioside töötas umbes 20 min. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS trackeri ühendus mobiilisideme teenuspakkujaga kõrguse pärast. Peale maandumist ühendas GPS Tracker ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Lend lõppes kell 14:06. Siis saime sondi kätta ja lugesime Raspberry Pi poolt tehtud logiandmed maha.
 
-\section{Metoodika}
-\subsection{Andmete kogumine}
-Andmeid kogutakse heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõdab erinevaid andmeid. Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal on Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
-\subsection{Andmete analüüs}
-Andmete analüüsimisks kasutan enda poolt kirjutatud c++/Python programmi. Programmiga saab joonistada graafikuid andmete põhjal ja kontrollida erinevaid seoseid.
 
-\section{Varem tehtud katsed}
-Selles uurimistöös tehtud katsed on tehtud Eesti kosmosekoolide võrgustiku siseselt. See võrgustik on varem teinud juba kaks heeliumõhupalli lendu, ning selle uurimistööga seoses tehakse ka heeliumõhupalliga lend. Uue katse planeerimiseks on vajalik eelmiste katsete analüüs ja leida vigu, mida uues katses parandada.
-\newline Esimene lend mis tehti 29. märtsil kestis umbes kaks tundi, kus kõrgeim punkt milleni jõuti oli 26474 m. Selleks läks aega poolteist tundi ja sellel kõrgusel lõhkes õhupall väikese välisrõhu pärast suureks paisumise tõttu. Kokku tehti 220 mõõtmist. Mõõtmise alla kuulusid kellaaeg, laiuskraad, pikkuskraad, kõrgus, kapsli sisetemperatuur, välistemperatuur ja rõhk.
-\newline Teine lend tehti 11. mail ning seekord kestis lend peaaegu neli tundi, jõudes kolme ja poole tunniga kõrgusele 32608 m. Katse tegijad muutsid õhupallis heeliumi kogust, mille tõttu oli tõusmise kiirus väiksem, aga õhupall plahvatas hiljem ja jõuti kõrgemale. Seekord tehti 4300 mõõtmist ja mõõdeti samu parameetreid.
-\newline Ma kasutan teise lennu andmeid, et planeerida enda lendu, sest teisel lennul on tihedamad andmepunktid.
-
+\section{varasemad katse analüüs}
 \subsection{Kõrguse sõltuvus lennuajast}
-Joonisel \ref{NK_H_T} on näha õhupalli kõrgust lennu jooksul muutuvana ajast. Kuna mõõtmised on tehtud kindlate ajavahemike tagant on näha, kuidas peale õhupalli lõhkemist langeb sond kiiremini ja hakkab peale seda aeglustama. %(huvitav, kuidas õhupall läheb koguaeg ühtlase kiirusega ülesse(Jarl mõtle hiljem üle)).
-
-
-\begin{figure}[h]
-	\includegraphics[width=1\textwidth]{NK_H_T.png}
-	\caption{Kõrguse sõltuvus ajast}
-	%\allikas{Minu programm}
-	\label{NK_H_T}% Selle järgi viidatakse, see rida peab olema pärast \caption
-\end{figure}
+Joonisel () on näha õhupalli kõrgust lennu jooksul muutuvana ajast. Kuna mõõtmised on tehtud kindlate ajavahemike tagant on näha, kuidas peale õhupalli lõhkemist langeb sond kiiremini ja hakkab peale seda aeglustama. %(huvitav, kuidas õhupall läheb koguaeg ühtlase kiirusega ülesse(Jarl mõtle hiljem üle)).
 
 
 \subsection{Rõhu sõltuvus kõrgusest}
-Joonisel \ref{NK_R_H} on näha rõhu sõltuvust kõrgusest. Graafikult tuleb ilusasti välja sõltuvus, välja arvatud umbes 10 km kõrgusel, kus jookseb kaks joont. Erinevus tekib, sest üks joon näitab andmeid tõusmisel ja teine langemisel.
-\begin{figure}[h]
-	\includegraphics[width=1\textwidth]{NK_R_H.png}
-	\caption{Rõhu sõltuvus kõrgusest}
-	%\allikas{Minu programm}
-	\label{NK_R_H}% Selle järgi viidatakse, see rida peab olema pärast \caption
-\end{figure}
+Joonisel () on näha rõhu sõltuvust kõrgusest. Graafikult tuleb ilusasti välja sõltuvus, välja arvatud umbes 10 km kõrgusel, kus jookseb kaks joont. Erinevus tekib, sest üks joon näitab andmeid tõusmisel ja teine langemisel.
+
 
 \subsection{Välistemperatuuri sõltuvus kõrgusest}
-Joonisel \ref{NK_T_H} on näha välistemperatuuri sõltuvus kõrgusest. Nagu  joonisel \ref{NK_R_H} on ka siin näha kahte joont, mis tuleb tõusmisest ja langemisest. Tõusmisel on andmepunktid väga laiali valgunud, mis tuleb sondi pöörlemisest. Vahepeal on temperatuuri andur päikese poole, mille tõttu temperatuur on suurem ja vahepeal on andur päikesest eemal, mis juhul mõõdetakse tegelikku temperatuuri. Langemisel on pöörlemist vähem ja siis on punktid rohkem ühe joone peal. Et enda katses vältida andmete laialivalgumit, on vaja lahendada päikesest tulenevat temperatuur väärmõõtmise probleemi.
+Joonisel () on näha välistemperatuuri sõltuvus kõrgusest. Nagu  joonisel () on ka siin näha kahte joont, mis tuleb tõusmisest ja langemisest. Tõusmisel on andmepunktid väga laiali valgunud, mis tuleb sondi pöörlemisest. Vahepeal on temperatuuri andur päikese poole, mille tõttu temperatuur on suurem ja vahepeal on andur päikesest eemal, mis juhul mõõdetakse tegelikku temperatuuri. Langemisel on pöörlemist vähem ja siis on punktid rohkem ühe joone peal. Et enda katses vältida andmete laialivalgumit, on vaja lahendada päikesest tulenevat temperatuur väärmõõtmise probleemi.
 \newline On näha, et temperatuur ei lange pidevalt atmosfääris tõustes. Troposfääris temperatuur langeb, kuid strarosfääri jõudes hakkab temperatuur tõusma. Kõige külmem piirkond umbes 10 km kõrgusel.
+
+
+
+\chapter{Katseandmete analüüs}
+Andmete analüüsimisks kasutan enda poolt kirjutatud c++/Python programmi. Programmiga saab joonistada graafikuid andmete põhjal ja kontrollida erinevaid seoseid.
+
+\section{Lennu asukohaline ülevaade}
+
+\section{Temperatuuri muutus kõrgusega}
+
 \begin{figure}[h]
-	\includegraphics[width=1\textwidth]{NK_T_H.png}
-	\caption{Välistemperatuuri sõltuvus kõrgusest}
+	\includegraphics[width=0.5\textwidth]{PicGra/tempkõr.pdf}
+	\caption{Temperatuuri sõltuvus kõrgusest}
 	%\allikas{Minu programm}
-	\label{NK_T_H}% Selle järgi viidatakse, see rida peab olema pärast \caption
+	\label{TempKõrgus}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Joonisel \ref{TempKõrgus} on näha temperatuuri muutust kõrgusega. Joonisel on kaks joont, sest andmeid mõõdeti igalt kõrguselt kaks korda, sondi tõusmisel ja sondi laskumisel. Lennu stardi ajal oli kõrgem temperatuur kui lennu lõppemise ajal.
+
+Joonisel on näha kuidas temperatuur kõigub, mitte ei muutu ühtlaselt. See on tingitud päikese valgusest. Kui sensor on päikese poole soojendab päike sensorit. Kui sensor on sondi varjus siis peale maha jahtumist mõõdab sensor jälle tegelikku õhutemperatuuri. Sensor ei mõõda kunagi madalamat temperatuuri tegelikust õhu temperatuurist. Kõrguse kasvades muutub temperatuuri kõikumine amplituud kõrgemaks. See on tingitud madalst rõhust. Kuna õhk hõreneb hakkab sondi temperatuuri rohkem mõjutama päike kui õhk ise.
+
+Kukkumine hakkab sel hetkel kui sensor on ülesse soojenenud. Seega sensor kukkumise ajal jahtub, kuid kuna nende kõrguste juures kõrguse langemisel langeb ka temperatuur, ei saavuta sensor välisemperatuuri, varem kui \SI{20}{km} kõrgusel maast. Sel ajal on näha sujuvat temperatuuri muutust. Sensori mitte üles soojenemist kukkumisel võib põhjendada mittut moodi. Sond võis kukkumisel hakkata tugevalt pöörlema (MIS SIIS???). Kogu lennu vältel oli sond külgtuultega samas kiiruse taustsüsteemis. Seega sondile mõjustid tuuled mis tulevad üles liikumisest ja alla kukkumisest. Kuna kuni \SI{20}{km}'ni kukkus sond keskmise kiirusega \SI{70}{m/s} siis jahutas tuul sensorit.
+
+Kuna selles uurimistöös uuritakse täpsemalt tropsfääri osa siis võib algul välja jätta kõik muu peale esimese umbes \SI{8}{km}. Täpseks kõrguseks valiti \SI{8154}{m}. Sellel kõrgusel tehti viimane mõõtmine mis oli temperatuurigraafiku viimane lokaalne miinimum peale mida hakkas temperatuur jälle tõusma. Kuna graafik on ebatasane vastab lokaalne miinimum kõige paremini tegelikkule temperatuurile. Sama kõrgus valiti ka kukkumisel. Tõusmisel on selles vahemikus \SI{578} andmepunkti ja laskumisel on selles vahemikus \SI{144} andmepunkti.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtrop.pdf}
+	\caption{Temperatuuri sõltuvus kõrgusest alla \SI{8}{km}}
+	\allikas{Autori erakogu}
+	\label{tempkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Jooniselt \ref{tempkõrtrop} märgati anomaaliat. Umbes \SI{2}{km} kõrgusel on nii laskumisel kui ka tõusmisel näha kõrguse tõusmisega väikest temperatuuri muutust. Kuna see toimub nii tõusmisel kui ka kukkumisel siis on see suure tõenäelsusega tegelik temperatuuri muutus ja mitte sensori viga või muud sellist.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/humkõrtrop.pdf}
+	\caption{õhuniisekuse sõltuvus kõrgusest alla \SI{8}{km}}
+	\allikas{Autori erakogu}
+	\label{humkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Vaadates joonist \ref{humkõrtrop} on näha, et kuni \SI{2}{km} kõrguseni on õhuniiskus ühtlselt kõrge. Kuid peale \SI{2}{km} on näha, et õhuniiskus langeb tugevalt. Õhuniiskus langes, kuna sond väljus pilvedest, ning temperatuur tõusis. Pilvedest väljumist saab ka tõestada temperatuuri kõikumise algusega. Kuni \SI{2}{km}'ni temperatuur ei kõikunud, kuna päikest ei paistnud sondile peale. Pilvedest väljudes hakkas aga päike mõjutama sensori lugemist. Kuna osa mõõtmisi tehti pilvede sees ja osa pilvedest väljas otsustatti vaadelda temperatuuri muutumist eraldi pilvede sees ja pilvedest väljas.
+
+\subsection{temperatuuri muutus kõrgusega pilvedes sees ja allpool}
+Pilvede sees vaadati temperatuure tõustes kuni  \SI{2010}{m} meetrini. Sellel kõrgusel tehti viimane mõõtmine peale mida temperatuur tõusis pilvedest väljumise tagajärgel. Samal põhjusel valiti laskumisel viimaseks andmepunktiks \SI{1926}{m} kõrgusel mõõdetud andmepunkt. Sellel kõrgusvahemikul teht tõustes \SI{133} mõõtmist ja langedes \SI{41} mõõtmist.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroppilvlin.pdf}
+	\caption{temperatuuri sõltuvus kõrgusest alla \SI{2}{km}}
+	\allikas{Autori erakogu}
+	\label{tempkõrtroppilvlin}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Joonisel \ref{tempkõrtroppilvlin} on graafikutele sobitatud võimalikult täpne lineaarne seos kõrguse ja temperatuuri vahel. Parima seose puhul tõusmisel muutub temperatuur \SI{-5.04572}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{3.98954}{\celsius} $r=-0.9929$. Laskumisel muutub temperatuur \SI{-5.53009}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{2.61829}{\celsius} $r=-0.999$.
+
+
+\subsection{temperatuuri muutus kõrgusega pilvedest kõrgemal}
+Tõusmisel valiti algpunktiks \SI{2565}{m} kõrgusel mõõdetud andmepunkt. See on esimene andmepunkt,alates \SI{2010}{m} kõrgusel asuvast andmepunktist, kus on madalam temperatuu kui \SI{2010}{m} kõrgusel mõõdetud temperatuur.
+
+Laskumisel valiti algpunktiks \SI{2136}{m} kõrgusel mõõdetud andmepunkt. See on esimene andmepunkt, alates \SI{1926}{m} kõrgusel mõõdetud andmepunktist, kus on madalam temperatuu kui \SI{1926}{m} kõrgusel mõõdetud temperatuur.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplin.pdf}
+	\caption{temperatuuri sõltuvus kõrgusest üle \SI{2}{km}}
+	\allikas{Autori erakogu}
+	\label{tempkõrtroplin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
 
- 
+Joonisel \ref{tempkõrtroplin} on graafikutele sobitatud võimalikult täpne lineaarne seos kõrguse ja temperatuuri vahel. Parima seose puhul tõusmisel muutub temperatuur \SI{-7.13398}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{12.8454}{\celsius} $r=-0.9951$. Laskumisel muutub temperatuur \SI{-7.67992}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{9.13797}{\celsius} $r=-0.9994$.
+
+Tõusmise graafik on kõikuv mille on põhjustanud päike. Kuna päike soojendas siis sensor mõõtis tegelikust kõrgemat temperatuuri. Kui sensor jahtus siis mõõtis sensor tegelikku temperatuuri. Kindlasti ei mõõtnud sensor tegelikkust madalamat temperatuuri. Kasutades seda asjaolu võib eemaldada kõik hüpplevad kohad. Andmeid hakkati madalama kõrgusega alates vaatama nii, et temperatuur pidevalt langeks. Kui kõrguse tõusetes temperatuur tõuseb eemaltatti järjest kõik andmepunktid kuni jõuti andmepunktini mis oli madalam viimasest võrdluspunktist.
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplinstalin.pdf}
+ 	\caption{temperatuuri sõltuvus kõrgusest üle \SI{2}{km}}
+ 	\allikas{Autori erakogu}
+ 	\label{tempkõrtroplinstalin}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
+
+Joonisel \ref{tempkõrtroplinstalin} on graafikutele sobitatud võimalikult täpne lineaarne seos kõrguse ja temperatuuri vahel. Parima seose puhul tõusmisel muutub temperatuur \SI{-7.23193}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{12.5889}{\celsius} $r=-0.998$.
+
+
+
+
+
+
+
+
+
+
+
 \addchap{Kasutatud materjalid}% Viitamine paraneb veel
 
 Hobbs, P. V., Wallace, J. M. (2006) Atmospheric Science: An Introductory Survey. Amsterdam: Elsevier \newline
