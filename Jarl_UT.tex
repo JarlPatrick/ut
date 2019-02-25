@@ -81,7 +81,9 @@ dp=-\rho (z) gdz
 Kui seda integreerida, siis saab kätte rõhu muutuse sõltuvalt kõrgusest. Aga kuna tihedus ei ole konstantne, siis on vaja kõigepealt leida kuidas tihedus muutub kõrguse muutumisega.
 
 \section{Ideaalne gaas}
-Selles alampeatükkis teeme eelduse, et atmosfäär koosneb ideaalsest gaasist. Sellisel juhul saame kasutada ideaalse gaasi olekuvõrrandit
+On olemas erinevaid gaasi mudeleid. Nendest kõige tuntum on ideaalse gaasi olekuvõrrand. Ideaalne gaas erineb reaalsest gaasist kahe eelnuse poolest. Ideaalses gaasis ei arvestatta osakeste vahelist vastastikjõude. Ideaalses gaasis on osakestel tühiselt väike suurus. Võib eeldada, et gaas on ideaalne siis kui rõhk on väike kriitilise rõhu suhtes ja temperatuur on kõrge kriitilise temperatuuri suhtes. Kui rõhk on kõrge siis on osakeste vahelisi kokkupõrkeid palju ja osakeste suurus saab oluliseks. Kui temperatuur on madal siis liiguvad osakesed aeglaselt ja osakestel on rohkem aega olla üksteise mõjuväljas ja saada mõjutatud. Kui me vaatame atmosfääri siis kõige kõrgem rõhk on maa lähedal ja kõrguse tõustes see väheneb, millega väheneb ka osakeste vaheline vastasmõju. Atmosfääris olevad rõhud on väikesed võrreldes õhu kriitilise rõhuga. Temperatuur võib langeda atmosfääris küll madalale, aga mitte piisavalt madalale, et see läheneks kriitilisele temperatuurile. Seega võib eeldada, et atmosfääris olevad gaasid käituvad kui ideaalsed gaasid.
+
+Sellisel juhul saame kasutada ideaalse gaasi olekuvõrrandit
 \begin{equation}\label{eq8}
 PV=\nu RT
 \end{equation}
@@ -173,47 +175,8 @@ Kasutades nuud seost \ref{eq13} saame seose
 p = p_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{z}{z_0} \bigg)^\frac{\gamma}{\gamma-1}
 \end{equation*}
 
-\subsection{Mitteadiabaatiline atmosfäär}
 
-\section{Wan der Waalsi gaasi mudel}
-Wan der Waals esitas ideaalse gaasi olekuvõrrandist täpsema mudeli gaasi olekuvõrrandi jaoks.
-\begin{equation}\label{eq15}
-\nu RT = \bigg( p+\frac{\nu^2 a}{V^2} \bigg) \bigg( V - \nu b \bigg)
-\end{equation}
-Kus $a$ ja $b$ on igale  gaasile empiiriliselt määratud parameetrid. Siseenergia on antud kujul
-\begin{equation}\label{eq14}
-U = \nu c_VT-\frac{\nu^2 a}{V}
-\end{equation}
-
-
-\subsection{Adiabaatiline atmosfäär}
-Siseenergia muutu saab avaldada valemist \ref{eq14}
-\begin{equation*}
-dU = \nu c_VdT + \frac{\nu^2 a}{V^2}dV
-\end{equation*}
-Adiabaatilise protsessi deffinitsiooni kohaselt ei anta gaasile siseenergiat juurde, ehk $dQ = 0$. Seega saame kirja panna
-\begin{equation*}
-0 = dU + pdV = \nu c_V dT + \bigg( \frac{\nu^2 a}{V^2} + p \bigg) dV
-\end{equation*}
-Asendades siia sisse valemi \ref{eq15} saame
-\begin{equation*}
-0 = c_V dT + \frac{RT}{V - \nu b}dV
-\end{equation*}
-\begin{equation*}
-\int - \frac{c_V}{T} dT = \int \frac{R}{V - \nu b}dV
-\end{equation*}
-\begin{equation*}
-c_V \ln(T) + R \ln(V - \nu b) = Const.
-\end{equation*}
-\begin{equation*}
-(V - \nu b)^R T^{c_V} = Const.
-\end{equation*}
-\begin{equation*}
-(V - \nu b)^{R + c_V} \bigg( p + \frac{\nu^2 a}{V^2} \bigg)^{c_V} = Const.
-\end{equation*}
-\begin{equation*}
- \bigg( p + \frac{\nu^2 a}{V^2} \bigg) (V - \nu b)^\gamma = Const.
-\end{equation*}
+\section{Virtuaalne temperatuur}
 
 
 \chapter{Katse ülesehitus}
@@ -269,25 +232,22 @@ Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja p
 Lennu start oli kell 11:51. Algul saadi andmeid kätte raadio teel saadetud signaalist. Raadioside töötas umbes 20 min. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS trackeri ühendus mobiilisideme teenuspakkujaga kõrguse pärast. Peale maandumist ühendas GPS Tracker ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Lend lõppes kell 14:06. Siis saime sondi kätta ja lugesime Raspberry Pi poolt tehtud logiandmed maha.
 
 
-\section{varasemad katse analüüs}
-\subsection{Kõrguse sõltuvus lennuajast}
-Joonisel () on näha õhupalli kõrgust lennu jooksul muutuvana ajast. Kuna mõõtmised on tehtud kindlate ajavahemike tagant on näha, kuidas peale õhupalli lõhkemist langeb sond kiiremini ja hakkab peale seda aeglustama. %(huvitav, kuidas õhupall läheb koguaeg ühtlase kiirusega ülesse(Jarl mõtle hiljem üle)).
-
-
-\subsection{Rõhu sõltuvus kõrgusest}
-Joonisel () on näha rõhu sõltuvust kõrgusest. Graafikult tuleb ilusasti välja sõltuvus, välja arvatud umbes 10 km kõrgusel, kus jookseb kaks joont. Erinevus tekib, sest üks joon näitab andmeid tõusmisel ja teine langemisel.
-
-
-\subsection{Välistemperatuuri sõltuvus kõrgusest}
-Joonisel () on näha välistemperatuuri sõltuvus kõrgusest. Nagu  joonisel () on ka siin näha kahte joont, mis tuleb tõusmisest ja langemisest. Tõusmisel on andmepunktid väga laiali valgunud, mis tuleb sondi pöörlemisest. Vahepeal on temperatuuri andur päikese poole, mille tõttu temperatuur on suurem ja vahepeal on andur päikesest eemal, mis juhul mõõdetakse tegelikku temperatuuri. Langemisel on pöörlemist vähem ja siis on punktid rohkem ühe joone peal. Et enda katses vältida andmete laialivalgumit, on vaja lahendada päikesest tulenevat temperatuur väärmõõtmise probleemi.
-\newline On näha, et temperatuur ei lange pidevalt atmosfääris tõustes. Troposfääris temperatuur langeb, kuid strarosfääri jõudes hakkab temperatuur tõusma. Kõige külmem piirkond umbes 10 km kõrgusel.
-
-
 
 \chapter{Katseandmete analüüs}
 Andmete analüüsimisks kasutan enda poolt kirjutatud c++/Python programmi. Programmiga saab joonistada graafikuid andmete põhjal ja kontrollida erinevaid seoseid.
 
 \section{Lennu asukohaline ülevaade}
+
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/kõraeg.pdf}
+	\caption{kõrguse sõltuvus ajast}
+	%\allikas{Minu programm}
+	\label{kõraeg}
+\end{figure}
+
+Joonisel \ref{kõraeg} on näha sondi kõrguse muutumist ajas. Kokku kestis lend \SI{8083}{s}, ehk 2 tundi, 14 min ja 43 sekundit. Selle aja jooksul tehti kokku 2460 mõõtmist. Mõõtmised on tehut sekundi tüpsuse aja tagant, eha kas iga 3 või 4 sekundi tagant. Keskmiselt tehti mõõtmisi iga \SI{3.29}{s} tagant.
+
+Tõusmisel oli sondil ühtlane tõusukiirus. Keskmine kiirus tõustes oli \SI{3.95}{m/s}. Laskudes kiirus varieerus. Peale kukkumise algust langes sond kiiresti madala õhutihesduse tõttu. Keskmine kiirus peale langemise algust esimesel \SI{4}{km} oli \SI{78}{m/s}. Keskmine kiirus vahetult enne kokkupõrget maaga oli \SI{14}{m/s}. Kogu Kukkumise keskmine kiirus oli \SI{29.8}{m/s}.
 
 \section{Temperatuuri muutus kõrgusega}
 
