@@ -40,8 +40,19 @@ Teooria osas proovitakse leida erinevaid täpseid viise, kuidas kirjeldada rõhu
 
 Joonisel \ref{profile} on näha, kuidas temperatuur muutub kõrguse kasvades. Troposfääris temperatuur langeb ja stratosfääris temperatuur tõuseb. Kõrguse kasvades rõhk väheneb, sest kõrguse kasvades väheneb ülevalpool oleva õhu mass, mis surub õhku kokku tekitades rõhku. Kuna rõhk väheneb, siis temperatuur langeb. See seletab temperatuuri langust troposfääris. Peale troposfääri tuleb osoonikiht, mis asub stratosfääris. Osoon neelab päikeselt tulevat kiirgust muutes selle soojuseks. Mida kõrgemal, seda vähem kiirgust on neelatud päikese poolt ja seda soojem. Eelkirjeldatud atmosfääri kihtides on kogutud käesoleva uurimistöö katseandmed.
 
-Selles peatükis on avaldatud temperatuuri ja rõhu sõltuvused kõrgusest erinevate meetoditega, otsides kõige täpsemat seost.
+On olemas erinevaid gaasi mudeleid. Nendest kõige tuntum on ideaalse gaasi olekuvõrrand. Ideaalne gaas erineb reaalsest gaasist kahe eelnuse poolest. Ideaalses gaasis ei arvestatta osakeste vahelist vastastikjõude. Ideaalses gaasis on osakestel tühiselt väike suurus. Võib eeldada, et gaas on ideaalne siis kui rõhk on väike kriitilise rõhu suhtes ja temperatuur on kõrge kriitilise temperatuuri suhtes. Kui rõhk on kõrge siis on osakeste vahelisi kokkupõrkeid palju ja osakeste suurus saab oluliseks. Kui temperatuur on madal siis liiguvad osakesed aeglaselt ja osakestel on rohkem aega olla üksteise mõjuväljas ja saada mõjutatud. Kui me vaatame atmosfääri siis kõige kõrgem rõhk on maa lähedal ja kõrguse tõustes see väheneb, millega väheneb ka osakeste vaheline vastasmõju. Atmosfääris olevad rõhud on väikesed võrreldes õhu kriitilise rõhuga. Temperatuur võib langeda atmosfääris küll madalale, aga mitte piisavalt madalale, et see läheneks kriitilisele temperatuurile. Seega võib eeldada, et atmosfääris olevad gaasid käituvad kui ideaalsed gaasid.
 
+
+Vaatame õhukest õhuriba laiusega $dz$ kõrgusel $z$. Rõhu muutust kõrguste $z$ ja $z + dz$ vahel saab kirjeldada valemiga
+\begin{equation}\label{eq10}
+dp=-\rho (z) gdz
+\end{equation}
+Kui seda integreerida, siis saab kätte rõhu muutuse sõltuvalt kõrgusest. Aga kuna tihedus ei ole konstantne, siis on vaja kõigepealt leida kuidas tihedus muutub kõrguse muutumisega.
+
+
+
+
+\section{Adiabaatinile protsess}
 Termodünaamika esimene seadus on avaldatud alljärgnevalt
 \begin{equation}\label{eq1}
 dU = dQ - dA
@@ -74,40 +85,6 @@ Samuti saab näidata $c_V$ ja $c_p$ vahelist seost
 c_p = c_V + R
 \end{equation}
 
-Vaatame õhukest õhuriba laiusega $dz$ kõrgusel $z$. Rõhu muutust kõrguste $z$ ja $z + dz$ vahel saab kirjeldada valemiga
-\begin{equation}\label{eq10}
-dp=-\rho (z) gdz
-\end{equation}
-Kui seda integreerida, siis saab kätte rõhu muutuse sõltuvalt kõrgusest. Aga kuna tihedus ei ole konstantne, siis on vaja kõigepealt leida kuidas tihedus muutub kõrguse muutumisega.
-
-\section{Ideaalne gaas}
-On olemas erinevaid gaasi mudeleid. Nendest kõige tuntum on ideaalse gaasi olekuvõrrand. Ideaalne gaas erineb reaalsest gaasist kahe eelnuse poolest. Ideaalses gaasis ei arvestatta osakeste vahelist vastastikjõude. Ideaalses gaasis on osakestel tühiselt väike suurus. Võib eeldada, et gaas on ideaalne siis kui rõhk on väike kriitilise rõhu suhtes ja temperatuur on kõrge kriitilise temperatuuri suhtes. Kui rõhk on kõrge siis on osakeste vahelisi kokkupõrkeid palju ja osakeste suurus saab oluliseks. Kui temperatuur on madal siis liiguvad osakesed aeglaselt ja osakestel on rohkem aega olla üksteise mõjuväljas ja saada mõjutatud. Kui me vaatame atmosfääri siis kõige kõrgem rõhk on maa lähedal ja kõrguse tõustes see väheneb, millega väheneb ka osakeste vaheline vastasmõju. Atmosfääris olevad rõhud on väikesed võrreldes õhu kriitilise rõhuga. Temperatuur võib langeda atmosfääris küll madalale, aga mitte piisavalt madalale, et see läheneks kriitilisele temperatuurile. Seega võib eeldada, et atmosfääris olevad gaasid käituvad kui ideaalsed gaasid.
-
-Sellisel juhul saame kasutada ideaalse gaasi olekuvõrrandit
-\begin{equation}\label{eq8}
-PV=\nu RT
-\end{equation}
-
-\subsection{Isotermiline atmosfäär}
-Oletame, et armosfääris on kõikjal ühtlane temperatuur. Sellisel juhul on atmosfäär isotermiline ja me saame asendada valemi \ref{eq8} valemise \ref{eq10} saades järgmise seose
-\begin{equation}\label{eq16}
-\frac{dp}{p} = -\frac{\mu g}{RT}dz
-\end{equation}
-Kuna temperatuur on konstantne, siis on ka $\frac{\mu g}{RT}$ konstantne ning seda integreerides saame järgneva
-\begin{equation*}
-\int_{p_0}^{p} \frac{dp}{p}  = \int_{0}^{z} -\frac{\mu g}{RT}dz
-\end{equation*}
-\begin{equation*}
-\ln(\frac{p}{p_0}) = - \frac{\mu g}{RT} z
-\end{equation*}
-Kus $T$ on atmosfääri konstatntne temparatuur, $z$ on kõrgus maapinnalt, $p_0$ on kõrgus maapinnalt ja $p$ on rõhk kõrgusel $z$ maapinnast ja $p$ sõltub kõrgusest järgnevalt
-\begin{equation*}
-p = p_0 e^{-\frac{\mu g}{RT}z}
-\end{equation*}
-Kuid see valem ei kehti, sest atmosfääris pole ühtlane temperatuur.
-
-          
-\subsection{Adiabaatiline atmosfäär}
 Adiabaatiline protsess on termodünaamiline protsess, mille käigus ei toimus soojusvahetust väliskeskkonnaga.
 
 Harilikult on õhumassid atmosfääris tugevas liikumises, nii et nad liiguvad pidevalt üles-alla. Kuna kõrgemal on rõhk väiksem kui all, siis jahtub gaas üles liikudes adiabaatilise paisumise tõttu (õhumasside suurte mõõtmete tõttu on soojusjuhtivus hästi aeglane).
@@ -176,7 +153,68 @@ p = p_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{z}{z_0} \bigg)^\frac{\gamma}{\gam
 \end{equation*}
 
 
-\section{Virtuaalne temperatuur}
+
+\section{Kuiv adiabaatiline temperatuurigradient}
+Adiabaatilist protsessi saab kirjeldada kui
+\begin{equation*}
+pdV = -\frac{Vdp}{\gamma}
+\end{equation*}
+Termodünaamika esimesest seadust saame kirjutada adiabaatilise protsessi jaoks kui 
+\begin{equation*}
+mc_V dT - \frac{Vdp}{\gamma} = 0
+\end{equation*}
+Kuna $\gamma = \frac{c_p}{c_v}$ saab näidata, et
+\begin{equation*}
+c_p dT - \frac{1}{\rho}dp = 0
+\end{equation*}
+Tõusva õhu puhul muutub rõhk hüdrostaatika valemi järgi
+\begin{equation*}
+dp = - g\rho dz = \rho c_p dT
+\end{equation*}
+Millest saame
+\begin{equation*}
+\Gamma_d = \frac{dT}{dz} = -\frac{g}{c_p}
+\end{equation*}
+
+
+
+\section{Rõhu muutus kõrgusega}
+Hüdrostaatika valemist saame, et 
+\begin{equation*}
+dp = -\rho g dz
+\end{equation*}
+Pannes siia sisse  ideaalse gaasi olekuvõrrandi saame
+\begin{equation*}
+\frac{dp}{dz} = -\frac{gp\mu}{RT}
+\end{equation*}
+Kui temperatuur on konstantne on selle lahendus
+\begin{equation*}
+\int_{p_0}^{p}\frac{1}{p}dp = \int_{0}^{z} -\frac{g\mu}{RT} dz
+\end{equation*}
+Kus $z$ on kõruste vahe kus on mõõdetud $p_0$ ja $p$. Selle lahendus on
+\begin{equation*}
+\ln \left( \frac{p}{p_0} \right) = - \frac{g\mu}{RT}z
+\end{equation*}
+Kuid see ei ole täpne, kuna see eeldab, et temperatuur ei muutu kõrgusega. Täpsema seose puhul tuleb vaadelda juhtu kui temperatuur muutub. 
+\begin{equation*}
+\frac{dp}{dz}[z] = -\frac{g\mu}{R}\frac{p[z]}{T[z]}
+\end{equation*}
+Integraarides seda saame
+\begin{equation*}
+\ln \left( \frac{p[z]}{p_0} \right) = - \frac{g\mu}{R} \left( \int_{0}^{z} \frac{d\zeta}{T[\zeta]}\right)
+\end{equation*}
+Nüüd saab kasutada temperatuuri gradienti $\Gamma$ mis kirjeldab temperatuuri muutust ühe pikkusühiku kohta.
+\begin{equation*}
+\int_{0}^{z} \frac{d\zeta}{T_0 + \Gamma \zeta} = \frac{1}{\Gamma}\left(\ln\left[T_0 + \Gamma z\right] - \ln\left[T_0\right]\right)
+\end{equation*}
+Seega lõpplik lahend on
+\begin{equation*}
+\ln\left(\frac{p}{p_0}\right) = -\frac{g\mu}{R\Gamma} \ln\left(\frac{T_0 + \Gamma z}{T_0}\right)
+\end{equation*}
+kust saame, et
+\begin{equation*}
+p = p_0 \left(1+\frac{\Gamma z}{T_0}\right)^{-\frac{g\mu}{R\Gamma}}
+\end{equation*}
 
 
 \chapter{Katse ülesehitus}
@@ -227,8 +265,10 @@ Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja p
 	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-\subsection{Lend}
 
+
+
+\section{Katse läbiviimine}
 Lennu start oli kell 11:51. Algul saadi andmeid kätte raadio teel saadetud signaalist. Raadioside töötas umbes 20 min. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS trackeri ühendus mobiilisideme teenuspakkujaga kõrguse pärast. Peale maandumist ühendas GPS Tracker ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Lend lõppes kell 14:06. Siis saime sondi kätta ja lugesime Raspberry Pi poolt tehtud logiandmed maha.
 
 
