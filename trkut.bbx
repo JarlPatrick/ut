@@ -1,7 +1,7 @@
 % See fail on kasutatud materjalide jaoks
 \ProvidesFile{trkut.bbx}
 
-\ExecuteBibliographyOptions{language=estonian,dateabbrev=false,maxbibnames=99,giveninits=true}
+\ExecuteBibliographyOptions{language=estonian, sortlocale=en, dateabbrev=false,maxbibnames=99,giveninits=true, sorting=nyt}
 
 \newbibmacro*{begentry}{}
 \newbibmacro*{finentry}{\finentry}
@@ -48,7 +48,9 @@ references = {Kasutatud materjalid},
   		\addspace%
   		\parentext{\printfield{number}}%
   	}
-  	\addcomma%
+  	\iffieldundef{pages}{}
+  		{\addcomma%
+  		}
   }
   \usebibmacro{pages}%
   \usebibmacro{finentry}
@@ -83,7 +85,7 @@ references = {Kasutatud materjalid},
     \printfield{year}%
     )%
     \setunit{\addspace}%
-  }% 
+  }%
   %\setunit{\labelnamepunct}\newblock
   \ifnameundef{author}{%
   	\setunit{\adddot\addspace}%
@@ -114,13 +116,21 @@ references = {Kasutatud materjalid},
 	}
 }
 
+%\renewbibmacro*{journal}{%
+%	\printfield{journal}%
+%	\newunit%
+%}
+
 % Jutumärke ega muud eristust ei ole pealkirjadel
 \DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat[article]{title}{\enquote*{#1}}
 % Leheküljenumbrid
 \DeclareFieldFormat{pages}{lk #1}
 % Väljaanne
 \DeclareFieldFormat[article]{volume}{nr #1}
 % Netiaadresside ette kirjutame "URL" asemel "Loetud"
 \DeclareFieldFormat{url}{Loetud\addcolon\space\url{#1}}
+% Ajakiri pole kaldkirjas
+\DeclareFieldFormat{journaltitle}{#1\isdot}
 
 \endinput

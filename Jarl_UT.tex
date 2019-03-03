@@ -3,6 +3,7 @@
 \usepackage{pgfplots}
 \usepackage{amsmath}
 \usepackage{siunitx}
+\usepackage{wasysym}
 \addbibresource{viited_eesnimi_perekonnanimi.bib}% Viidete info fail
 \defbibheading{bibliography}{\addchap{#1}}% Lisame kasutatud materjalid sisukorda
 
@@ -274,7 +275,7 @@ Lennu start oli kell 11:51. Algul saadi andmeid kätte raadio teel saadetud sign
 
 
 \chapter{Katseandmete analüüs}
-Andmete analüüsimisks kasutan enda poolt kirjutatud c++/Python programmi. Programmiga saab joonistada graafikuid andmete põhjal ja kontrollida erinevaid seoseid.
+Andmete analüüsimisks kasutan enda poolt kirjutatud c++ programmi. Programm aitab suurest andmekogust välja sorteerida vajalikud andmed, leida vastavaid sobitavusi ja testida sobitavusi.
 
 \section{Lennu asukohaline ülevaade}
 
@@ -285,11 +286,12 @@ Andmete analüüsimisks kasutan enda poolt kirjutatud c++/Python programmi. Prog
 	\label{kõraeg}
 \end{figure}
 
-Joonisel \ref{kõraeg} on näha sondi kõrguse muutumist ajas. Kokku kestis lend \SI{8083}{s}, ehk 2 tundi, 14 min ja 43 sekundit. Selle aja jooksul tehti kokku 2460 mõõtmist. Mõõtmised on tehut sekundi tüpsuse aja tagant, eha kas iga 3 või 4 sekundi tagant. Keskmiselt tehti mõõtmisi iga \SI{3.29}{s} tagant.
+Joonisel \ref{kõraeg} on näha sondi kõrguse muutumist ajas. Kokku kestis lend \SI{8083}{s}, ehk 2 tundi, 14 min ja 43 sekundit. Selle aja jooksul tehti kokku 2460 mõõtmist. Mõõtmised on tehut sekundi täpsuse aja tagant, eha kas iga 3 või 4 sekundi tagant. Keskmiselt tehti mõõtmisi iga \SI{3.29}{s} tagant.
 
 Tõusmisel oli sondil ühtlane tõusukiirus. Keskmine kiirus tõustes oli \SI{3.95}{m/s}. Laskudes kiirus varieerus. Peale kukkumise algust langes sond kiiresti madala õhutihesduse tõttu. Keskmine kiirus peale langemise algust esimesel \SI{4}{km} oli \SI{78}{m/s}. Keskmine kiirus vahetult enne kokkupõrget maaga oli \SI{14}{m/s}. Kogu Kukkumise keskmine kiirus oli \SI{29.8}{m/s}.
 
 \section{Temperatuuri muutus kõrgusega}
+Joonisel \ref{TempKõrgus} on näha temperatuuri muutust kõrgusega. Joonisel on kaks joont, sest andmeid mõõdeti igalt kõrguselt kaks korda, sondi tõusmisel ja sondi laskumisel. Lennu stardi ajal oli kõrgem temperatuur kui lennu lõppemise ajal.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/tempkõr.pdf}
@@ -298,14 +300,13 @@ Tõusmisel oli sondil ühtlane tõusukiirus. Keskmine kiirus tõustes oli \SI{3.
 	\label{TempKõrgus}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Joonisel \ref{TempKõrgus} on näha temperatuuri muutust kõrgusega. Joonisel on kaks joont, sest andmeid mõõdeti igalt kõrguselt kaks korda, sondi tõusmisel ja sondi laskumisel. Lennu stardi ajal oli kõrgem temperatuur kui lennu lõppemise ajal.
-
 Joonisel on näha kuidas temperatuur kõigub, mitte ei muutu ühtlaselt. See on tingitud päikese valgusest. Kui sensor on päikese poole soojendab päike sensorit. Kui sensor on sondi varjus siis peale maha jahtumist mõõdab sensor jälle tegelikku õhutemperatuuri. Sensor ei mõõda kunagi madalamat temperatuuri tegelikust õhu temperatuurist. Kõrguse kasvades muutub temperatuuri kõikumine amplituud kõrgemaks. See on tingitud madalst rõhust. Kuna õhk hõreneb hakkab sondi temperatuuri rohkem mõjutama päike kui õhk ise.
 
 Kukkumine hakkab sel hetkel kui sensor on ülesse soojenenud. Seega sensor kukkumise ajal jahtub, kuid kuna nende kõrguste juures kõrguse langemisel langeb ka temperatuur, ei saavuta sensor välisemperatuuri, varem kui \SI{20}{km} kõrgusel maast. Sel ajal on näha sujuvat temperatuuri muutust. Sensori mitte üles soojenemist kukkumisel võib põhjendada mittut moodi. Sond võis kukkumisel hakkata tugevalt pöörlema (MIS SIIS???). Kogu lennu vältel oli sond külgtuultega samas kiiruse taustsüsteemis. Seega sondile mõjustid tuuled mis tulevad üles liikumisest ja alla kukkumisest. Kuna kuni \SI{20}{km}'ni kukkus sond keskmise kiirusega \SI{70}{m/s} siis jahutas tuul sensorit.
 
-Kuna selles uurimistöös uuritakse täpsemalt tropsfääri osa siis võib algul välja jätta kõik muu peale esimese umbes \SI{8}{km}. Täpseks kõrguseks valiti \SI{8154}{m}. Sellel kõrgusel tehti viimane mõõtmine mis oli temperatuurigraafiku viimane lokaalne miinimum peale mida hakkas temperatuur jälle tõusma. Kuna graafik on ebatasane vastab lokaalne miinimum kõige paremini tegelikkule temperatuurile. Sama kõrgus valiti ka kukkumisel. Tõusmisel on selles vahemikus \SI{578} andmepunkti ja laskumisel on selles vahemikus \SI{144} andmepunkti.
+Kuna selles uurimistöös uuritakse täpsemalt tropsfääri osa siis võib algul välja jätta kõik muu peale esimese umbes \SI{8}{km}. Täpseks kõrguseks valiti \SI{8154}{m}. Sellel kõrgusel tehti viimane mõõtmine mis oli temperatuurigraafiku viimane lokaalne miinimum peale mida hakkas temperatuur jälle tõusma. Kuna graafik on ebatasane vastab lokaalne miinimum kõige paremini tegelikkule temperatuurile. Sama kõrgus valiti ka kukkumisel.
 
+Jooniselt \ref{tempkõrtrop} märgati anomaaliat. Umbes \SI{2}{km} kõrgusel on nii laskumisel kui ka tõusmisel näha kõrguse tõusmisega väikest temperatuuri muutust. Kuna see toimub nii tõusmisel kui ka kukkumisel siis on see suure tõenäelsusega tegelik temperatuuri muutus ja mitte sensori viga või muud sellist.
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtrop.pdf}
 	\caption{Temperatuuri sõltuvus kõrgusest alla \SI{8}{km}}
@@ -313,8 +314,7 @@ Kuna selles uurimistöös uuritakse täpsemalt tropsfääri osa siis võib algul
 	\label{tempkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Jooniselt \ref{tempkõrtrop} märgati anomaaliat. Umbes \SI{2}{km} kõrgusel on nii laskumisel kui ka tõusmisel näha kõrguse tõusmisega väikest temperatuuri muutust. Kuna see toimub nii tõusmisel kui ka kukkumisel siis on see suure tõenäelsusega tegelik temperatuuri muutus ja mitte sensori viga või muud sellist.
-
+Vaadates joonist \ref{humkõrtrop} on näha, et kuni \SI{2}{km} kõrguseni on õhuniiskus ühtlselt kõrge. Kuid peale \SI{2}{km} on näha, et õhuniiskus langeb tugevalt. Õhuniiskus langes, kuna sond väljus pilvedest, ning temperatuur tõusis. Pilvedest väljumist saab ka tõestada temperatuuri kõikumise algusega. Kuni \SI{2}{km}'ni temperatuur ei kõikunud, kuna päikest ei paistnud sondile peale. Pilvedest väljudes hakkas aga päike mõjutama sensori lugemist. Kuna osa mõõtmisi tehti pilvede sees ja osa pilvedest väljas otsustatti vaadelda temperatuuri muutumist eraldi pilvede sees ja pilvedest väljas.
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/humkõrtrop.pdf}
 	\caption{õhuniisekuse sõltuvus kõrgusest alla \SI{8}{km}}
@@ -322,10 +322,22 @@ Jooniselt \ref{tempkõrtrop} märgati anomaaliat. Umbes \SI{2}{km} kõrgusel on 
 	\label{humkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Vaadates joonist \ref{humkõrtrop} on näha, et kuni \SI{2}{km} kõrguseni on õhuniiskus ühtlselt kõrge. Kuid peale \SI{2}{km} on näha, et õhuniiskus langeb tugevalt. Õhuniiskus langes, kuna sond väljus pilvedest, ning temperatuur tõusis. Pilvedest väljumist saab ka tõestada temperatuuri kõikumise algusega. Kuni \SI{2}{km}'ni temperatuur ei kõikunud, kuna päikest ei paistnud sondile peale. Pilvedest väljudes hakkas aga päike mõjutama sensori lugemist. Kuna osa mõõtmisi tehti pilvede sees ja osa pilvedest väljas otsustatti vaadelda temperatuuri muutumist eraldi pilvede sees ja pilvedest väljas.
+Selles osas leitakse temperatuuri muutusele kõrgusega parim lineaarne seos
+\begin{equation*}
+T(z) = T_0 + \Gamma z
+\end{equation*}
+kus $T_0$ on temperatuur algpunktis ja $\Gamma$ on temperatuurigradient, ehk temperatuuti muutus kõrguse kasvades. Lineaarse seose leidmiseks kasutatti vähimruutude meetodit.
+\begin{equation*}
+\Gamma = \frac{\sum_{i=1}^{n}(z_i - \overline{z})(T_i - \overline{T})}{\sum_{i=1}^{n}(z_i - \overline{z})^2}
+\end{equation*}
+\begin{equation*}
+T_0 = \overline{T} - \Gamma \overline{z}
+\end{equation*}
+kus $z$ on kõrgus ja $T$ on temperatuur.
 
-\subsection{temperatuuri muutus kõrgusega pilvedes sees ja allpool}
-Pilvede sees vaadati temperatuure tõustes kuni  \SI{2010}{m} meetrini. Sellel kõrgusel tehti viimane mõõtmine peale mida temperatuur tõusis pilvedest väljumise tagajärgel. Samal põhjusel valiti laskumisel viimaseks andmepunktiks \SI{1926}{m} kõrgusel mõõdetud andmepunkt. Sellel kõrgusvahemikul teht tõustes \SI{133} mõõtmist ja langedes \SI{41} mõõtmist.
+Pilvede sees vaadati temperatuure tõustes kuni  \SI{2010}{m} meetrini. Sellel kõrgusel tehti viimane mõõtmine peale mida temperatuur tõusis pilvedest väljumise tagajärgel. Samal põhjusel valiti laskumisel viimaseks andmepunktiks \SI{1926}{m} kõrgusel mõõdetud andmepunkt.
+
+Joonisel \ref{tempkõrtroppilvlin} on näha temperatuuri muutust selles vahemikus. Laskumisel on temperatuuri gradient \SI{-5.53009}{\degreeCelsius/km} ning temperatuur algpunktis on \SI{2.12611}{\degreeCelsius}. Tõusmisel esimese \SI{2}{km}'il on näha kahte erinevat lineaarset temperatuuri muutust. Esimesel \SI{793}{m}'il on temperatuuri gradient \SI{-3.19233}{\degreeCelsius/km} ja temperatuur algpunktis \SI{3.16728}{\degreeCelsius}. Kõrguste vahemikus \SI{808}{m} kuni \SI{2010}{m} on temperatuuri gradient \SI{-5.73645}{\degreeCelsius/km} ja temperatuu algpunktis \SI{0.360244}{\degreeCelsius}.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroppilvlin.pdf}
@@ -334,13 +346,10 @@ Pilvede sees vaadati temperatuure tõustes kuni  \SI{2010}{m} meetrini. Sellel k
 	\label{tempkõrtroppilvlin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Joonisel \ref{tempkõrtroppilvlin} on graafikutele sobitatud võimalikult täpne lineaarne seos kõrguse ja temperatuuri vahel. Parima seose puhul tõusmisel muutub temperatuur \SI{-5.04572}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{3.98954}{\celsius} $r=-0.9929$. Laskumisel muutub temperatuur \SI{-5.53009}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{2.61829}{\celsius} $r=-0.999$.
 
+Tõusmisel valiti algpunktiks \SI{2565}{m} kõrgusel mõõdetud andmepunkt. See on esimene andmepunkt,alates \SI{2010}{m} kõrgusel asuvast andmepunktist, kus on madalam temperatuu kui \SI{2010}{m} kõrgusel mõõdetud temperatuur. Laskumisel valiti algpunktiks \SI{2136}{m} kõrgusel mõõdetud andmepunkt. See on esimene andmepunkt, alates \SI{1926}{m} kõrgusel mõõdetud andmepunktist, kus on madalam temperatuu kui \SI{1926}{m} kõrgusel mõõdetud temperatuur. Antud vahemikus olevad mõõtmised on kuvatud joonisel \ref{tempkõrtroplin}.
 
-\subsection{temperatuuri muutus kõrgusega pilvedest kõrgemal}
-Tõusmisel valiti algpunktiks \SI{2565}{m} kõrgusel mõõdetud andmepunkt. See on esimene andmepunkt,alates \SI{2010}{m} kõrgusel asuvast andmepunktist, kus on madalam temperatuu kui \SI{2010}{m} kõrgusel mõõdetud temperatuur.
-
-Laskumisel valiti algpunktiks \SI{2136}{m} kõrgusel mõõdetud andmepunkt. See on esimene andmepunkt, alates \SI{1926}{m} kõrgusel mõõdetud andmepunktist, kus on madalam temperatuu kui \SI{1926}{m} kõrgusel mõõdetud temperatuur.
+Tõusmisel on temperatuuri gradient \SI{-7.13399}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-5.4533}{\celsius}. Laskumisel oli temperatuuri gradient \SI{-7.67992}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-7.26635}{\celsius}.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplin.pdf}
@@ -349,10 +358,7 @@ Laskumisel valiti algpunktiks \SI{2136}{m} kõrgusel mõõdetud andmepunkt. See 
 	\label{tempkõrtroplin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-
-Joonisel \ref{tempkõrtroplin} on graafikutele sobitatud võimalikult täpne lineaarne seos kõrguse ja temperatuuri vahel. Parima seose puhul tõusmisel muutub temperatuur \SI{-7.13398}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{12.8454}{\celsius} $r=-0.9951$. Laskumisel muutub temperatuur \SI{-7.67992}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{9.13797}{\celsius} $r=-0.9994$.
-
-Tõusmise graafik on kõikuv mille on põhjustanud päike. Kuna päike soojendas siis sensor mõõtis tegelikust kõrgemat temperatuuri. Kui sensor jahtus siis mõõtis sensor tegelikku temperatuuri. Kindlasti ei mõõtnud sensor tegelikkust madalamat temperatuuri. Kasutades seda asjaolu võib eemaldada kõik hüpplevad kohad. Andmeid hakkati madalama kõrgusega alates vaatama nii, et temperatuur pidevalt langeks. Kui kõrguse tõusetes temperatuur tõuseb eemaltatti järjest kõik andmepunktid kuni jõuti andmepunktini mis oli madalam viimasest võrdluspunktist.
+Tõusmise graafik on kõikuv mille on põhjustanud päike. Kuna päike soojendas siis sensor mõõtis tegelikust kõrgemat temperatuuri. Kui sensor jahtus siis mõõtis sensor tegelikku temperatuuri. Kindlasti ei mõõtnud sensor tegelikkust madalamat temperatuuri. Kasutades seda asjaolu võib eemaldada kõik hüpplevad kohad. Andmeid hakkati madalama kõrgusega alates vaatama nii, et temperatuur pidevalt langeks. Kui kõrguse tõusetes temperatuur tõuseb eemaltatti järjest kõik andmepunktid kuni jõuti andmepunktini mis oli madalam viimasest võrdluspunktist. Tulemus on joonisel \ref{tempkõrtroplinstalin}. Temperatuuri gradient on \SI{-7.23193}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-5.961}{\celsius}.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplinstalin.pdf}
@@ -361,14 +367,52 @@ Tõusmise graafik on kõikuv mille on põhjustanud päike. Kuna päike soojendas
  	\label{tempkõrtroplinstalin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Joonisel \ref{tempkõrtroplinstalin} on graafikutele sobitatud võimalikult täpne lineaarne seos kõrguse ja temperatuuri vahel. Parima seose puhul tõusmisel muutub temperatuur \SI{-7.23193}{\degreeCelsius/km} ja algtemperatuur kõrgusel \SI{0}{m} merepinnast on \SI{12.5889}{\celsius} $r=-0.998$.
+Kokkuvõttev tabel
+\begin{table}[htb]
+	\caption{Temperatuuri gradiendid erinevatel kõrgustel}
+	\begin{tabular}{r|r|r|r|r}
+		\hline
+		alguspunkti kõrgus & lõpppunkti kõrgus & tõus/langus & $T_0$ & $\Gamma$ \\
+		\hline
+		22 & 793 & tõus & 3.16728 & -3.19233 \\
+		808 & 2010 & tõus & 0.360244 & -5.73645 \\
+		2565 & 8154 & tõus & -5.961 & -7.23193 \\
+		89 & 1926 & langus & 2.12611 & -5.53009 \\
+		2136 & 8154 & langus & -7.26635 & -7.67992
+	\end{tabular}
+\end{table}
 
 
+\section{Rõhu muutus kõrgusega}
+Käesolevas osas uuritakse, et kas teooria osas saadud valem
+\begin{equation*}
+p = p_0 \left(1+\frac{\Gamma z}{T_0}\right)^{-\frac{g\mu}{R\Gamma}}
+\end{equation*}
+vastab katseandmetele. Kuna temperatuuri gradient on erinevatel atmosfööri osades erinev vaatame üksikult osi kus temperatuuri gradient on konstantne. $g = 9.80665 $ , $R = 8.3144598$ ja $\mu = 0.0289647$. Valemi testimiseks kasutati programmi mis arvutab algaantmete põhjal välja rõhu mõõdetud punkti kõrgusel ja võrdleb sellel kõrgusel mõõdetud rõhuga. Võrdlemise valem on
+\begin{equation*}
+e = \frac{p_a-p_m}{p_a}
+\end{equation*}
+kus $p_a$ on arvutatud rõhk ja $p_m$ on mõõdetud rõhk.
 
 
+Joonisel \ref{prekõrg} on näha rõhu muutust kogu lennu jooksul. Rõhu mõõtmistulemused on täpsed ja ükski mõõtmine ei lange teistest mööda. Jooniselt on seda raske välja lugeda, aga tegelikult eksisteerib kaks joont. Tõusmisel on rõhk madalam kui tõustes.
 
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{PicGra/prekõrg.pdf}
+	\caption{Rõhu muutus kõrgusega}
+	\allikas{Autori erakogu}
+	\label{prekõrg}% Selle järgi viidatakse, see rida peab olema pärast \caption
+\end{figure}
 
+Esimene kõrgusevahemik on \SI{22}{m} kuni \SI{793}{m}. Kõrgusel \SI{22}{m} on $p_0=\SI{995.14242}{hPa}$ ja $T_0 = 276.31728$ K. Keskmine erinevus selles kõrgusevahemikus oli \SI{0.515915}{\permil}. Kõrgusel \SI{793}{m} mõõdeti rõhuks \SI{903.92}{hPa} ja arvutati rõhuks \SI{904.276}{hPa}. Järgmise kõrgusvahemikul alguspunktis \SI{808}{m} kõrgusel arvutas programm rõhuks \SI{902.585}{hPa}.
 
+Teine kõrgusevahemik on \SI{808}{m} kuni \SI{2010}{m}. Kõrgusel \SI{808}{m} on $p_0 = 902.01955$ ja $T_0 = 273.510244$ K. Keskmine erinevus selles kõrgusevahemikus oli \SI{0.229426}{\permil}. Kõrgusel \SI{2010}{m} mõõdeti rõhuks \SI{774.026}{hPa} ja arvutati rõhuks \SI{774.777}{hPa}. Järgmise kõrgusvahemikul alguspunktis \SI{2565}{m} kõrgusel arvutas programm rõhuks \SI{721.283}{hPa}. Kui kasutada eelnevas kõrgusvahemikust arvutatud rõhku \SI{808}{m} kõrgusel, mis oli \SI{902.585}{hPa} siis on keskmine erinevus \SI{0.717021}{\permil}. Sellisel juhul on järgmise kõrgusvahemikul alguspunktis \SI{2565}{m} kõrgusel programmi järgi rõhuks \SI{721.735}{hPa}.
+
+Kolmas kõrgusevahemik on \SI{2565}{m} kuni \SI{8154}{m}. Kõrgusel \SI{2565}{m} on $p_0 = 720.86625$ ja $T_0 = 267.189$ K. Keskmine erinevus selles kõrgusevahemikus oli \SI{4.72004}{\permil}. Kõrgusel \SI{8154}{m} mõõdeti rõhuks \SI{329.341}{hPa} ja arvutati rõhuks \SI{332.165}{hPa}. Kui kasutada eelnevas kõrgusvahemikust arvutatud rõhku \SI{2565}{m} kõrgusel, mis oli \SI{721.735}{hPa} siis on keskmine erinevus \SI{5.91381}{\permil}.
+
+Vaadates langemisel mõõdetud andmeid on esimene kõrgusvahemik \SI{89}{m} kuni \SI{1926}{m}. Kõrgusel \SI{89}{m} on $p_0=\SI{989.32523}{hPa}$ ja $T_0 = \SI{275.27611}{K}$ ning $\Gamma = \SI{-5.53009}{K/km}$. Keskmine erinevus selles kõrgusevahemikus oli \SI{2.85639}{\permil}. Kõrgusel \SI{1926}{m} mõõdeti rõhuks \SI{786.723}{hPa} ja arvutati rõhuks \SI{784.252}{hPa}. Järgmise kõrgusvahemikul alguspunktis \SI{2136}{m} kõrgusel arvutas programm rõhuks \SI{763.269}{hPa}.
+
+Teisel kõrgusvahemikul \SI{2136}{m} kuni \SI{8154}{m}. Kõrgusel \SI{2136}{m} on $p_0=\SI{765.63645}{hPa}$ ja $T_0 = \SI{265.88365}{K}$ ning $\Gamma = \SI{-7.67992}{K/km}$. Keskmine erinevus selles kõrgusevahemikus oli \SI{4.45647}{\permil}. Kõrgusel \SI{8154}{m} mõõdeti rõhuks \SI{332.17}{hPa} ja arvutati rõhuks \SI{328.404}{hPa}. Kui kasutada eelnevas kõrgusvahemikust arvutatud rõhku \SI{2136}{m} kõrgusel, mis oli \SI{763.269}{hPa} siis on keskmine erinevus \SI{7.55264}{\permil}.
 
 
 
