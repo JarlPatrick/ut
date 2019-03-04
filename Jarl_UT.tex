@@ -19,7 +19,7 @@
 \addchap{Sissejuhatus}
 \nummerdame% See käsk peab olema kohe peale sissejuhatust
 %See teema on aktuaalne, kuna see on väga huvitav ja ma tahan seda uurida...
-Globaliseeruvas ja ülerahvastatud maailmas on atmosfääri reostatus üks kõige olulisemaid probleeme. Atmosfääri reostusega kaasneb kasvuhooneefekt - kliima soojenemine, mis omakorda viib maailmamere tõusule. Atmosfääri mudeldamine aitab mõista atmosfääris toimuvaid protsesse ja leida lahendusi atmosfääri seisundi arendamiseks. Mudeli andmeid saab kasutada globaalse atmosfääri mudeli arendamisel.
+Globaliseeruvas ja ülerahvastatud maailmas on maa atmosfääri reostatus üks kõige olulisemaid probleeme. Atmosfääri reostusega kaasneb kasvuhooneefekt - kliima soojenemine, mis omakorda viib maailmamere tõusule. Atmosfääri mudeldamine aitab mõista atmosfääris toimuvaid protsesse ja leida lahendusi atmosfääri seisundi parandamiseks. Mudeli andmeid saab kasutada globaalse atmosfääri mudeli väljatöötamisel.
 
 Uurimistöö eesmärk on leida vaatlusandmete alusel võimalikult täpne mudel, mis kirjeldaks atmosfääri temperatuuri ja rõhu seoseid vastavalt kõrgusele maapinnast. Uurimisküsimus on "Millised seosed on atmosfääris mõõdetavate parameetrite vahel - temperatuur, rõhk ja kõrgus maapinnast?".
 
@@ -30,7 +30,7 @@ Uurimistöö alguses leitakse erinevate eeldustega erinevad seosed temperatuuri 
 
 
 \chapter{Teooria}
-Teooria osas proovitakse leida erinevaid täpseid viise, kuidas kirjeldada rõhu ja temperatuuri sõltuvust kõrgusest.
+Käesolevas osas leitakse seoseid, kuidas kirjeldada atmosfääris rõhu ja temperatuuri sõltuvust kõrgusest.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/Profile2.png}
@@ -41,19 +41,19 @@ Teooria osas proovitakse leida erinevaid täpseid viise, kuidas kirjeldada rõhu
 
 Joonisel \ref{profile} on näha, kuidas temperatuur muutub kõrguse kasvades. Troposfääris temperatuur langeb ja stratosfääris temperatuur tõuseb. Kõrguse kasvades rõhk väheneb, sest kõrguse kasvades väheneb ülevalpool oleva õhu mass, mis surub õhku kokku tekitades rõhku. Kuna rõhk väheneb, siis temperatuur langeb. See seletab temperatuuri langust troposfääris. Peale troposfääri tuleb osoonikiht, mis asub stratosfääris. Osoon neelab päikeselt tulevat kiirgust muutes selle soojuseks. Mida kõrgemal, seda vähem kiirgust on neelatud päikese poolt ja seda soojem. Eelkirjeldatud atmosfääri kihtides on kogutud käesoleva uurimistöö katseandmed.
 
-On olemas erinevaid gaasi mudeleid. Nendest kõige tuntum on ideaalse gaasi olekuvõrrand. Ideaalne gaas erineb reaalsest gaasist kahe eelnuse poolest. Ideaalses gaasis ei arvestatta osakeste vahelist vastastikjõude. Ideaalses gaasis on osakestel tühiselt väike suurus. Võib eeldada, et gaas on ideaalne siis kui rõhk on väike kriitilise rõhu suhtes ja temperatuur on kõrge kriitilise temperatuuri suhtes. Kui rõhk on kõrge siis on osakeste vahelisi kokkupõrkeid palju ja osakeste suurus saab oluliseks. Kui temperatuur on madal siis liiguvad osakesed aeglaselt ja osakestel on rohkem aega olla üksteise mõjuväljas ja saada mõjutatud. Kui me vaatame atmosfääri siis kõige kõrgem rõhk on maa lähedal ja kõrguse tõustes see väheneb, millega väheneb ka osakeste vaheline vastasmõju. Atmosfääris olevad rõhud on väikesed võrreldes õhu kriitilise rõhuga. Temperatuur võib langeda atmosfääris küll madalale, aga mitte piisavalt madalale, et see läheneks kriitilisele temperatuurile. Seega võib eeldada, et atmosfääris olevad gaasid käituvad kui ideaalsed gaasid.
-
-
-Vaatame õhukest õhuriba laiusega $dz$ kõrgusel $z$. Rõhu muutust kõrguste $z$ ja $z + dz$ vahel saab kirjeldada valemiga
-\begin{equation}\label{eq10}
-dp=-\rho (z) gdz
+On olemas erinevaid gaasi mudeleid. Nendest kõige tuntum on ideaalse gaasi olekuvõrrand. Ideaalne gaas erineb reaalsest gaasist kahe eelnuse poolest. Ideaalses gaasis ei arvestatta osakeste vahelist vastastikjõude. Ideaalses gaasis on osakestel tühiselt väike suurus. Võib eeldada, et gaas on ideaalne siis kui rõhk on väike kriitilise rõhu suhtes ja temperatuur on kõrge kriitilise temperatuuri suhtes. Kui rõhk on kõrge siis on osakeste vahelisi kokkupõrkeid palju ja osakeste suurus saab oluliseks. Kui temperatuur on madal siis liiguvad osakesed aeglaselt ja osakestel on rohkem aega olla üksteise mõjuväljas ja saada mõjutatud. Kui me vaatame atmosfääri siis kõige kõrgem rõhk on maa lähedal ja kõrguse tõustes see väheneb, millega väheneb ka osakeste vaheline vastasmõju. Atmosfääris olevad rõhud on väikesed võrreldes õhu kriitilise rõhuga. Temperatuur võib langeda atmosfääris küll madalale, aga mitte piisavalt madalale, et see läheneks kriitilisele temperatuurile. Seega võib eeldada, et atmosfääris olevad gaasid käituvad kui ideaalsed gaasid. Ideaalse gaasi olekuvõrrand on
+\begin{equation}\label{eq8}
+pV=\nu RT ,
 \end{equation}
-Kui seda integreerida, siis saab kätte rõhu muutuse sõltuvalt kõrgusest. Aga kuna tihedus ei ole konstantne, siis on vaja kõigepealt leida kuidas tihedus muutub kõrguse muutumisega.
+kus $p$ on gaasi rõhk, $V$ on gaasi ruumala, $\nu = \frac{m}{\mu}$ on gaasi kogus moolides, kus $m$ on gaasi mass ja $\mu$ on gaasi molaarmass, $R$ on univarsaalne gaasikonstant ja $T$ on gaasi temperatuur.
+
+Atmosfääris rõhk langeb kõrguse kasvades. Rõhu erinevus erinevatel kõrgustel toob kaasa rõhkude vahest tingitud üles pooles suunatud jõu, mille tasakaalustab gravitatsiooni jõud. Rõhk muutub $dp$ võrra kõrguse $dz$ võrra kasvades, kui õhu tihedus kõrgusel $z$ on $\rho$, järgnevalt:
+\begin{equation}\label{eq10}
+dp=-\rho gdz
+\end{equation}
 
 
-
-
-\section{Adiabaatinile protsess}
+\section{Adiabaatiline protsess}
 Termodünaamika esimene seadus on avaldatud alljärgnevalt
 \begin{equation}\label{eq1}
 dU = dQ - dA
@@ -86,11 +86,7 @@ Samuti saab näidata $c_V$ ja $c_p$ vahelist seost
 c_p = c_V + R
 \end{equation}
 
-Adiabaatiline protsess on termodünaamiline protsess, mille käigus ei toimus soojusvahetust väliskeskkonnaga.
-
-Harilikult on õhumassid atmosfääris tugevas liikumises, nii et nad liiguvad pidevalt üles-alla. Kuna kõrgemal on rõhk väiksem kui all, siis jahtub gaas üles liikudes adiabaatilise paisumise tõttu (õhumasside suurte mõõtmete tõttu on soojusjuhtivus hästi aeglane).
-
-Kuna adiabaatilises protsessis soojusvahetust ei toimu, siis valemis \ref{eq1} $dQ=0$. Gaasi poolt tehtud töö on $d A=pdV$ ja gaasi siseenergia muut on $dU=\nu c_VdT$. Sellest järeldub
+Adiabaatiline protsess on termodünaamiline protsess, mille käigus ei toimus soojusvahetust väliskeskkonnaga. Kuna adiabaatilises protsessis soojusvahetust ei toimu, siis valemis \ref{eq1} $dQ=0$. Gaasi poolt tehtud töö on $d A=pdV$ ja gaasi siseenergia muut on $dU=\nu c_VdT$. Sellest järeldub
 \begin{equation}\label{eq2}
 \nu c_VdT = -pdV
 \end{equation}
@@ -118,13 +114,14 @@ Sellest saame järeldada
 \begin{equation*}
 pV^\gamma = Const.
 \end{equation*}
-Samuti kasutades ideaalse gaasi olekuvõrrandid saame tuletada veel 2 seost
+Samuti kasutades ideaalse gaasi olekuvõrrandid saame tuletada veel ühe seose
 \begin{equation}\label{eq13}
 p^{1-\gamma}T^\gamma = Const.
 \end{equation}
-\begin{equation*}
-V^{\gamma-1}T = Const.
-\end{equation*}
+
+\section{Kuiv adiabaatiline temperatuurigradient }
+Harilikult on õhumassid atmosfääris tugevas liikumises, nii et nad liiguvad pidevalt üles-alla. Kuna kõrgemal on rõhk väiksem kui all, siis jahtub gaas üles liikudes adiabaatilise paisumise tõttu (õhumasside suurte mõõtmete tõttu on soojusjuhtivus hästi aeglane). Selles osas vaadatakse olukorda kui õhk on täiesti kuiv.
+
 Valemist \ref{eq13} saame
 \begin{equation*}
 d\ln(p^{1-\gamma}T^\gamma) = 0
@@ -133,95 +130,86 @@ Millest saame
 \begin{equation}\label{eq17}
 \frac{dp}{p} = \frac{\gamma}{\gamma-1}\frac{dT}{T}
 \end{equation}
-Võttes nüüd valemi \ref{eq16} ja valemi \ref{eq17}
-\begin{equation*}
-\frac{dT}{dz}=-\frac{\gamma-1}{\gamma} \frac{\mu g}{R}
-\end{equation*}
-Seda integreerides saame
-\begin{equation*}
-\int_{T_0}^{T} dT = \int_{0}^{z} -\frac{\gamma-1}{\gamma} \frac{\mu g}{R} dz
-\end{equation*}
-\begin{equation*}
-T - T_0 = - \frac{\gamma - 1}{\gamma} \frac{\mu g}{R} z
-\end{equation*}
-Kus $T_0$ on temperatuur maapinnal ja $T$ on temperatuur kõrgusel $z$, mille saab avaldada sõltuvusena
-\begin{equation*}
-T=T_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{\mu g}{R T_0} z \bigg)
-\end{equation*}
-Kasutades nuud seost \ref{eq13} saame seose
-\begin{equation*}
-p = p_0 \bigg( 1-\frac{\gamma-1}{\gamma} \frac{z}{z_0} \bigg)^\frac{\gamma}{\gamma-1}
-\end{equation*}
+Võttes nüüd valemi \ref{eq10} ja valemi \ref{eq17} saame temperatuuri gradiendi
+\begin{equation}\label{eq11}
+\Gamma \equiv \frac{dT}{dz}=-\frac{\gamma-1}{\gamma} \frac{\mu g}{R} = -\frac{R}{c_p}\frac{\mu g}{R} = -\frac{\mu g}{c_p}
+\end{equation}
 
 
 
-\section{Kuiv adiabaatiline temperatuurigradient}
-Adiabaatilist protsessi saab kirjeldada kui
+\section{Rõhu muutus kõrgusega }
+Integreerides valemit \ref{eq10} saadakse
 \begin{equation*}
-pdV = -\frac{Vdp}{\gamma}
+\int_{T_0}^{T} dT = \int_{0}^{z} \Gamma dz
 \end{equation*}
-Termodünaamika esimesest seadust saame kirjutada adiabaatilise protsessi jaoks kui 
 \begin{equation*}
-mc_V dT - \frac{Vdp}{\gamma} = 0
+T-T_0 = \Gamma z
 \end{equation*}
-Kuna $\gamma = \frac{c_p}{c_v}$ saab näidata, et
+kus $T_0$ on temperatuur algpunktis ja $T$ on temperatuur kõrgusel $z$ algpunktist. Ümber paigutades saadakse
 \begin{equation*}
-c_p dT - \frac{1}{\rho}dp = 0
+T = T_0 \left(1+\frac{\Gamma}{T_0}z\right)
 \end{equation*}
-Tõusva õhu puhul muutub rõhk hüdrostaatika valemi järgi
+Kasutades nüüd seost \ref{eq13}
 \begin{equation*}
-dp = - g\rho dz = \rho c_p dT
+p^{1-\gamma}T^{\gamma} = p_0^{1-\gamma}T_0^{\gamma}
 \end{equation*}
-Millest saame
+saab eelmise valemi ümber kirjutada kujul:
 \begin{equation*}
-\Gamma_d = \frac{dT}{dz} = -\frac{g}{c_p}
+p=p_0 \left(1+\frac{\Gamma}{T_0}z\right)^{\frac{\gamma}{\gamma-1}}
 \end{equation*}
+Astme saab ümber kirjutada kujul
+\begin{equation*}
+\frac{\gamma}{\gamma-1} = \frac{c_p}{R} = -\frac{g\mu}{\Gamma R}
+\end{equation*}
+saades lõplikuks valemiks
+\begin{equation*}
+p=p_0 \left(1+\frac{\Gamma}{T_0}z\right)^{ -\frac{g\mu}{\Gamma R}}
+\end{equation*}
+Seega kui on teada algpunktis olev rõhk $p_0$, temperatuur $T_0$ ja temperatuuri gradient $\Gamma$ on võimalik leida seda vaemit kasutades rõhk kõrgusel $z$ algpunktist. Kui asendada siia vaemisse sisse kuiva õhu temperatuurigradient \ref{eq11} saadakse
+\begin{equation*}
+p=p_0 \left(1-\frac{\gamma-1}{\gamma}\frac{\mu g}{RT_0}z\right)^{\frac{\gamma}{\gamma-1}}
+\end{equation*}
+kuid see valem töötab ainult kuiva õhu puhul.
 
 
 
-\section{Rõhu muutus kõrgusega}
-Hüdrostaatika valemist saame, et 
+\section{Pilved}
+Kui niiske õhk tõuseb kõrgemale väheneb temperatuur ja rõhk. Kui õhk jahtub ja rõhk väheneb väheneb ka õhu võime hoida vett auruna endas. Siis vesi kondenseerub väga väikesteks tilkadeks. Veel on lihtsam kondenseeruda kui ta saab kondenseeruda osakese külge. Nendeks osakesteks on tavaliselt tolm, õietolm või muud sellist. Kui piisavalt palju vett kondenseerub võikeste osakest külge moodustub pilv.
+
+Adiabaatiline protsess on termodünaamiline protsess mille käigus soojusvahetust ei toimu. Pilvedes vee kondenseerumisel eraldub soojus, seega pilvedes ei vasta rõhu muutus adiabaatilisele protsessile. Kuid adiabaatiline protsess töötab niiske õhu puhul enne ja peale pilvi, kuna soojusvahetust pole.
+
+Järgnevalt leitakse suhe välja aurustunud vee ja õhu vahel. Temperatuuri gradient vahetult pilve all on $\Gamma$, temperatuur pilve all on $T_0$, temperatuur pilvede kohal $z$ võrra kõrgemal algtemperatuurist on $T_2$, vaadeldava õhu mass on $m_a$ ja sellest õhust kondenseerunud õhu vee mass on $m_v$. Kui pilvi ei oleks muutuks temperatuur edasi vastavalt temperatuuri gradiandile. Seega temperatuur oleks $T_2$ asemel $T_1$.
 \begin{equation*}
-dp = -\rho g dz
+T_1 = T_0 - \Gamma z
 \end{equation*}
-Pannes siia sisse  ideaalse gaasi olekuvõrrandi saame
+Kondeneseerumisest tekkinud õhu siseenergia muut on
 \begin{equation*}
-\frac{dp}{dz} = -\frac{gp\mu}{RT}
+\Delta U = \frac{i}{2}\frac{m_a}{\mu}R\left(T_2 - T_0 + \Gamma z\right).
 \end{equation*}
-Kui temperatuur on konstantne on selle lahendus
+Selle energia andis talle kondenseerunud vesi
 \begin{equation*}
-\int_{p_0}^{p}\frac{1}{p}dp = \int_{0}^{z} -\frac{g\mu}{RT} dz
+\Delta U = L m_v
 \end{equation*}
-Kus $z$ on kõruste vahe kus on mõõdetud $p_0$ ja $p$. Selle lahendus on
+kus $L$ on keemisenergia.
 \begin{equation*}
-\ln \left( \frac{p}{p_0} \right) = - \frac{g\mu}{RT}z
+\frac{m_v}{m_a} = \frac{i}{2}\frac{R}{\mu L}\left(T_2- T_0 + \Gamma z\right)
 \end{equation*}
-Kuid see ei ole täpne, kuna see eeldab, et temperatuur ei muutu kõrgusega. Täpsema seose puhul tuleb vaadelda juhtu kui temperatuur muutub. 
-\begin{equation*}
-\frac{dp}{dz}[z] = -\frac{g\mu}{R}\frac{p[z]}{T[z]}
-\end{equation*}
-Integraarides seda saame
-\begin{equation*}
-\ln \left( \frac{p[z]}{p_0} \right) = - \frac{g\mu}{R} \left( \int_{0}^{z} \frac{d\zeta}{T[\zeta]}\right)
-\end{equation*}
-Nüüd saab kasutada temperatuuri gradienti $\Gamma$ mis kirjeldab temperatuuri muutust ühe pikkusühiku kohta.
-\begin{equation*}
-\int_{0}^{z} \frac{d\zeta}{T_0 + \Gamma \zeta} = \frac{1}{\Gamma}\left(\ln\left[T_0 + \Gamma z\right] - \ln\left[T_0\right]\right)
-\end{equation*}
-Seega lõpplik lahend on
-\begin{equation*}
-\ln\left(\frac{p}{p_0}\right) = -\frac{g\mu}{R\Gamma} \ln\left(\frac{T_0 + \Gamma z}{T_0}\right)
-\end{equation*}
-kust saame, et
-\begin{equation*}
-p = p_0 \left(1+\frac{\Gamma z}{T_0}\right)^{-\frac{g\mu}{R\Gamma}}
-\end{equation*}
+
+
+\section{Päikese mõjutus}
+
 
 
 \chapter{Katse ülesehitus}
-Katse käigus mõõdeti atmosfääris, troposfääris ja stratosfääri madalametes kihtides, rõhku, temperatuuti ja õhuniiskust. Selle jaoks kasutati heeliumõhupalli külge kinnitatud sondi, mis tegi mõõtmisi.
+Katse käigus mõõdeti atmosfääris, troposfääris ja stratosfääri madalametes kihtides rõhku, temperatuuri ja õhuniiskust. Selle jaoks kasutati heeliumõhupalli külge kinnitatud sondi, mis tegi mõõtmisi.
 
-Andmeid kogutakse heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõdab erinevaid andmeid. Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal on Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
+Andmeid koguti heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõtis erinevaid andmeid. Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal oli Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
+
+
+\section{Katse eesmärk}
+Katsel oli kaks eesmärki. Üks eesmärk oli uurimistöö jaoks koguda atmosfäärist andmeid, et testida reaalsete katseandmete kokkulangemist teoreetiliselt tuletatud valemitega. Teiseks tekkis idee tuua midagi atmosfäärist kaasa ja see idee suunati edasi Reaalkooli põhikooli õpilastele, kes arendasid ideed edasi ja otsustasid stratosfäärist õhku läbi filtri juhtida ja sellega koguda tolmu ja muid suuremaid osakesi.
+
+Mudeli kontrollimiseks oli vaja koguda atmosfääri erinevatest kõrgustest andmeid temperatuuri, rõhu ja õhuniiskuse kohta.
 
 \section{Katsemetoodika valik}
 Selles uurimistöös tehtud katsed on tehtud koostöös Eesti kosmosekoolide võrgustikuga.
@@ -230,7 +218,7 @@ Eesti kosmosekoolide võrgustik oli enne selle uurimistööga tehtud lendu teinu
 
 Katse korraldamiseks ja läbiviimiseks vajalikud oskused saadi Eesti kosmosekoolide võrgustiku poolt korraldatavast koolituselt ja sealt on pärit vastav metootika.
 
-Selle uurimistöö käigus tehti katse milleks oli heeliumõhupalliga andmete kogumine kogu lennu vältel. Heeliumõhupalli külge kinnitati sond, mis mõõtis õhurõhku, temperatuuri, õhuniiskust ja asukohta. Lend koraldati 10. veebruaril 2019.
+Selle uurimistöö käigus tehti katse milleks oli heeliumõhupalliga andmete kogumine kogu lennu vältel. Heeliumõhupalli külge kinnitati sond, mis mõõtis õhurõhku, temperatuuri, õhuniiskust ja asukohta. Lend korraldati 10. veebruaril 2019.
 
 \section{Katse planeerimine}
 Alguses oli plaanis lend teha väätsa staadionilt, aga kasutades http://predict.habhub.org/ lehel olevat kalkulaatorit oli ennustusest näha, et sond oleks kukkunud jõhvi lähedale. Kuna eksimusruum võib olla suur ning Venemaa piir ja meri pole kukkumis kohast kaugel otsustatti lennu start teha võimalikult edelast, nii et edela tuultega kalduks sond Kesk-Eestisse. Rihtides lõppsihtkohta Paide peale otsustatti start teha Varblast, Pärnumaalt.
@@ -239,23 +227,16 @@ Lennu jaoks oli vajalik saada lennuametilt kooskõlastus.
 
 Sondi ehitamise eest vastutasid Tallinna Reaalkooli põhikooli õpilaste robootikameeskond Viirus. Sondi põhiehitusmaterjaliks oli penoplast ja puidust tikkud. Sond pidi hoidma sisetemperatuuri madalate välistemperatuuri eesti, et sisemuses olev elektroonika töötaks. Sammuti peab korpus vastu pidama kukkumisele, ning kõige juures peab olema korpus võimalikult kerge. Selle tõttu valiti korpuse materjaliks penoplast ja tikkud. Kuna ühe lennuga saab üles saata mitu katset siis otsustasid põhikooli õpilaste meeskond Viirus koguda atmosföörist tolmu tõmmates õhku läbi filtri. 
 
-Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parralleelsed ja läbisid sondi kere. Nenede sees olid klappid, ventilaator ja filtrid. Selle eesmärgiks oli koguda tolmu ja muud, mis jääb filtrisse kinni kõrgemal kui 20km. Teatud kõrguse saavutamisel pöörab raspbarry Pi mootori \SI{90}{\degree} päripäeva avades nii klappid ja sulgedes lüliti. mille tõttu hakkavad ventilaarotid tööle. Kui võrgus on vähenenud soovitud kõrgusest siis pöörab raspbarry Pi mootori algasendisse. Sulgedes sellega klappid ja ühendades ventilaarotid vooluringist lahti. Tolmu kogumine ei käi selle uurimistöö juurde.
+Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parralleelsed ja läbisid sondi kere. Nenede sees olid klappid, ventilaator ja filtrid. Selle eesmärgiks oli koguda tolmu ja muud, mis jääb filtrisse kinni kõrgemal kui 20km. Teatud kõrguse saavutamisel pöörab raspbarry Pi mootori \SI{90}{\textdegree} päripäeva avades nii klappid ja sulgedes lüliti. mille tõttu hakkavad ventilaarotid tööle. Kui võrgus on vähenenud soovitud kõrgusest siis pöörab raspbarry Pi mootori algasendisse. Sulgedes sellega klappid ja ühendades ventilaarotid vooluringist lahti. Tolmu kogumine ei käi selle uurimistöö juurde.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/sond2korrus.jpg}
+	\includegraphics[width=1\textwidth]{PicGra/sond2korrus.jpg}
 	\caption{Pilt sondist}
 	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
 	\label{sond}
 \end{figure}
 
 Ülemises osas oli kogu tehnika. Mõõtmisi tegi ja klappe avas Raspberry Pi arvuti. Voolu andis nii ventilaatoritele kui ka Raspberry Pi'le akkupank. Raspberry Pi külge oli kinnitatud raadio antenn, Gps antenn mootor klappide jaoks ja andur BME280 mis mõõtis väljas olevat rõhku, temperatuuri ja õhuniiskust.
-
-\begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/sond1korrus1.jpg}
-	\caption{Pilt sondist}
-	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
-	\label{sond}
-\end{figure}
 
 Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja puit tikke. Sondist tuli välja nii raadio kui ka GPS antenn, ning ka andur BME280. Sondi peale oli kinnitatud langevari. Eraldi korpuses asus GPS tracker GL370?? mida kasutatti pärast sondi leidmisel. Lennuks kasutatti Hwoyee \SI{600}{g} õhupalli.
 
@@ -358,7 +339,7 @@ Tõusmisel on temperatuuri gradient \SI{-7.13399}{\degreeCelsius/km} ja temperat
 	\label{tempkõrtroplin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
-Tõusmise graafik on kõikuv mille on põhjustanud päike. Kuna päike soojendas siis sensor mõõtis tegelikust kõrgemat temperatuuri. Kui sensor jahtus siis mõõtis sensor tegelikku temperatuuri. Kindlasti ei mõõtnud sensor tegelikkust madalamat temperatuuri. Kasutades seda asjaolu võib eemaldada kõik hüpplevad kohad. Andmeid hakkati madalama kõrgusega alates vaatama nii, et temperatuur pidevalt langeks. Kui kõrguse tõusetes temperatuur tõuseb eemaltatti järjest kõik andmepunktid kuni jõuti andmepunktini mis oli madalam viimasest võrdluspunktist. Tulemus on joonisel \ref{tempkõrtroplinstalin}. Temperatuuri gradient on \SI{-7.23193}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-5.961}{\celsius}.
+Tõusmise graafik on kõikuv, mille on põhjustanud päike. Kuna päike soojendas, siis sensor mõõtis tegelikust kõrgemat temperatuuri. Kui sensor jahtus, siis mõõtis sensor tegelikku temperatuuri. Kindlasti ei mõõtnud sensor tegelikust madalamat temperatuuri. Kasutades seda asjaolu, võib eemaldada kõik kõrvalekalded. Andmeid hakati madalamast kõrgusest vaatama nii, et temperatuur pidevalt langeks. Kui kõrguse suurenedes temperatuur tõuseb, eemaldati järjest kõik andmepunktid, kuni jõuti andmepunktini, mis oli madalam viimasest võrdluspunktist. Tulemus on joonisel \ref{tempkõrtroplinstalin}. Temperatuuri gradient on \SI{-7.23193}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-5.961}{\celsius}.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplinstalin.pdf}
