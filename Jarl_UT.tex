@@ -136,6 +136,16 @@ Võttes nüüd valemi \ref{eq10} ja valemi \ref{eq17} saame temperatuuri gradien
 \end{equation}
 
 
+\section{märg adiabaatiline temperatuurigradient}
+Valem \ref{eq11} töötab juhul, kui õhus pole vee auru. Kui õhus on vee aur ja see pole küllastunud toimuvad atmosfääris ikkagi adiabaatilised protsessid. Sellisel juhu kehtiv valem 
+\begin{equation*}\label{eq11}
+\Gamma = -\frac{\mu g}{c_p}
+\end{equation*}
+kus $c_p$ on õhu ja vee auru erisoojuse summa, saades lõpplikuks valemiks
+\begin{equation*}\label{eq11}
+\Gamma = -\frac{\mu g}{(1-\omega)c_{p,ohk} + \omega c_{p,vee aur}}
+\end{equation*}
+kus $c_{p,ohk}$ on õhu erisoojus, $c_{p,vee aur}$ on vee auru erisoojus ja $\omega$ on vee hulgaosakaal.
 
 \section{Rõhu muutus kõrgusega }
 Integreerides valemit \ref{eq10} saadakse
@@ -180,11 +190,11 @@ Adiabaatiline protsess on termodünaamiline protsess mille käigus soojusvahetus
 
 Järgnevalt leitakse suhe välja aurustunud vee ja õhu vahel. Temperatuuri gradient vahetult pilve all on $\Gamma$, temperatuur pilve all on $T_0$, temperatuur pilvede kohal $z$ võrra kõrgemal algtemperatuurist on $T_2$, vaadeldava õhu mass on $m_a$ ja sellest õhust kondenseerunud õhu vee mass on $m_v$. Kui pilvi ei oleks muutuks temperatuur edasi vastavalt temperatuuri gradiandile. Seega temperatuur oleks $T_2$ asemel $T_1$.
 \begin{equation*}
-T_1 = T_0 - \Gamma z
+T_1 = T_0 + \Gamma z
 \end{equation*}
 Kondeneseerumisest tekkinud õhu siseenergia muut on
 \begin{equation*}
-\Delta U = \frac{i}{2}\frac{m_a}{\mu}R\left(T_2 - T_0 + \Gamma z\right).
+\Delta U = \frac{i}{2}\frac{m_a}{\mu}R\left(T_2 - T_0 - \Gamma z\right).
 \end{equation*}
 Selle energia andis talle kondenseerunud vesi
 \begin{equation*}
@@ -192,22 +202,37 @@ Selle energia andis talle kondenseerunud vesi
 \end{equation*}
 kus $L$ on keemisenergia.
 \begin{equation*}
-\frac{m_v}{m_a} = \frac{i}{2}\frac{R}{\mu L}\left(T_2- T_0 + \Gamma z\right)
+\frac{m_v}{m_a} = \frac{i}{2}\frac{R}{\mu L}\left(T_2- T_0 - \Gamma z\right)
 \end{equation*}
 
 
 \section{Päikese mõjutus}
+Peale troposfääri tuleb stratosfäär. Startosfääris temperatuur suureneb kõrguse kasvades. See on tingitud päikeselt tuleneva valgusenergia neelduminsest osooni kihis ja soojusena eralduv energia soojendab õhku. Kuna siseenergiat antakse õhule juurde pole tegu enam adiabaatilise protsessiga. Järgneatl arvutatakse kui palju suureneb õhu siseenergia atmosfääris. Temperatuur enne stratosfääri sinenemist on $T_0$ ja temperatuuri gradient samal kõrgusel on $\Gamma$. Temperatuur $z$ võrra kõrgemal stratosfääris on $T_2$. Kui päikest ei paistaks siis temperatuur langeks edasi temperatuuri gradiendi järgi. Seega sellisel juhul oleks temperatuur $z$ võrra kõrgemal algpunktist
+\begin{equation*}
+T_1 = T_0 + \Gamma z.
+\end{equation*}
+Siseenergia avaldub kujul
+\begin{equation*}
+U = \frac{i}{2}\gamma RT.
+\end{equation*}
+Seega on siseenergia 
+\begin{equation*}
+\frac{U_2}{U_1} = \frac{\frac{i}{2}\gamma RT_2}{\frac{i}{2}\gamma R\left(T_0 + \Gamma z\right)} = \frac{T_2}{T_0+\Gamma z}
+\end{equation*}
+korda suurem sellel kõrgusel päikesega kui ilma päikesega.
+
+
 
 
 
 \chapter{Katse ülesehitus}
-Katse käigus mõõdeti atmosfääris, troposfääris ja stratosfääri madalametes kihtides rõhku, temperatuuri ja õhuniiskust. Selle jaoks kasutati heeliumõhupalli külge kinnitatud sondi, mis tegi mõõtmisi.
+Katse käigus mõõdeti atmosfääris, troposfääris ja stratosfääri madalametes kihtides rõhku, temperatuuri ja õhuniiskust. Selle jaoks kasutati heeliumõhupalli külge kinnitatud sondi, mis tegi mõõtmisi. Andmeid koguti heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõtis erinevaid andmeid.
 
-Andmeid koguti heeliumiga täidetud õhupalliga kaasa saadetud sondiga, mis mõõtis erinevaid andmeid. Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal oli Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
+Põhilisteks andmeteks on kõrgus, asukoht, aeg, välistemperatuur ja rõhk. Sondi pardal oli Raspberry Pi arvuti. Õhupall kerkib atmosfääri kõrgemadesse kihtidesse, sest üleslükkejõud ületab kerge gaasi ja sondi massi. Kõrgemale tõustes rõhk väheneb. Et õhupalli siserõhk oleks tasakaalus välisrõhuga, suureneb õhupalli ruumala, kuni õhupall lõhkeb ülepingest. Peale seda kukkub sond alla ja leitakse GPS'ga üles.
 
 
 \section{Katse eesmärk}
-Katsel oli kaks eesmärki. Üks eesmärk oli uurimistöö jaoks koguda atmosfäärist andmeid, et testida reaalsete katseandmete kokkulangemist teoreetiliselt tuletatud valemitega. Teiseks tekkis idee tuua midagi atmosfäärist kaasa ja see idee suunati edasi Reaalkooli põhikooli õpilastele, kes arendasid ideed edasi ja otsustasid stratosfäärist õhku läbi filtri juhtida ja sellega koguda tolmu ja muid suuremaid osakesi.
+Katsel oli kaks eesmärki. Üks eesmärk oli uurimistöö jaoks koguda atmosfäärist andmeid, et testida reaalsete katseandmete kokkulangemist teoreetiliselt tuletatud valemitega. Teiseks tekkis idee tuua midagi atmosfäärist kaasa ja see idee suunati edasi Reaalkooli põhikooli õpilastele, kes arendasid ideed edasi ja otsustasid stratosfäärist õhku läbi filtri juhtida ja sellega koguda tolmu ja muid suuremaid osakesi. Tolmu kogumine ei käi selle uurimistöö juurde.
 
 Mudeli kontrollimiseks oli vaja koguda atmosfääri erinevatest kõrgustest andmeid temperatuuri, rõhu ja õhuniiskuse kohta.
 
@@ -225,33 +250,41 @@ Alguses oli plaanis lend teha väätsa staadionilt, aga kasutades http://predict
 
 Lennu jaoks oli vajalik saada lennuametilt kooskõlastus.
 
-Sondi ehitamise eest vastutasid Tallinna Reaalkooli põhikooli õpilaste robootikameeskond Viirus. Sondi põhiehitusmaterjaliks oli penoplast ja puidust tikkud. Sond pidi hoidma sisetemperatuuri madalate välistemperatuuri eesti, et sisemuses olev elektroonika töötaks. Sammuti peab korpus vastu pidama kukkumisele, ning kõige juures peab olema korpus võimalikult kerge. Selle tõttu valiti korpuse materjaliks penoplast ja tikkud. Kuna ühe lennuga saab üles saata mitu katset siis otsustasid põhikooli õpilaste meeskond Viirus koguda atmosföörist tolmu tõmmates õhku läbi filtri. 
+Sondi ehitamise eest vastutasid Tallinna Reaalkooli põhikooli õpilaste robootikameeskond Viirus. Sondi põhiehitusmaterjaliks oli penoplast ja puidust tikkud. Sond pidi hoidma sisetemperatuuri madalate välistemperatuuri eesti, et sisemuses olev elektroonika töötaks. Sammuti peab korpus vastu pidama kukkumisele, ning kõige juures peab olema korpus võimalikult kerge. Selle tõttu valiti korpuse materjaliks penoplast ja tikkud. Kuna ühe lennuga saab üles saata mitu katset siis otsustasid põhikooli õpilaste meeskond Viirus koguda atmosföörist tolmu tõmmates õhku läbi filtri. Tolmu sooviti koguda võimalikult kõrgelt. Ennustuse kohaselt oleks pidanud sond lendama \SI{27}{km} kõrgusele aga kuna sondi mass ületas planeeritud massi siis arvati, et sond väga kõrgele ei lenda ja väikese lisavaruga arvestades määrati vahetult enne starti tolmukogumise kõrguseks \SI{20}{km} ja kõrgemal.
 
-Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parralleelsed ja läbisid sondi kere. Nenede sees olid klappid, ventilaator ja filtrid. Selle eesmärgiks oli koguda tolmu ja muud, mis jääb filtrisse kinni kõrgemal kui 20km. Teatud kõrguse saavutamisel pöörab raspbarry Pi mootori \SI{90}{\textdegree} päripäeva avades nii klappid ja sulgedes lüliti. mille tõttu hakkavad ventilaarotid tööle. Kui võrgus on vähenenud soovitud kõrgusest siis pöörab raspbarry Pi mootori algasendisse. Sulgedes sellega klappid ja ühendades ventilaarotid vooluringist lahti. Tolmu kogumine ei käi selle uurimistöö juurde.
-
+Sondi sees olev ruum oli jaotatud kaheks. Alumises olid kaks toru mis olid parralleelsed ja läbisid sondi kere. Nenede sees olid klappid, ventilaator ja filtrid. Ülemises osas oli kogu tehnika. Mõõtmisi tegi ja klappe avas Raspberry Pi arvuti. Voolu andis nii ventilaatoritele kui ka Raspberry Pi'le akkupank. Raspberry Pi külge oli kinnitatud raadio antenn, Gps antenn mootor klappide jaoks ja andur BME280 mis mõõtis väljas olevat rõhku, temperatuuri ja õhuniiskust.
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/sond2korrus.jpg}
 	\caption{Pilt sondist}
-	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
-	\label{sond}
+	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84935}}
+	\label{sond1}
 \end{figure}
 
-Ülemises osas oli kogu tehnika. Mõõtmisi tegi ja klappe avas Raspberry Pi arvuti. Voolu andis nii ventilaatoritele kui ka Raspberry Pi'le akkupank. Raspberry Pi külge oli kinnitatud raadio antenn, Gps antenn mootor klappide jaoks ja andur BME280 mis mõõtis väljas olevat rõhku, temperatuuri ja õhuniiskust.
-
 Sondi mass oli \SI{1375}{g}. Sondi korpus oli ehitatud kasutades penoplasti ja puit tikke. Sondist tuli välja nii raadio kui ka GPS antenn, ning ka andur BME280. Sondi peale oli kinnitatud langevari. Eraldi korpuses asus GPS tracker GL370?? mida kasutatti pärast sondi leidmisel. Lennuks kasutatti Hwoyee \SI{600}{g} õhupalli.
-
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/sond.jpg}
 	\caption{Pilt sondist}
-	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84949}}
-	\label{sond}% Selle järgi viidatakse, see rida peab olema pärast \caption
+	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84935}}
+	\label{sond2}
 \end{figure}
 
 
+\section{Katse seadmed}
+Kogu tehnilist poolt juhtis Raspberry Pi arvuti. Raspberry külge kinnitatti lisaks Pi In The Sky (PITS) plaat. PITS plaadi külge kinnitatti GPS antenn mille järgi saadi teada geograafilisi kordinaate, kõrgust ja kellaaega ja raadio antenn, millega saadeti mõõdetud andmed maapinnale, et jooksvalt jälgida sondi lendu. Raspberry Pi arvuti küljes oli temperatuuri andur millega mõõdeti sisetemperatuuri. RP külge kinnitatti bme280 sensor. Sensor mõõtis temperatuuri, õhurõhku ja õhuniiskust. Sennsor viidi juhtmetega sondist välja, et mõõta välistingimusi mitte sisetingimusi. RP külge kinnitatti ka väike mootor. Mootori pööramisel avanesid klappid ja sulgus vooluring millega pandi ventilaatorid tööle. Sondi sees on akupank mis on ühe juhtmega ühendatud RP külge toiteks ja teise juhtmega ühendatud vooluringi kus asuvad ventilaatorid.
 
+Andmeid kogus autori poolt kirjutatud programm. Programm saab GPS'i kaudu teada andmed ja lisab sinna sensori poolt mõõdetud tulemuse. Saadud andmerea salvestab programm logifaili ja lisaks saadab PITS plaadi külge kinnitatud raadioantenni kaudu laiali. Programm kontrollib ka hetkest kõrgust ja kui see ületab soovitud kõrgust saadab programm signaali moororile, pöörates mootorit. Kui kõrgus on soovitust väiksem siis pannakse mootor tagasi algasendisse.
+
+Raadiosignaal saadi kätte raadioantenniga, mille signaal edastatti arvutisse. Kasutades tarkvaralist raadiot muudeti saadud signaal heliks ja suunati virtuaalse halijuhtme abil helikaardi dekodeerimistarkvarra. Seal muuudeti heli tekstiks kus oli võimalik välja lugeda mõõdetud andmed.
+
+Eraldi väikessesse korpusesse pandi GL300 jälgija ja kinnitatti suurema korpuse külge. Eraldi korpusesse pandi, et signaalid erinevate seadmete vahel ei hakkakse segama üksteist. Jälgia kasutab GPS'i et leida oma asukoha ja siis saadab selle modiilset andmesidet kasutades Internerri kust on võimalik teada jälgija asukohta. Seade pandi sondiga kaasa, et pärast maandumist lihtsalt sond üles leida. Kuna nõrk raadiosignaal ei levi hästi läbi metsa siis raadiosignaali abil leida sondi üles Eestist on aeganõudev. Kuid kuna teatud kõrgusel kaob ära mobiilne võrk on võimalik sellist meetodit kasutades jälgida sondi alguses ja lõppus, kui sond on maa lähedal.
 
 \section{Katse läbiviimine}
-Lennu start oli kell 11:51. Algul saadi andmeid kätte raadio teel saadetud signaalist. Raadioside töötas umbes 20 min. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS trackeri ühendus mobiilisideme teenuspakkujaga kõrguse pärast. Peale maandumist ühendas GPS Tracker ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Lend lõppes kell 14:06. Siis saime sondi kätta ja lugesime Raspberry Pi poolt tehtud logiandmed maha.
+Lennu planeeritud start oli kell 11:00 10. veebruaril 2019. Libedad teeolud ja väiksed teed pikendasid stardikohale jõudmise aega lükkates starti edasi. Varblasse jõudes otsiti sobiv koht, kus oli ruumi ja lage ala ida poole, et sondi oleks võimalik lennates kaua jälgida lennates läänetuultega. Õhupalli täideti baloonis olevast heeliumiga. Baloonis oli \SI{4000}{l} heeliumi soovitud heeliumikogus mõõdeti ballooni küljes oleva rõhumõõdikuga. Lennus kasutatti \SI{600}{g} latex õhupalli. Õhupalli täitmiseks võeti plastmasist pastaka ümbrus ja selle ümber mässiti tihedalt õhupalli suu. Kinnituseks kasutatti nipukaid. Pastaka teise otsa ühendatti nipukatega voolik, mis oli ühendatud ballooniga. Pastakat kasutatti et oleks võimalik teha võimalik tihe ühendus vooliku ja õhupalli vahel ilma, et sulgeks heeliumi liikumist balloonist õhupalli. Peale õhupalli täitmist volditi voolik õhupalli lähedalt mitme kordselt kokku ja kinnitatti see nipukatega. Seejärel lõigati voolik läbi. Lisaks kinnitatti ka nöör sondi ja õhupalli vahel õhupalli suu külge ja kinnitatti nipukatega. Kokku pandi õhupalli umbes \SI{2800}{l} heeliumi. Tugeva tuule tõttu pidi õhupalli väga maa lähedal täitma ja lisaks kättega õhupalli kinni hoidma. Lisaks enne lõppliku vooliku läbilõikamist kontrolliti, kas õhupall suudab sondi õhku tõsta.
+
+Vahetult enne lendu helistatti lennuametisse ja küsiti viimast kinnitust lennuks. Lennu start oli kell 11:51. Sond kadus pilvise ilma tõttu mõne minutiga vaateväljast. Raadiosidet suudeti hoida umbes \SI{20}{min}. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS trackeri ühendus mobiilisideme teenuspakkujaga kõrguse pärast. Peale sideme kaotust hakkati liikuma ennustatava maandumiskoha poole Paidesse. Peale maandumist ühendas GPS Tracker ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus kell 14:06 Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Sondi maandumisest saadi teada umbes \SI{15}{min} peale seda kui kontrolliti sondi asukohta jälgija kaudu. Peale seda leiti sond üles.
+
+
+
 
 
 
@@ -261,7 +294,7 @@ Andmete analüüsimisks kasutan enda poolt kirjutatud c++ programmi. Programm ai
 \section{Lennu asukohaline ülevaade}
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/kõraeg.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/kõraeg.pdf}
 	\caption{kõrguse sõltuvus ajast}
 	%\allikas{Minu programm}
 	\label{kõraeg}
@@ -275,7 +308,7 @@ Tõusmisel oli sondil ühtlane tõusukiirus. Keskmine kiirus tõustes oli \SI{3.
 Joonisel \ref{TempKõrgus} on näha temperatuuri muutust kõrgusega. Joonisel on kaks joont, sest andmeid mõõdeti igalt kõrguselt kaks korda, sondi tõusmisel ja sondi laskumisel. Lennu stardi ajal oli kõrgem temperatuur kui lennu lõppemise ajal.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/tempkõr.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/tempkõr.pdf}
 	\caption{Temperatuuri sõltuvus kõrgusest}
 	%\allikas{Minu programm}
 	\label{TempKõrgus}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -289,7 +322,7 @@ Kuna selles uurimistöös uuritakse täpsemalt tropsfääri osa siis võib algul
 
 Jooniselt \ref{tempkõrtrop} märgati anomaaliat. Umbes \SI{2}{km} kõrgusel on nii laskumisel kui ka tõusmisel näha kõrguse tõusmisega väikest temperatuuri muutust. Kuna see toimub nii tõusmisel kui ka kukkumisel siis on see suure tõenäelsusega tegelik temperatuuri muutus ja mitte sensori viga või muud sellist.
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtrop.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/tempkõrtrop.pdf}
 	\caption{Temperatuuri sõltuvus kõrgusest alla \SI{8}{km}}
 	\allikas{Autori erakogu}
 	\label{tempkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -297,7 +330,7 @@ Jooniselt \ref{tempkõrtrop} märgati anomaaliat. Umbes \SI{2}{km} kõrgusel on 
 
 Vaadates joonist \ref{humkõrtrop} on näha, et kuni \SI{2}{km} kõrguseni on õhuniiskus ühtlselt kõrge. Kuid peale \SI{2}{km} on näha, et õhuniiskus langeb tugevalt. Õhuniiskus langes, kuna sond väljus pilvedest, ning temperatuur tõusis. Pilvedest väljumist saab ka tõestada temperatuuri kõikumise algusega. Kuni \SI{2}{km}'ni temperatuur ei kõikunud, kuna päikest ei paistnud sondile peale. Pilvedest väljudes hakkas aga päike mõjutama sensori lugemist. Kuna osa mõõtmisi tehti pilvede sees ja osa pilvedest väljas otsustatti vaadelda temperatuuri muutumist eraldi pilvede sees ja pilvedest väljas.
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/humkõrtrop.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/humkõrtrop.pdf}
 	\caption{õhuniisekuse sõltuvus kõrgusest alla \SI{8}{km}}
 	\allikas{Autori erakogu}
 	\label{humkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -321,7 +354,7 @@ Pilvede sees vaadati temperatuure tõustes kuni  \SI{2010}{m} meetrini. Sellel k
 Joonisel \ref{tempkõrtroppilvlin} on näha temperatuuri muutust selles vahemikus. Laskumisel on temperatuuri gradient \SI{-5.53009}{\degreeCelsius/km} ning temperatuur algpunktis on \SI{2.12611}{\degreeCelsius}. Tõusmisel esimese \SI{2}{km}'il on näha kahte erinevat lineaarset temperatuuri muutust. Esimesel \SI{793}{m}'il on temperatuuri gradient \SI{-3.19233}{\degreeCelsius/km} ja temperatuur algpunktis \SI{3.16728}{\degreeCelsius}. Kõrguste vahemikus \SI{808}{m} kuni \SI{2010}{m} on temperatuuri gradient \SI{-5.73645}{\degreeCelsius/km} ja temperatuu algpunktis \SI{0.360244}{\degreeCelsius}.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroppilvlin.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/tempkõrtroppilvlin.pdf}
 	\caption{temperatuuri sõltuvus kõrgusest alla \SI{2}{km}}
 	\allikas{Autori erakogu}
 	\label{tempkõrtroppilvlin}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -333,7 +366,7 @@ Tõusmisel valiti algpunktiks \SI{2565}{m} kõrgusel mõõdetud andmepunkt. See 
 Tõusmisel on temperatuuri gradient \SI{-7.13399}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-5.4533}{\celsius}. Laskumisel oli temperatuuri gradient \SI{-7.67992}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-7.26635}{\celsius}.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplin.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/tempkõrtroplin.pdf}
 	\caption{temperatuuri sõltuvus kõrgusest üle \SI{2}{km}}
 	\allikas{Autori erakogu}
 	\label{tempkõrtroplin}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -342,7 +375,7 @@ Tõusmisel on temperatuuri gradient \SI{-7.13399}{\degreeCelsius/km} ja temperat
 Tõusmise graafik on kõikuv, mille on põhjustanud päike. Kuna päike soojendas, siis sensor mõõtis tegelikust kõrgemat temperatuuri. Kui sensor jahtus, siis mõõtis sensor tegelikku temperatuuri. Kindlasti ei mõõtnud sensor tegelikust madalamat temperatuuri. Kasutades seda asjaolu, võib eemaldada kõik kõrvalekalded. Andmeid hakati madalamast kõrgusest vaatama nii, et temperatuur pidevalt langeks. Kui kõrguse suurenedes temperatuur tõuseb, eemaldati järjest kõik andmepunktid, kuni jõuti andmepunktini, mis oli madalam viimasest võrdluspunktist. Tulemus on joonisel \ref{tempkõrtroplinstalin}. Temperatuuri gradient on \SI{-7.23193}{\degreeCelsius/km} ja temperatuur algpunktis \SI{-5.961}{\celsius}.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/tempkõrtroplinstalin.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/tempkõrtroplinstalin.pdf}
  	\caption{temperatuuri sõltuvus kõrgusest üle \SI{2}{km}}
  	\allikas{Autori erakogu}
  	\label{tempkõrtroplinstalin}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -379,7 +412,7 @@ kus $p_a$ on arvutatud rõhk ja $p_m$ on mõõdetud rõhk.
 Joonisel \ref{prekõrg} on näha rõhu muutust kogu lennu jooksul. Rõhu mõõtmistulemused on täpsed ja ükski mõõtmine ei lange teistest mööda. Jooniselt on seda raske välja lugeda, aga tegelikult eksisteerib kaks joont. Tõusmisel on rõhk madalam kui tõustes.
 
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{PicGra/prekõrg.pdf}
+	\includegraphics[width=1\textwidth]{PicGra/prekõrg.pdf}
 	\caption{Rõhu muutus kõrgusega}
 	\allikas{Autori erakogu}
 	\label{prekõrg}% Selle järgi viidatakse, see rida peab olema pärast \caption
@@ -395,19 +428,51 @@ Vaadates langemisel mõõdetud andmeid on esimene kõrgusvahemik \SI{89}{m} kuni
 
 Teisel kõrgusvahemikul \SI{2136}{m} kuni \SI{8154}{m}. Kõrgusel \SI{2136}{m} on $p_0=\SI{765.63645}{hPa}$ ja $T_0 = \SI{265.88365}{K}$ ning $\Gamma = \SI{-7.67992}{K/km}$. Keskmine erinevus selles kõrgusevahemikus oli \SI{4.45647}{\permil}. Kõrgusel \SI{8154}{m} mõõdeti rõhuks \SI{332.17}{hPa} ja arvutati rõhuks \SI{328.404}{hPa}. Kui kasutada eelnevas kõrgusvahemikust arvutatud rõhku \SI{2136}{m} kõrgusel, mis oli \SI{763.269}{hPa} siis on keskmine erinevus \SI{7.55264}{\permil}.
 
+\section{Mitte adiabaatilised vahemikud}
+Atmosfäär ei ole täielikult adiabaatiline. Üks koht kus atmosfäär ei ole adiabaatiline on pilvedes, kuna pilvedes toimub vee kondenseerumine mille käigua antakse õhule soojusenergiat. Selline asi juhtud umbes \SI{2}{km} kõrgusel nii tõustes kui ka langedes. Visuaalselt on seda võimalik näha jooniselt \ref{tempkõrtrop}. Nüüd arvutatakse välja, kui palju kondenseerub vett umbes \SI{1}{kg} õhu kohta. Selleks kasutatakse teooria osas leitud valemit (L = 2257000)
+\begin{equation*}
+\frac{m_v}{m_a} = \frac{i}{2}\frac{R}{\mu L}\left(T_2- T_0 - \Gamma z\right)
+\end{equation*}
+Tõustes on temperatuuri gradient vahetult enne pilvi $\Gamma = \SI{-5.73645}{K/km}$. Temperatuur kõrgusel \SI{2010}{m} on $T_0 = \SI{-6.76}{\degreeCelsius}$ ja sellest $z = \SI{555}{m}$ kõrgemal kõrgusel \SI{2565}{m} on $T_2 = \SI{-7.33}{\degreeCelsius}$. Pannes arvud sisse saadakse väärtuseks
+\begin{equation*}
+\frac{m_v}{m_a} = 0.83 \frac{g}{kg}
+\end{equation*}
+Laskudes on temperatuuri gradient vahetult enne pilvi $\Gamma = \SI{-5.53009}{K/km}$. Temperatuur kõrgusel \SI{1926}{m} on $T_0 = \SI{-7.81}{\degreeCelsius}$ ja sellest $z = \SI{210}{m}$ kõrgemal kõrgusel \SI{2136}{m} on $T_2 = \SI{-7.88}{\degreeCelsius}$. Pannes arvud sisse saadakse väärtuseks
+\begin{equation*}
+\frac{m_v}{m_a} = 0.16 \frac{g}{kg}
+\end{equation*}
+
+Stratosfääris pole ka atmosfäär adiabaatiline, sest siseenergat antakse õhule juurde päikesest tuleva kiirgusenergiana. Seda on visuaalselt näha jooniselt \ref{TempKõrgus} kus alates umber \SI{8}{km}'ist alates temperatuur kasvab. Nüüd arvutatakse kui palju oleks erinevus õhu siseenergias kui päike ei paiskaks. Selleks kasutatakse teooria osas leitud valemit
+\begin{equation*}
+\frac{U_2}{U_1} = \frac{T_2}{T_0+\Gamma z}.
+\end{equation*}
+Temperatuur kõrgusel \SI{8154}{m} on $T_0 = \SI{224.21}{K}$ ja sellest $z = \SI{18753}{m}$ kõrgemal kõrgusel \SI{26907}{m} on $T_2 = \SI{238.6}{k}$. See kõrgus valiti, sest see on viimane lokaalne miinimun üles minnes ja seega viimane võimalikult täpne õhu temperatuur. Seega päike paistab on siseenergia 
+\begin{equation*}
+\frac{U_2}{U_1} = 2.69
+\end{equation*}
+korda suurem kui päikest ei paistaks.
+
+Need arvutiused on hinnangulised näitamaks, et atmosfäär ei ole adiabaatiline pilvede sees ja stratosfääris.
+
+
+\section{Järeldus}
+
+
+
 
 
 
 \addchap{Kasutatud materjalid}% Viitamine paraneb veel
 
-Hobbs, P. V., Wallace, J. M. (2006) Atmospheric Science: An Introductory Survey. Amsterdam: Elsevier \newline
-Ahrens, C. D., Henson, R. (2018) Meteorology Today: An Introduction to Weather, Climate, and the Environment. Boston: Cengage Learning
+%Hobbs, P. V., Wallace, J. M. (2006) Atmospheric Science: An Introductory Survey. Amsterdam: Elsevier \newline
+%Ahrens, C. D., Henson, R. (2018) Meteorology Today: An Introduction to Weather, Climate, and the Environment. Boston: Cengage Learning
 
 %\cite{examplebook}% Kõige lihtsam viitamise käsk 
-%\cite{examplearticle}
+%\cite{book:1339577}
 %\cite{exampleonline}
 
-%\printbibliography% Selle käsuga trükime kasutatud materjalid, kommenteeri see kiirema kompileerimise jaoks
+\nocite{*}
+\printbibliography
 
 %\appendix% Lisad
 %\chapter{Kes see lisatööd ikka teha tahab}% Lisa pealkiri
