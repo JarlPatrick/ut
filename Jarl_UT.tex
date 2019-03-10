@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{siunitx}
 \usepackage{wasysym}
+\usepackage{verbatim}
+\usepackage{listings}
 \addbibresource{viited_eesnimi_perekonnanimi.bib}% Viidete info fail
 \defbibheading{bibliography}{\addchap{#1}}% Lisame kasutatud materjalid sisukorda
 
@@ -35,7 +37,7 @@ Käesolevas osas leitakse seoseid, kuidas kirjeldada atmosfääris rõhu ja temp
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/Profile2.png}
 	\caption{Temperatuuri sõltuvus kõrgusest}
-	%\allikas{Minu programm}
+	\allikas{\cite{book:779878}}
 	\label{profile}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
@@ -447,20 +449,23 @@ Need arvutused on hinnangulised näitamaks, et atmosfäär ei ole adiabaatiline 
 
 
 
-\addchap{Kasutatud materjalid}% Viitamine paraneb veel
 
-%Hobbs, P. V., Wallace, J. M. (2006) Atmospheric Science: An Introductory Survey. Amsterdam: Elsevier \newline
-%Ahrens, C. D., Henson, R. (2018) Meteorology Today: An Introduction to Weather, Climate, and the Environment. Boston: Cengage Learning
-
-%\cite{examplebook}% Kõige lihtsam viitamise käsk 
 %\cite{book:1339577}
-%\cite{exampleonline}
 
 \nocite{*}
-\printbibliography
+%\printbibliography
 
-%\appendix% Lisad
-%\chapter{Kes see lisatööd ikka teha tahab}% Lisa pealkiri
+\appendix% Lisad
+\chapter{Andmete analüüsi kood}
+\scriptsize
+\lstinputlisting[language=C++,breaklines]{Lisad/analüüs.cpp}
+\normalsize
+
+\chapter{logifail}
+\scriptsize
+\lstinputlisting{Lisad/log.txt}
+\normalsize
+
 
 \kinnitusleht% Kinnitusleht
 \end{document}
