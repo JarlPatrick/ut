@@ -167,9 +167,9 @@ Astendaja saab asendada kujuga
 \frac{\gamma}{\gamma-1} = \frac{c_p}{R} = -\frac{g\mu}{\Gamma R},
 \end{equation*}
 saades lõplikuks valemiks:
-\begin{equation*}
+\begin{equation}\label{eq15}
 p=p_0 \left(1+\frac{\Gamma}{T_0}z\right)^{ -\frac{g\mu}{\Gamma R}}.
-\end{equation*}
+\end{equation}
 Seega, kui on teada algpunktis olev rõhk $p_0$, temperatuur $T_0$ ja temperatuurigradient $\Gamma$, on võimalik leida seda valemit kasutades rõhk kõrgusel $z$ algpunktist \parencite{Texas}.
 
 
@@ -262,7 +262,7 @@ Raadiosignaal saadi kätte raadioantenniga, mille signaal edastati arvutisse. Ka
 Eraldi väikessesse korpusesse pandi GL300 jälgija ja kinnitati suurema korpuse külge. Jälgija pandi eraldi korpusesse, et signaalid erinevate seadmete vahel ei hakkaks segama üksteist. Jälgija kasutas GPS'i, et leida oma asukohta ja siis saatis selle mobiilset andmesidet kasutades Internetti, kust oli võimalik teada saada jälgija asukohta. Seade pandi sondiga kaasa, et pärast maandumist lihtsalt sond üles leida. Kuna nõrk raadiosignaal ei levi hästi läbi metsa, siis raadiosignaali abil leida sondi üles maandumiskohast on aeganõudev. Kuid kuna teatud kõrgusel kaob ära mobiilne võrk, siis oli võimalik sellist meetodit kasutades jälgida sondi lennu alguses ja lennu lõpus, kui sond oli maapinna lähedal.
 
 \section{Katse läbiviimine}
-Lennu start oli planeeritud kell 11:00 10. veebruaril 2019. Libedad teeolud külavaheteedel pikendasid stardikohale jõudmise aega, lükates starti edasi. Varblasse jõudes otsiti sobiv koht, kus oli stardi jaoks vajalik vaba ala ja lage ala ida suunas, et sondi oleks võimalik lennates kaua jälgida, kuna tugev tuul puhus läänest. Õhupalli täideti balloonis olevast heeliumiga. Balloonis oli \SI{4000}{l} heeliumi. Soovitud heeliumikogus mõõdeti ballooni küljes oleva rõhumõõdikuga. Lennus kasutati \SI{600}{g} massiga lateksist õhupalli. Õhupalli täitmiseks võeti plastmassist pastaka toru korpus ja selle ümber mässiti tihedalt õhupalli suu. Kinnituseks kasutati nipukaid. Pastaka teise otsa ühendati voolik, mis oli ühendatud ballooniga. Pastakat kasutati, et oleks võimalik teha võimalikult tihe ühendus vooliku ja õhupalli vahel ilma, et sulguks heeliumi liikumine balloonist õhupalli. Peale õhupalli täitmist volditi voolik õhupalli lähedalt mitmekordselt kokku ja kinnitati see nipukatega. Seejärel lõigati voolik läbi. Pika nööriga kinnitati sond õhupalli suu külge. Kokku pandi õhupalli umbes \SI{2800}{l} heeliumi. Tugeva tuule tõttu pidi õhupalli väga maa lähedal täitma ja lisaks kätega õhupalli kinni hoidma. Lisaks enne lõplikku vooliku läbilõikamist kontrolliti, kas õhupall suudab sondi õhku tõsta ja hinnati tõstejõu piisavust.
+Lennu start oli planeeritud kell 11:00 10. veebruaril 2019. Libedad teeolud külavaheteedel pikendasid stardikohale jõudmise aega, lükates starti edasi. Varblasse jõudes otsiti sobiv koht, kus oli stardi jaoks vajalik vaba ala ja lage ala ida suunas, et sondi oleks võimalik lennates kaua jälgida, kuna tugev tuul puhus läänest. Õhupalli täideti balloonis olnud heeliumiga. Balloonis oli \SI{4000}{l} heeliumi. Soovitud heeliumikogus mõõdeti ballooni küljes oleva rõhumõõdikuga. Lennus kasutati \SI{600}{g} massiga lateksist õhupalli. Õhupalli täitmiseks võeti plastmassist pastaka toru korpus ja selle ümber mässiti tihedalt õhupalli suu. Kinnituseks kasutati nipukaid. Pastaka teise otsa ühendati voolik, mis oli ühendatud ballooniga. Pastakat kasutati, et oleks võimalik teha võimalikult tihe ühendus vooliku ja õhupalli vahel ilma, et sulguks heeliumi liikumine balloonist õhupalli. Peale õhupalli täitmist volditi voolik õhupalli lähedalt mitmekordselt kokku ja kinnitati see nipukatega. Seejärel lõigati voolik läbi. Pika nööriga kinnitati sond õhupalli suu külge. Kokku pandi õhupalli umbes \SI{2800}{l} heeliumi. Tugeva tuule tõttu pidi õhupalli väga maa lähedal täitma ja lisaks kätega õhupalli kinni hoidma. Lisaks enne lõplikku vooliku läbilõikamist kontrolliti, kas õhupall suudab sondi õhku tõsta ja hinnati tõstejõu piisavust.
 
 Vahetult enne lendu helistati Lennuametisse ja küsiti viimast kinnitust lennuks. Lennu start toimus kell 11:51. Sond kadus pilvise ilma tõttu mõne minutiga vaateväljast. Raadiosidet suudeti hoida umbes \SI{20}{min}. Peale seda polnud võimalik puhast signaali kätte saada. Siis kadus GPS jälgija ühendus mobiilisideme teenuspakkujaga kõrguse tõttu. Peale sideühenduse kadumist hakati liikuma ennustatava maandumiskoha poole Paidesse. Peale maandumist ühendas GPS jälgija ennast uuesti teenusepakkuja võrku ja saadi teada sondi kukkumise asukoht. Sond maandus kell 14:06 Paide lähedal paarkümmend meetrit Tallinn-Tartu maanteest. Sondi maandumisest saadi teada umbes \SI{15}{min} peale seda, kui kontrolliti sondi asukohta GPS jälgija kaudu.
 
@@ -462,22 +462,30 @@ Eriti täpseks osutus rõhu muutuse arvutamise valem \ref{eq14}, mis tuletati ee
 \addchap{Kokkuvõte}
 Uurimistöö hüpotees, et atmosfääri madalamates kihtides toimuvad termodünaamilised protsessid on adiabaatilised protsessid, leidis uurimistöö tulemusena kinnitust, kuid ilmnesid järgmised erandid: adiabaatilisus ei kehti pilvedes ja stratosfääris. 
 
-Adiabaatiline protsess on termodünaamiline protsess, mille käigus soojusvahetust ei toimu. Stratosfääris toimuvad termodünaamilised protsessid ei ole adiabaatilised, sest Päikese poolt kiiratud UV kiirgus neeldub stratosfääris asuvas osoonikihis, eraldades soojust, mille käigus soojeneb õhk. Pilvedes toimuvad termodünaamilised protsessid ei ole adiabaatilised, sest õhus oleva veeauru kondenseerumisel eralduv soojus läheb õhu soojendamiseks.
+Adiabaatiline protsess on termodünaamiline protsess, mille käigus soojusvahetust ei toimu. Stratosfääris toimuvad termodünaamilised protsessid ei ole adiabaatilised, sest Päikese poolt kiiratud UV kiirgus neeldub stratosfääris asuvas osoonikihis, eraldades soojust, mille käigus õhk soojeneb. Pilvedes toimuvad termodünaamilised protsessid ei ole adiabaatilised, sest õhus oleva veeauru kondenseerumisel eralduv soojus läheb õhu soojendamiseks. Kuna aga troposfääris soojendab õhku ainult maapind ja õhk on seal pidevas liikumises on troposfääris toimuvad termodünaamilised protsessid adiabaatilised.
 
-Kuna aga troposfääris soojendab õhku ainult maa pind ja õhk on seal pidevas liikumises on troposfääris toimuvad termodünaamilised protsessid adiabaatilised.
+Uurimistöö käigus korraldati heeliumõhupalliga stratosfääri lend. Heeliumõhupalli külge kinnitati sond, mis mõõtis andmeid. Andmetega kontrolliti tuletatud seoste kehtivust.
 
-Teoreetiliselt leiti ja katseandmetega kinnitati, et temperatuur muutub kõrguse kasvades lineaarselt ning temperatuurigradient sõltub veeauru kogusest õhus. Mida rohkem on õhus veeauru, seda vähem muutub temperatuur kõrguse muutumisel. Teoreetiliselt leiti ka valem, mis kirjeldab rõhu muutumist kõrgusega, kui on teada temperatuurigradient ja algpunktis mõõdetud algandmed. Katseandmetega kontrollides leiti, et valem kirjeldab rõhu muutust väga täpselt. Sellega sai täidetud uurimistöö eesmärk.
+Uurimistöö eesmärkl sai täidetud. Teoreetiliselt leiti ja katseandmetega kinnitati, et temperatuur muutub kõrguse kasvades lineaarselt ning temperatuurigradient sõltub veeauru kogusest õhus. Mida rohkem on õhus veeauru, seda vähem muutub temperatuur kõrguse muutumisel. Temperatuurigradient on avaldatud valemis \ref{eq12}. Teoreetiliselt leiti ka valem, mis kirjeldab rõhu muutumist kõrgusega, kui on teada temperatuurigradient ja algpunktis mõõdetud algandmed. Katseandmetega kontrollides leiti, et valem kirjeldab rõhu muutust väga täpselt. Rõhu muutuse on avaldatud valemis \ref{eq15}.
+
+%Temperatuurigradient avaldub kujul
+%\begin{equation*}
+%	\Gamma = -\frac{g}{(1-\omega)c_{o} + \omega c_{v}} ,
+%\end{equation*}
+%kus $g$ on gravitatsioonikiirendus, $\omega$ on õhus oleva veeauru osakaal, $c_o$ on õhu erisoojus ja $c_v$ on veeauru erisoojus.
+
+%Rõhu $z$ võrra kõrgemal algpunktist avaldub kujul 
+%\begin{equation*}
+%	p=p_0 \left(1+\frac{\Gamma}{T_0}z\right)^{ -\frac{g\mu}{\Gamma R}} ,
+%\end{equation*}
+%kus $p_0$ on rõhk algpunktis, $\Gamma$ on temperatuurigradient, $T_0$ on temperatuur algpunktis, $g$ on gravitatsioonikiirendus, $\mu$ on õhu molaarmass ja $R$ on universaalne gaasikonstant.
 
 
 
-
-
-%\cite{book:1339577}
 
 %\nocite{*}
 \printbibliography
 
-%\appendix% Lisad
 \addchap{Lisa 1 Andmete kogumise kood}
 \scriptsize
 \lstinputlisting[language=Python,breaklines]{Lisad/lend.txt}
@@ -495,7 +503,7 @@ Teoreetiliselt leiti ja katseandmetega kinnitati, et temperatuur muutub kõrguse
 
 \addchap{Lisa 4 Logifail}
 \scriptsize
-%\lstinputlisting{Lisad/log.txt}
+\lstinputlisting{Lisad/log.txt}
 \normalsize
 
 
