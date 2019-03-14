@@ -52,12 +52,12 @@ pV=\nu RT ,
 kus $p$ on gaasi rõhk, $V$ on gaasi ruumala, $\nu = \frac{m}{\mu}$ on gaasi kogus moolides, kus $m$ on gaasi mass ja $\mu$ on gaasi molaarmass, $R$ on universaalne gaasikonstant ja $T$ on gaasi temperatuur \parencite{IGasKhan}.
 
 
-Kuna selle uurimistöö käigus koguti katseandmeid troposfääris ja stratosfääris, uuritakse ainult neid piirkondi. Joonisel \ref{profile} on näha, kuidas temperatuur muutub kõrguse kasvades. Stratopausis on üks temperatuuri maksimume. Seal olev kõrge temperatuur on otse tingitud UV kiirguse neeldumisest osoonikihis. Kuigi osooni kiht on kõige tihedam madalamal stratosfääris umbes \SI{20}{km} ja \SI{30}{km} vahel, on temperatuur ikkagi kõige kõrgem umbes \SI{50}{km} juures. See on tingitud osooni kihi läbipaistmatusest UV kiirguse jaoks, mistõttu suurem osa kiirgusest neeldub kõrgemal. Troposfäär ei ole mõjutatud Päikese kiirgusest, kuna see on läbipaistev. Erinevalt stratosfäärist ringleb õhk troposfääris palju. Troposfääri soojendab maapind, mida soojendab Päike. Soojalt maapinnalt tõustes hakkab rõhk vähenema ja ideaalse gaasi olekuvõrrandi kohaselt hakkab temparatuur langema \parencite[25--26]{book:779878}.
+Kuna selle uurimistöö käigus koguti katseandmeid troposfääris ja stratosfääris, uuritakse ainult neid piirkondi. Joonisel \ref{profile} on näha, kuidas temperatuur muutub kõrguse kasvades. Stratopausis on üks temperatuuri maksimume. Seal olev kõrge temperatuur on otse tingitud UV kiirguse neeldumisest osoonikihis. Kuigi osooni kiht on kõige tihedam madalamal stratosfääris umbes \SI{20}{km} ja \SI{30}{km} vahel, on temperatuur ikkagi kõige kõrgem umbes \SI{50}{km} juures. See on tingitud osooni kihi läbipaistmatusest UV kiirguse jaoks, mistõttu suurem osa kiirgusest neeldub kõrgemal. Troposfäär ei ole mõjutatud Päikese kiirgusest, kuna see on läbipaistev. Erinevalt stratosfäärist ringleb õhk troposfääris palju. Troposfääri soojendab maapind, mida soojendab Päike. Soojalt maapinnalt tõustes hakkab rõhk vähenema ja ideaalse gaasi olekuvõrrandi kohaselt hakkab temparatuur langema \parencite[24--26]{book:779878}.
 
 \begin{figure}[h]
 	\includegraphics[width=0.5\textwidth]{PicGra/Profile2.png}
 	\caption{Temperatuuri sõltuvus kõrgusest}
-	\allikas{\cite{book:779878}}
+	\allikas{\cite[24]{book:779878}}
 	\label{profile}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
 
@@ -82,13 +82,13 @@ Molaarset soojusmahutavust saab avaldada valemiga $c_V = \frac{C_V}{\nu}$, saade
 c_V = \frac{i}{2}R .
 \end{equation}
 Kui aga vaadata isobaarilist protsessi, siis olekuvõrrandist tuleneb: $pdV=\nu RdT$, ning gaas teeb tööd $dA = pdV = \nu RdT$. Avaldades need valemisse \ref{eq1} saadakse:
-\begin{equation*}
+\begin{equation}
 dQ = dU + dA = \frac{i+2}{2} \nu R dT ,
-\end{equation*}
+\end{equation}
 millest järeldub:
-\begin{equation*}
+\begin{equation}
 c_p=\frac{i+2}{2}R.
-\end{equation*}
+\end{equation}
 Samuti saab näidata $c_V$ ja $c_p$ vahelist seost:
 \begin{equation}\label{eq9}
 c_p =\frac{i+2}{2}R = \frac{i}{2}R + R = c_V + R.
@@ -106,28 +106,28 @@ Asendades valemi \ref{eq3} valemisse \ref{eq2} saadakse uus seos:
 pdV(c_V+R)+c_VVdp=0.
 \end{equation}
 Asendades siia sisse valemi \ref{eq9} ja adiabaadi näitaja $ \gamma \equiv \frac{c_p}{c_V}$ saadakse võrrand
-\begin{equation*}
+\begin{equation}
 \gamma \frac{dV}{V} + \frac{dp}{p} = 0.
-\end{equation*}
+\end{equation}
 Seda integreerides saadakse uus võrdus:
-\begin{equation*}
+\begin{equation}
  \int \gamma \frac{dV}{V} + \frac{dp}{p} = \gamma \ln(V) + \ln(p) = Const.
-\end{equation*}
+\end{equation}
 Sellest saab järeldada
-\begin{equation*}
+\begin{equation}
 pV^\gamma = Const.
-\end{equation*}
+\end{equation}
 Samuti, kasutades ideaalse gaasi olekuvõrrandit, saab tuletada järgneva seose:
 \begin{equation}\label{eq13}
 p^{1-\gamma}T^\gamma = Const.
 \end{equation}
-Seega, kui vaadata mingit kogust gaasi adiabaatilises protsessis, siis jääb antud võrduse väärtus gaasi parameetrite muutumisel samaks \parencite{JKtermo}.
+Seega, kui vaadata mingit kogust gaasi adiabaatilises protsessis, siis jääb antud võrduse väärtus gaasi parameetrite muutumisel samaks \parencite[4--8]{JKtermo}.
 
 \section{Adiabaatiline temperatuurigradient }
 Selles osas tuletatakse temperatuuri gradient adiabaatilise protsesi puhul. Valemist \ref{eq13} saadakse
-\begin{equation*}
+\begin{equation}
 d\ln(p^{1-\gamma}T^\gamma) = 0,
-\end{equation*}
+\end{equation}
 millest saadakse
 \begin{equation}\label{eq17}
 \frac{dp}{p} = \frac{\gamma}{\gamma-1}\frac{dT}{T}.
@@ -137,9 +137,9 @@ Asendades seosed \ref{eq10} ja \ref{eq8} seosesse \ref{eq17} saadakse temperatuu
 \Gamma \equiv \frac{dT}{dz}=-\frac{\gamma-1}{\gamma} \frac{\mu g}{R} = -\frac{R}{c_p}\frac{\mu g}{R} = -\frac{\mu g}{c_p}.
 \end{equation}
 Valem \ref{eq11} kehtib juhul, kui õhus pole veeauru. Kui õhus on küllastumata veeaur, toimuvad atmosfääris ikkagi adiabaatilised protsessid. Sellisel juhul kehtib valem 
-\begin{equation*}
+\begin{equation}
 \Gamma = -\frac{g}{c_m} ,
-\end{equation*}
+\end{equation}
 kus $c_m$ niiske õhu erisoojus. Erisoojus avaldub molaarsest erisoojusest kujul $c_m=\frac{c_p}{\mu}$. Kui asendada nüüd valemisse õhu erisoojuse osakaalud, saadakse lõplikuks valemiks
 \begin{equation}\label{eq12}
 \Gamma = -\frac{g}{(1-\omega)c_{o} + \omega c_{v}} ,
@@ -148,24 +148,24 @@ kus $c_{o}$ on õhu erisoojus, $c_{v}$ on vee auru erisoojus ja $\omega$ on vee 
 
 \section{Rõhu muutus kõrgusega }
 Integreerides valemit \ref{eq11} saadakse
-\begin{equation*}
+\begin{equation}
 \int_{T_0}^{T} dT = \int_{0}^{z} \Gamma dz
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}
 T-T_0 = \Gamma z,
-\end{equation*}
+\end{equation}
 kus $T_0$ on temperatuur algpunktis ja $T$ on temperatuur kõrgusel $z$ algpunktist. Avaldist teisendades saadakse:
-\begin{equation*}
+\begin{equation}
 T = T_0 \left(1+\frac{\Gamma}{T_0}z\right).
-\end{equation*}
+\end{equation}
 Kasutades nüüd seost \ref{eq13}, saab eelmise valemi ümber kirjutada kujul:
-\begin{equation*}
+\begin{equation}
 p=p_0 \left(1+\frac{\Gamma}{T_0}z\right)^{\frac{\gamma}{\gamma-1}}.
-\end{equation*}
+\end{equation}
 Astendaja saab asendada kujuga
-\begin{equation*}
+\begin{equation}
 \frac{\gamma}{\gamma-1} = \frac{c_p}{R} = -\frac{g\mu}{\Gamma R},
-\end{equation*}
+\end{equation}
 saades lõplikuks valemiks:
 \begin{equation}\label{eq15}
 p=p_0 \left(1+\frac{\Gamma}{T_0}z\right)^{ -\frac{g\mu}{\Gamma R}}.
@@ -175,42 +175,42 @@ Seega, kui on teada algpunktis olev rõhk $p_0$, temperatuur $T_0$ ja temperatuu
 
 
 \section{Veeauru kondenseerumine}
-Kõrguse kasvades väheneb temperatuur ja rõhk. Kui niiske õhk jahtub ja rõhk väheneb, siis väheneb ka õhu võime hoida vett auruna endas ja aur muutub küllastanuks. Veeaurul on lihtsam kondenseeruda, kui veeaur saab kondenseeruda osakese külge. Nendeks osakesteks on tavaliselt tolm või õietolm. Kui piisavalt palju veeauru kondenseerub väikeste osakeste külge, siis moodustub pilv \parencite{raamat1}.
+Kõrguse kasvades väheneb temperatuur ja rõhk. Kui niiske õhk jahtub ja rõhk väheneb, siis väheneb ka õhu võime hoida vett auruna endas ja aur muutub küllastanuks. Veeaurul on lihtsam kondenseeruda, kui veeaur saab kondenseeruda osakese külge. Nendeks osakesteks on tavaliselt tolm või õietolm. Kui piisavalt palju veeauru kondenseerub väikeste osakeste külge, siis moodustub pilv \parencite[209]{raamat1}.
 
 Vee kondenseerumisel pilvedes eraldub soojus, seega pilvedes toimuv termodünaamiline protsess ei vasta adiabaatilisele protsessile. Kuid kuna väljaspool pilvi veeaur ei kondenseeru, siis pilvedest madalamal ja kõrgemal termodünaamilised protsessid on adiabaatilised protsessid.
 
 Järgnevalt leitakse suhe õhust välja aurustunud vee ja õhu masside vahel. Temperatuuri gradient vahetult pilve all on $\Gamma$, temperatuur pilve all on $T_0$, temperatuur pilvede kohal $z$ võrra kõrgemal algtemperatuurist on $T_2$, vaadeldava õhu mass on $m_a$ ja sellest õhust kondenseerunud õhu vee mass on $m_v$. Kui pilvi ei oleks, siis muutuks temperatuur edasi vastavalt temperatuurigradiendile. Seega temperatuur oleks $T_2$ asemel
-\begin{equation*}
+\begin{equation}
 T_1 = T_0 + \Gamma z.
-\end{equation*}
+\end{equation}
 Veearu annab kondenseerumisel ära energia
-\begin{equation*}
+\begin{equation}
 \Delta U = L m_v
-\end{equation*}
+\end{equation}
 kus $L$ on aurustumissoojus. See energia läheb õhu siseenergia suurendamiseks. Gaasi siseenergiat saab arvutada valemiga \ref{eq5}, seega siseenergia muut on
-\begin{equation*}
+\begin{equation}
 \Delta U =\frac{i}{2}\frac{m_a}{\mu}RT_2 - \frac{i}{2}\frac{m_a}{\mu}RT_1  = \frac{i}{2}\frac{m_a}{\mu}R\left(T_2 - T_0 - \Gamma z\right).
-\end{equation*}
+\end{equation}
 Seega saab avaldada masside suhte järgnevalt:
-\begin{equation*}
+\begin{equation}
 \frac{m_v}{m_a} = \frac{i}{2}\frac{R}{\mu L}\left(T_2- T_0 - \Gamma z\right).
-\end{equation*}
+\end{equation}
 
 
 
 \section{UV kiirgus stratosfääris}
 Troposfäärist kõrgemal asub stratosfäär. Kuna UV kiirguse neeldumisel eralduv soojus antakse õhule juurde, siis pole tegu enam adiabaatilise protsessiga. Järgnevalt võrreldakse olukorda, kus UV kiirgus ei neeldu stratosfääris, tegeliku olukorraga, kus UV kiirgus neeldub stratosfääris. Arvutatakse gaasi siseenergiate suhe nendes erinevates olukordades. Temperatuur stratosfääri ja troposfääri vahelisel alal on $T_0$ ja temperatuurigradient samal kõrgusel on $\Gamma$. Temperatuur $z$ võrra kõrgemal stratosfääris on $T_2$. Kui UV kiirgus ei neelduks, siis temperatuur langeks edasi temperatuurigradiendi järgi. Sellisel juhul oleks temperatuur $z$ võrra kõrgemal algpunktist
-\begin{equation*}
+\begin{equation}
 T_1 = T_0 + \Gamma z.
-\end{equation*}
+\end{equation}
 Siseenergia avaldub kujul:
-\begin{equation*}
+\begin{equation}
 U = \frac{i}{2}\gamma RT.
-\end{equation*}
+\end{equation}
 Seega on siseenergia 
-\begin{equation*}
+\begin{equation}
 \frac{U_2}{U_1} = \frac{\frac{i}{2}\gamma RT_2}{\frac{i}{2}\gamma R\left(T_0 + \Gamma z\right)} = \frac{T_2}{T_0+\Gamma z}
-\end{equation*}
+\end{equation}
 korda suurem siis, kui UV kiirgus neeldub, võrreldes olukorraga, kui UV kiirgust ei neeldu.
 
 
@@ -239,14 +239,14 @@ Sondi ehitamise eest võttis vastutuse enda peale Tallinna Reaalkooli põhikooli
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/sond2korrus.jpg}
 	\caption{Pilt sondist}
-	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84935}}
+	\allikas{\cite{sond}}
 	\label{sond1}
 \end{figure}
 Sondi mass oli \SI{1375}{g}. Sondi välimus on joonisel \ref{sond2}. Sondist tuli välja nii raadio- kui ka GPS-antenn ning ka andur BME280. Sondi peale oli kinnitatud langevari. Eraldi korpuses asus GPS jälgija GL300, mida kasutati pärast sondi leidmisel. Lennuks kasutati Hwoyee \SI{600}{g} õhupalli.
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/sond.jpg}
 	\caption{Pilt sondist}
-	\allikas{\url{http://pildid.real.edu.ee/main.php?g2_itemId=84935}}
+	\allikas{\cite{sond}}
 	\label{sond2}
 \end{figure}
 
@@ -279,7 +279,7 @@ Andmete analüüsimisks kasutati autori poolt kirjutatud programmi. Programm ait
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/kõraeg.pdf}
 	\caption{kõrguse sõltuvus ajast}
-	%\allikas{Minu programm}
+	\allikas{Autori erakogu}
 	\label{kõraeg}
 \end{figure}
 
@@ -315,7 +315,7 @@ Kõrgemal kui \SI{8}{km} hakkab temperatuur kõrguse kasvades suurenema. See on 
 Joonisel \ref{tempkõrtrop} on anomaalia. Umbes \SI{2}{km} kõrgusel on nii laskumisel kui ka tõusmisel näha kõrguse suurenemisel väikest temperatuuri muutust. Kuna see toimub nii tõusmisel kui ka kukkumisel, siis on see suure tõenäosusega tegelik temperatuuri muutus ja mitte sensori viga või muud sellist.
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/tempkõrtrop.pdf}
-	\caption{Temperatuuri sõltuvus merepinnast kuni kõrguseni \SI{8}{km}}
+	\caption{Temperatuuri sõltuvus merepinnast kuni kõrguseni \textbf{\SI{8}{km}}}
 	\allikas{Autori erakogu}
 	\label{tempkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
@@ -329,16 +329,16 @@ Vaadates joonist \ref{humkõrtrop} on näha, et kuni \SI{2}{km} kõrguseni on õ
 \end{figure}
 
 Järgnevalt leitakse temperatuuri muutusele kõrgusega parim lineaarne seos:
-\begin{equation*}
+\begin{equation}
 T(z) = T_0 + \Gamma z.
-\end{equation*}
+\end{equation}
 kus $T_0$ on temperatuur algpunktis ja $\Gamma$ on temperatuurigradient, ehk temperatuuri muutus kõrguse kasvades. Lineaarse seose leidmiseks kasutati vähimruutude meetodit, mis avaldub järgnevalt:
-\begin{equation*}
+\begin{equation}
 \Gamma = \frac{\sum_{i=1}^{n}(z_i - \overline{z})(T_i - \overline{T})}{\sum_{i=1}^{n}(z_i - \overline{z})^2}
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}
 T_0 = \overline{T} - \Gamma \overline{z}
-\end{equation*}
+\end{equation}
 kus $z$ on kõrgus ja $T$ on temperatuur \parencite[252-285]{mat}.
 
 Pilvede sees vaadati temperatuure õhupalli tõustes kuni \SI{2010}{m} meetrini. Sellel kõrgusel tehti viimane mõõtmine, peale mida temperatuur tõusis pilvedest väljumise tagajärgel. Samal põhjusel valiti laskumisel viimaseks andmepunktiks \SI{1926}{m} kõrgusel mõõdetud andmepunkt.
@@ -374,9 +374,9 @@ Tõusmise graafik on kõikuv, mille on põhjustanud päikesekiirgus. Kuna Päike
 \end{figure}
 
 Tabelis \ref{tabel1} on kokkuvõttev tabel selles osas mõõdetud andmetest. Kui kasutada valemit \ref{eq12}, saab temperatuurigradienti kasutades leida veeauru massiosakaalu õhus, saades valemiks
-\begin{equation*}
+\begin{equation}
 \omega = \frac{g + c_o}{\Gamma(c_o-c_v)}.
-\end{equation*}
+\end{equation}
 \begin{table}[htb]
 	\caption{Temperatuurigradiendid erinevatel kõrgustel}
 	\label{tabel1}
@@ -409,9 +409,9 @@ Käesolevas osas uuritakse, et kas teooria osas saadud valem, mis kirjeldab rõh
 p = p_0 \left(1+\frac{\Gamma z}{T_0}\right)^{-\frac{g\mu}{R\Gamma}}
 \end{equation}
 vastab katseandmetele. Kuna temperatuuri gradient on erinevatel atmosfääri osades erinev, siis vaatame üksikult osi, kus temperatuuri gradient on konstantne. Konstantite väärtused on: $g = \SI{9.80665}{\frac{m}{s^2}}$ , $R = \SI{8.3144598}{\frac{J}{mol*K}}$ ja $\mu = \SI{0.0289647}{\frac{km}{mol}}$. Valemi testimiseks kasutati programmi, mis arvutab algandmete põhjal välja rõhu mõõdetud punkti kõrgusel ja võrdleb sellel kõrgusel mõõdetud rõhuga. Võrdlemise valem on
-\begin{equation*}
+\begin{equation}
 e = \frac{p_a-p_m}{p_a},
-\end{equation*}
+\end{equation}
 kus $p_a$ on arvutatud rõhk ja $p_m$ on mõõdetud rõhk.
 
 Esimene kõrgusvahemik on \SI{22}{m} kuni \SI{793}{m}. Kõrgusel \SI{22}{m} on $p_0=\SI{995.14242}{hPa}$ ja $T_0 = 276.31728$ K. Keskmine erinevus selles kõrgusvahemikus oli \SI{0.515915}{\permil}. Kõrgusel \SI{793}{m} mõõdeti rõhuks \SI{903.92}{hPa} ja arvutati rõhuks \SI{904.276}{hPa}. Järgmise kõrgusvahemiku alguspunktis \SI{808}{m} kõrgusel arvutas programm rõhuks \SI{902.585}{hPa}.
@@ -426,26 +426,26 @@ Teisel kõrgusvahemikul \SI{2136}{m} kuni \SI{8154}{m}. Kõrgusel \SI{2136}{m} o
 
 \section{Mitteadiabaatilised vahemikud}
 Atmosfäär ei ole täielikult adiabaatiline. Üks ala, kus atmosfäär ei ole adiabaatiline, on pilvedes, kuna pilvedes toimub veeauru kondenseerumine, mille käigus antakse õhule soojusenergiat. Selline protsess toimub umbes \SI{2}{km} kõrgusel nii tõustes kui ka langedes. Visuaalselt on seda võimalik näha jooniselt \ref{tempkõrtrop}. Nüüd arvutatakse välja, kui palju kondenseerub vett umbes \SI{1}{kg} õhu kohta. Selleks kasutatakse teooria osas leitud valemit
-\begin{equation*}
+\begin{equation}
 \frac{m_v}{m_a} = \frac{i}{2}\frac{R}{\mu L}\left(T_2- T_0 - \Gamma z\right).
-\end{equation*}
+\end{equation}
 Tõustes on temperatuurigradient vahetult enne pilvi $\Gamma = \SI{-5.73645}{K/km}$. Temperatuur kõrgusel \SI{2010}{m} on $T_0 = \SI{-6.76}{\degreeCelsius}$ ja sellest $z = \SI{555}{m}$ kõrgemal kõrgusel \SI{2565}{m} on $T_2 = \SI{-7.33}{\degreeCelsius}$, ning vee aurustumissoojus on $L = \SI{2257000}{\frac{J}{kgs}}$. Kasutades valemis katseandmeid saadakse, et õhust eraldub veeauru
-\begin{equation*}
+\begin{equation}
 \frac{m_v}{m_a} = 0.83 \frac{g}{kg}.
-\end{equation*}
+\end{equation}
 Laskudes on temperatuurigradient vahetult enne pilvi $\Gamma = \SI{-5.53009}{K/km}$. Temperatuur kõrgusel \SI{1926}{m} on $T_0 = \SI{-7.81}{\degreeCelsius}$ ja sellest $z = \SI{210}{m}$ kõrgemal kõrgusel \SI{2136}{m} on $T_2 = \SI{-7.88}{\degreeCelsius}$. Kasutades valemis katseandmeid saadakse, et õhust eraldub veeauru
-\begin{equation*}
+\begin{equation}
 \frac{m_v}{m_a} = 0.16 \frac{g}{kg}.
-\end{equation*}
+\end{equation}
 
 Ka stratosfääris pole atmosfäär adiabaatiline, sest siseenergat antakse õhule juurde Päikesest tuleva UV kiirguse neeldumisel. Seda on visuaalselt näha jooniselt \ref{TempKõrgus}, kus alates umbes \SI{8}{km}'ist alates temperatuur kasvab. Nüüd arvutatakse, kui palju oleks erinevus õhu siseenergias, kui UV kiirgust ei neelduks stratosfääris. Selleks kasutatakse teooria osas leitud valemit:
-\begin{equation*}
+\begin{equation}
 \frac{U_2}{U_1} = \frac{T_2}{T_0+\Gamma z}.
-\end{equation*}
+\end{equation}
 Temperatuur kõrgusel \SI{8154}{m} on $T_0 = \SI{224.21}{K}$ ja sellest $z = \SI{18753}{m}$ kõrgemal kõrgusel \SI{26907}{m} on $T_2 = \SI{238.6}{k}$. See kõrgus valiti, sest see on viimane lokaalne miinimum õhupalli tõustes ja seega viimane võimalikult täpne õhu temperatuur. Seega, kui päike paistab, on siseenergia 
-\begin{equation*}
+\begin{equation}
 \frac{U_2}{U_1} = 2.69
-\end{equation*}
+\end{equation}
 korda suurem, võrreldes olukorraga kui päikest ei paistaks.
 
 Need arvutused on hinnangulised näitamaks, et atmosfäär ei ole adiabaatiline pilvede sees ja stratosfääris.
@@ -503,7 +503,7 @@ kus $p_0$ on rõhk algpunktis, $\Gamma$ on temperatuurigradient, $T_0$ on temper
 
 \addchap{Lisa 4 Logifail}
 \scriptsize
-%\lstinputlisting{Lisad/log.txt}
+\lstinputlisting{Lisad/log.txt}
 \normalsize
 
 %\input{Lisad/pull.txt}
@@ -525,6 +525,8 @@ Leiti ka erandeid, kus termodünaamilised protsessid ei ole adiabaatilised. Sell
 
 
 \addchap{Abstract}
+
+
 In a globalized and overcrowded world, pollution of the Earth's atmosphere is one of the most important problems. Modeling the atmosphere helps to understand the processes that take place in the atmosphere and to find solutions for improving the atmosphere. The purpose of the research was to find relationships that describe the temperature and pressure dependence on height.
 
 In the course of the research, thermodynamic processes in the atmosphere were studied, and the processes were considered adiabatic. This assumption was used to establish the relationship between temperature and pressure changes in height.

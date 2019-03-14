@@ -24,15 +24,15 @@ int main(){
     }
 
     for(int i = 0; i < n; i++){
-        fo<< "\\addchap{Lisa " << i + 5 << " Andmepunkt number " << i+1 <<"}"<<endl;
-        fo<< "Antud m66tmise indeks on " << nr[i] << endl;
-        fo<< "Antud m66tmine tehti " << time[i]<<" s peale starti" << endl;
-        fo<< "Antud m66tmine tehti laiuskraadil " << lat[i] <<"N ja pikkuskraadil " << lon[i] << "S" << endl;
-        fo<< "Antud m66tmine tehti kõrgusel " << height[i]<<" m merepinnast" << endl;
-        fo<< "Antud m66tmisel mõõdeti sisetemperatuuriks " << itemp[i]<<" kraadi Celsiust" << endl;
-        fo<< "Antud m66tmisel mõõdeti välistemperatuuriks " << otemp[i]<<" kraadi Celsiust" << endl;
-        fo<< "Antud m66tmisel mõõdeti r6huks " << pre[i]<<" hekta paskalit" << endl;
-        fo<< "Antud m66tmisel mõõdeti 6huniiskuseks " << hum[i]<<" %" << endl;
+        fo<< "\\addchap{Lisa " << i + 5 << " Andmepunkt number " << i+1 <<"}"<<endl<<endl;
+        fo<< "Antud m66tmise indeks on " << nr[i] << endl<<endl;
+        fo<< "Antud m66tmine tehti " << time[i]<<" s peale starti" << endl<<endl;
+        fo<< "Antud m66tmine tehti laiuskraadil " << lat[i] <<"N ja pikkuskraadil " << lon[i] << "S" << endl<<endl;
+        fo<< "Antud m66tmine tehti k6rgusel " << height[i]<<" m merepinnast" << endl<<endl;
+        fo<< "Antud m66tmisel m66deti sisetemperatuuriks " << itemp[i]<<" kraadi Celsiust" << endl<<endl;
+        fo<< "Antud m66tmisel m66deti välistemperatuuriks " << otemp[i]<<" kraadi Celsiust" << endl<<endl;
+        fo<< "Antud m66tmisel m66deti r6huks " << pre[i]<<" hekta paskalit" << endl<<endl;
+        fo<< "Antud m66tmisel m66deti 6huniiskuseks " << hum[i]<<" %" << endl<<endl;
     }
 
     return 0;
