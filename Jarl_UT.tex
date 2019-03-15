@@ -9,10 +9,10 @@
 \addbibresource{viited_eesnimi_perekonnanimi.bib}% Viidete info fail
 \defbibheading{bibliography}{\addchap{#1}}% Lisame kasutatud materjalid sisukorda
 
-\pealkiri{Atmosfääri mudeldamine ja katseandmete põhjal täpseima mudeli leidmine} % Kahel real
+\pealkiri{Atmosfääri mudeldamine ja katseandmete põhjal täpseima mudeli koostamine} % Kahel real
 \autor{Jarl Patrick Paide}
 \klass{11.a}
-\juhendaja{õp Mart Kuurme }
+\juhendaja{Mart Kuurme (MSc)}
 
 \begin{document}
 \maketitle% Tiitelleht
@@ -175,7 +175,7 @@ Seega, kui on teada algpunktis olev rõhk $p_0$, temperatuur $T_0$ ja temperatuu
 
 
 \section{Veeauru kondenseerumine}
-Kõrguse kasvades väheneb temperatuur ja rõhk. Kui niiske õhk jahtub ja rõhk väheneb, siis väheneb ka õhu võime hoida vett auruna endas ja aur muutub küllastanuks. Veeaurul on lihtsam kondenseeruda, kui veeaur saab kondenseeruda osakese külge. Nendeks osakesteks on tavaliselt tolm või õietolm. Kui piisavalt palju veeauru kondenseerub väikeste osakeste külge, siis moodustub pilv \parencite[209]{raamat1}.
+Kõrguse kasvades väheneb temperatuur ja rõhk. Kui niiske õhk jahtub ja rõhk väheneb, siis väheneb ka õhu võime hoida vett auruna endas ja aur muutub küllastunuks. Veeaurul on lihtsam kondenseeruda, kui veeaur saab kondenseeruda osakese külge. Nendeks osakesteks on tavaliselt tolm või õietolm. Kui piisavalt palju veeauru kondenseerub väikeste osakeste külge, siis moodustub pilv \parencite[209]{raamat1}.
 
 Vee kondenseerumisel pilvedes eraldub soojus, seega pilvedes toimuv termodünaamiline protsess ei vasta adiabaatilisele protsessile. Kuid kuna väljaspool pilvi veeaur ei kondenseeru, siis pilvedest madalamal ja kõrgemal termodünaamilised protsessid on adiabaatilised protsessid.
 
@@ -255,7 +255,7 @@ Autor vastutas kogu tehnika töötamise eest: paigaldas sondi esimesele korrusel
 \section{Katseseadmed}
 Kogu tehnilist poolt juhtis Raspberry Pi arvuti. Raspberry külge kinnitati lisaks Pi In The Sky (PITS) plaat. PITS plaadi külge kinnitati GPS-antenn, mille kaudu saadi teada geograafilised koordinaadid, kõrgus ja kellaaeg, ning raadioantenn, millega saadeti mõõdetud andmed maapinnale, et jooksvalt jälgida sondi lendu. Raspberry Pi arvuti küljes oli temperatuuriandur, millega mõõdeti sisetemperatuuri. Raspberry Pi külge kinnitati BME280 sensor. Sensor mõõtis temperatuuri, õhurõhku ja õhuniiskust. Sensor viidi juhtmetega sondist välja, et mõõta välistingimusi, mitte sondi sisetingimusi. Raspberry Pi külge kinnitati ka väike mootor. Mootori pööramisel avanesid klapid ja sulgus vooluring, millega pandi ventilaatorid tööle. Sondi sees oli akupank, mis oli ühe juhtmega ühendatud Raspberry Pi külge toiteks ja teise juhtmega ühendatud vooluringi, kus asusuid ventilaatorid.
 
-Andmeid kogus käesoleva uurimistöö autori poolt kirjutatud programm. Programm leidis GPS-antenni kaudu enda asukoha ja lisas sinna sensori poolt mõõdetud tulemused. Saadud andmerea salvestas programm logifaili ja lisaks saatis PITS plaadi külge kinnitatud raadioantenni kaudu info laiali. Programm kontrollis igal ajahetkel kõrgust ja kui see ületas \SI{20}{km}, siis saatis programm signaali mootorile, pöörates mootorit, millega hakkati tolmu koguma. Kui kõrgus oli sellest väiksem, siis pandi mootor tagasi algasendisse.
+Andmeid kogus käesoleva uurimistöö autori poolt kirjutatud programm. Programm leidis GPS-antenni kaudu enda asukoha ja lisas sinna sensori poolt mõõdetud tulemused. Saadud andmerea salvestas programm logifaili ja lisaks saatis PITS plaadi külge kinnitatud raadioantenni kaudu info laiali. Programm kontrollis igal ajahetkel kõrgust ja kui see ületas \SI{20}{km}, siis saatis programm signaali mootorile, pöörates mootorit, millega hakkati tolmu koguma. Kui kõrgus oli sellest väiksem, siis pandi mootor tagasi algasendisse. Katse käius kasutatud arvutiprogrammid asuvad Lisas 1 ja Lisas 2.
 
 Raadiosignaal saadi kätte raadioantenniga, mille signaal edastati arvutisse. Kasutades tarkvaralist raadiot, muudeti saadud signaal heliks ja suunati virtuaalse helijuhtme abil helikaardi dekodeerimistarkvarra. Seal muuudeti heli tekstiks, kust oli võimalik välja lugeda mõõdetud andmed.
 
@@ -272,13 +272,13 @@ Vahetult enne lendu helistati Lennuametisse ja küsiti viimast kinnitust lennuks
 
 
 \chapter{Katseandmete analüüs}
-Andmete analüüsimisks kasutati autori poolt kirjutatud programmi. Programm aitas suurest andmekogust välja sorteerida vajalikud andmed ja kontrollida katseandmete kokkulangemist teoreetiliste seostega.
+Andmete analüüsimisks kasutati autori poolt kirjutatud programmi. Programm aitas suurest andmekogust välja sorteerida vajalikud andmed ja kontrollida katseandmete kokkulangemist teoreetiliste seostega. Katse käigus salvestatud logiandmed on Lisas 4 ja andmeanalüüsiks kasutatud programm on Lisas 3.
 
 \section{Lennu asukohaline ülevaade}
 
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/kõraeg.pdf}
-	\caption{kõrguse sõltuvus ajast}
+	\caption{Kõrguse sõltuvus ajast}
 	\allikas{Autori erakogu}
 	\label{kõraeg}
 \end{figure}
@@ -315,7 +315,7 @@ Kõrgemal kui \SI{8}{km} hakkab temperatuur kõrguse kasvades suurenema. See on 
 Joonisel \ref{tempkõrtrop} on anomaalia. Umbes \SI{2}{km} kõrgusel on nii laskumisel kui ka tõusmisel näha kõrguse suurenemisel väikest temperatuuri muutust. Kuna see toimub nii tõusmisel kui ka kukkumisel, siis on see suure tõenäosusega tegelik temperatuuri muutus ja mitte sensori viga või muud sellist.
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/tempkõrtrop.pdf}
-	\caption{Temperatuuri sõltuvus merepinnast kuni kõrguseni \textbf{\SI{8}{km}}}
+	\caption{Temperatuuri sõltuvus kõrgusest (merepinnast kuni kõrguseni 8 km)}
 	\allikas{Autori erakogu}
 	\label{tempkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
@@ -323,7 +323,7 @@ Joonisel \ref{tempkõrtrop} on anomaalia. Umbes \SI{2}{km} kõrgusel on nii lask
 Vaadates joonist \ref{humkõrtrop} on näha, et kuni \SI{2}{km} kõrguseni on õhuniiskus ühtlaselt kõrge. Kuid peale \SI{2}{km} on näha, et õhuniiskus langeb tugevalt. Õhuniiskus langes, kuna sond väljus pilvedest ning temperatuur tõusis. Pilvedest väljumist saab ka tõestada temperatuuri kõikumise algusega. Esimesed \SI{2}{km} temperatuur ei kõikunud, kuna Päikest ei paistnud sondile peale. Pilvedest väljudes hakkas aga Päike mõjutama sensori lugemit. Kuna osa mõõtmisi tehti pilvede sees ja osa pilvedest väljas, otsustati vaadelda temperatuuri muutumist eraldi pilvedest madalamal ja pilvedest kõrgemal.
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/humkõrtrop.pdf}
-	\caption{Õhuniiskuse sõltuvus kõrgusest merepinnast kuni kõrguseni \SI{8}{km}}
+	\caption{Õhuniiskuse sõltuvus kõrgusest (merepinnast kuni kõrguseni 8 km)}
 	\allikas{Autori erakogu}
 	\label{humkõrtrop}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
@@ -347,7 +347,7 @@ Joonisel \ref{tempkõrtroppilvlin} on näha temperatuuri muutust selles vahemiku
 
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/tempkõrtroppilvlin.pdf}
-	\caption{Temperatuuri sõltuvus kõrgusest merepinnast kuni kõrguseni \SI{2}{km}}
+	\caption{Temperatuuri sõltuvus kõrgusest (merepinnast kuni kõrguseni 2 km)}
 	\allikas{Autori erakogu}
 	\label{tempkõrtroppilvlin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
@@ -359,7 +359,7 @@ Tõusmisel on temperatuurigradient $\Gamma =\SI{-7.13399}{\degreeCelsius/km}$ ja
 
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/tempkõrtroplin.pdf}
-	\caption{Temperatuuri sõltuvus alates kõrgusest \SI{2}{km} kuni kõrguseni \SI{8}{km}}
+	\caption{Temperatuuri sõltuvus kõrgusest (alates kõrgusest 2 km kuni kõrguseni 8 km)}
 	\allikas{Autori erakogu}
 	\label{tempkõrtroplin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
@@ -368,7 +368,7 @@ Tõusmise graafik on kõikuv, mille on põhjustanud päikesekiirgus. Kuna Päike
 
 \begin{figure}[h]
 	\includegraphics[width=1\textwidth]{PicGra/tempkõrtroplinstalin.pdf}
- 	\caption{Temperatuuri sõltuvus alates kõrgusest \SI{2}{km} kuni kõrguseni \SI{8}{km}}
+ 	\caption{Temperatuuri sõltuvus kõrgusest (alates kõrgusest 2 km kuni kõrguseni 8 km)}
  	\allikas{Autori erakogu}
  	\label{tempkõrtroplinstalin}% Selle järgi viidatakse, see rida peab olema pärast \caption
 \end{figure}
@@ -456,7 +456,7 @@ Eelnevast järeldub, et atmosfääris toimuvad termodünaamilised protsessid pol
 
 Pilvedest madalamal ja pilvedest kõrgemal tropsfääris, kus pole osoonikihti muutub temperatuur kõrguse muutumisel vastavalt temperatuurigradiendile, mis tuletati adiabaatilise protsessi jaoks. Temperatuurigradient sõltub õhus olevast veeaurust. Kuna veeaurul on õhust suurem erisoojus, siis mida rohkem on veeauru õhus, seda vähem muutub temperatuur kõrguse muutumisel. Seda kinnitasid ka katseandmed, et pilvedest madalamal, kus on rohkem veeauru, on temperatuurigradiendi absoluutväärtus väiksem kui pilvedest väljas, kus on vähem veeauru.
 
-Eriti täpseks osutus rõhu muutuse arvutamise valem \ref{eq14}, mis tuletati eeldusel, et atmosfääris toimuvad termodünaamilised protsessid on adiabaatilised. Seega, kui on teada temperatuurigradient ja algandmed algpunktis, on võimalik täpselt välja arvutada rõhk soovitud punktis.
+Eriti täpseks osutus rõhu muutuse arvutamise valem \ref{eq14}, mis tuletati eeldusel, et atmosfääris toimuvad termodünaamilised protsessid on adiabaatilised. Kui on teada temperatuurigradient ja algandmed algpunktis, on võimalik välja arvutada rõhk soovitud punktis.
 
 
 \addchap{Kokkuvõte}
@@ -490,21 +490,25 @@ kus $p_0$ on rõhk algpunktis, $\Gamma$ on temperatuurigradient, $T_0$ on temper
 \scriptsize
 \lstinputlisting[language=Python,breaklines]{Lisad/lend.txt}
 \normalsize
+Allikas: \cite{logimine}
 
 \addchap{Lisa 2 Sensori kood}
 \scriptsize
 \lstinputlisting[language=Python,breaklines]{Lisad/sensor.txt}
 \normalsize
+Allikas: \cite{sensor}
 
 \addchap{Lisa 3 Andmete analüüsi kood}
 \scriptsize
 \lstinputlisting[language=C++,breaklines]{Lisad/analüüs.cpp}
 \normalsize
+Allikas: Autori erakogu
 
 \addchap{Lisa 4 Logifail}
 \scriptsize
 \lstinputlisting{Lisad/log.txt}
 \normalsize
+Allikas: Autori erakogu
 
 %\input{Lisad/pull.txt}
 
@@ -526,6 +530,7 @@ Leiti ka erandeid, kus termodünaamilised protsessid ei ole adiabaatilised. Sell
 
 \addchap{Abstract}
 
+\textbf{\large Modeling the atmosphere and creating the most accurate model based on experimental data}
 
 In a globalized and overcrowded world, pollution of the Earth's atmosphere is one of the most important problems. Modeling the atmosphere helps to understand the processes that take place in the atmosphere and to find solutions for improving the atmosphere. The purpose of the research was to find relationships that describe the temperature and pressure dependence on height.
 
